@@ -1,0 +1,6 @@
+# Robots.txt for Medhyx Solutions (https://medhyx.com)
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://medhyx.com/sitemap.xml

@@ -2765,3 +2765,160 @@ button {
     padding: 24px 16px;
   }
 }
+
+/* ==========================================================================
+   ACCESSIBILITY & SKIP TO CONTENT
+   ========================================================================== */
+.skip-to-content {
+  position: absolute;
+  top: -120px;
+  left: 20px;
+  background: var(--blue-600);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  z-index: 100000;
+  transition: top 0.2s ease;
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  top: 20px;
+  outline: 3px solid #38bdf8;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue-500);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   PARTNER & CERTIFICATION BADGES STRIP
+   ========================================================================== */
+.certifications-strip {
+  background: #ffffff;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 32px 0;
+}
+
+.cert-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cert-title-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cert-title-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue-600);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.cert-title-heading {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+.cert-badges-grid {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cert-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-medium);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-800);
+  transition: all var(--transition-fast);
+}
+
+.cert-badge-pill:hover {
+  border-color: var(--blue-400);
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.cert-badge-icon {
+  color: var(--blue-600);
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   PRINT / PDF EXPORT STYLESHEET
+   ========================================================================== */
+@media print {
+  .top-banner,
+  .nav,
+  .mobile-drawer,
+  .drawer-backdrop,
+  .scroll-progress-bar,
+  .back-to-top-btn,
+  .legal-modal-backdrop,
+  .availability-chip,
+  .btn,
+  #contact,
+  #solutionMatcher,
+  .chip-group {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: #0f172a !important;
+    font-size: 11pt;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding: 0 15px !important;
+  }
+
+  .section {
+    padding: 24px 0 !important;
+    border: none !important;
+    page-break-inside: avoid;
+  }
+
+  .tech-card,
+  .job-card,
+  .case-card,
+  .preview-box {
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: #0284c7 !important;
+  }
+
+  .footer {
+    background: transparent !important;
+    color: #475569 !important;
+    border-top: 1px solid #cbd5e1 !important;
+    padding: 20px 0 !important;
+  }
+}

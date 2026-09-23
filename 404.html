@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404: Page Not Found | Medhyx Solutions</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=1.7">
+  <style>
+    .error-page-container {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .error-card {
+      max-width: 600px;
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 48px 36px;
+      box-shadow: var(--shadow-xl);
+    }
+    .error-code {
+      font-family: var(--font-mono);
+      font-size: 72px;
+      font-weight: 700;
+      color: var(--blue-600);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .error-title {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--ink-900);
+      margin-bottom: 14px;
+    }
+    .error-desc {
+      font-size: 15px;
+      color: var(--ink-600);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .quick-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-light);
+    }
+    .quick-link {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--blue-600);
+    }
+    .quick-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-banner">
+    <div class="top-banner-inner">
+      <span>Medhyx Solutions — Enterprise Data Engineering &amp; Cloud Lakehouse Consultancy</span>
+      <a href="index.html#contact" class="banner-link">Contact Us &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Medhyx Solutions Home">
+        <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" class="brand-logo">
+      </a>
+      <div class="nav-actions">
+        <a class="btn btn-nav" href="index.html">Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="error-page-container">
+    <div class="error-card">
+      <div class="error-code">404</div>
+      <h1 class="error-title">Page or Endpoint Not Found</h1>
+      <p class="error-desc">
+        The cloud resource or URL you requested cannot be located. It may have moved, or the link address might be incorrect.
+      </p>
+
+      <a href="index.html" class="btn btn-primary btn-lg">Return to Homepage &rarr;</a>
+
+      <div class="quick-links">
+        <a href="index.html#solutions" class="quick-link">Lakehouse Solutions</a>
+        <span>&bull;</span>
+        <a href="index.html#pipeline" class="quick-link">Architecture Pipeline</a>
+        <span>&bull;</span>
+        <a href="careers.html" class="quick-link">Careers &amp; Open Roles</a>
+        <span>&bull;</span>
+        <a href="index.html#contact" class="quick-link">Contact Our Team</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" style="padding: 30px 0; border-top: 1px solid var(--border-light);">
+    <div class="container text-center" style="font-size: 13px; color: #94a3b8;">
+      &copy; 2026 Medhyx Solutions. All rights reserved. &bull; Headquarters: New Delhi, India
+    </div>
+  </footer>
+
+</body>
+</html>
