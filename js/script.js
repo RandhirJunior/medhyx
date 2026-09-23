@@ -145,9 +145,16 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.innerHTML = '<span>Request Delivered ✓</span>';
           formStatus.className = 'form-status success';
           formStatus.style.display = 'block';
+
+          const escapeHTML = (str) => {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+          };
+
           formStatus.innerHTML = `
-            <strong>Thank you, ${name}!</strong><br>
-            Your inquiry regarding <em>${focus}</em> has been securely sent. A principal cloud data architect will review your project details and reach out to <code>${email}</code> within 1 business day.
+            <strong>Thank you, ${escapeHTML(name)}!</strong><br>
+            Your inquiry regarding <em>${escapeHTML(focus)}</em> has been securely sent. A principal cloud data architect will review your project details and reach out to <code>${escapeHTML(email)}</code> within 1 business day.
           `;
 
           consultationForm.reset();

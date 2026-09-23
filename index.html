@@ -7,6 +7,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Medhyx Solutions | Enterprise Data Engineering & Cloud Analytics</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -926,17 +927,17 @@
                 <div class="form-row">
                   <div class="form-group">
                     <label for="clientName">Full Name *</label>
-                    <input type="text" id="clientName" name="name" placeholder="e.g. Alex Morgan" required>
+                    <input type="text" id="clientName" name="name" placeholder="e.g. Alex Morgan" maxlength="100" required>
                   </div>
                   <div class="form-group">
                     <label for="clientEmail">Work Email *</label>
-                    <input type="email" id="clientEmail" name="email" placeholder="alex@company.com" required>
+                    <input type="email" id="clientEmail" name="email" placeholder="alex@company.com" maxlength="100" required>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="companyName">Organization / Company</label>
-                  <input type="text" id="companyName" name="company" placeholder="e.g. Acme Health">
+                  <input type="text" id="companyName" name="company" placeholder="e.g. Acme Health" maxlength="120">
                 </div>
 
                 <div class="form-group">
@@ -953,7 +954,7 @@
 
                 <div class="form-group">
                   <label for="projectScope">Project Overview / Current Challenges</label>
-                  <textarea id="projectScope" name="message" rows="3" placeholder="Briefly describe your data volume, current cloud stack, and key objectives..."></textarea>
+                  <textarea id="projectScope" name="message" rows="3" maxlength="3000" placeholder="Briefly describe your data volume, current cloud stack, and key objectives..."></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitFormBtn">
@@ -1177,9 +1178,16 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.innerHTML = '<span>Request Delivered ✓</span>';
           formStatus.className = 'form-status success';
           formStatus.style.display = 'block';
+
+          const escapeHTML = (str) => {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+          };
+
           formStatus.innerHTML = `
-            <strong>Thank you, ${name}!</strong><br>
-            Your inquiry regarding <em>${focus}</em> has been securely sent. A principal cloud data architect will review your project details and reach out to <code>${email}</code> within 1 business day.
+            <strong>Thank you, ${escapeHTML(name)}!</strong><br>
+            Your inquiry regarding <em>${escapeHTML(focus)}</em> has been securely sent. A principal cloud data architect will review your project details and reach out to <code>${escapeHTML(email)}</code> within 1 business day.
           `;
 
           consultationForm.reset();
