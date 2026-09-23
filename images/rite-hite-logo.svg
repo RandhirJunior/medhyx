@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 76" width="340" height="76">
+  <defs>
+    <linearGradient id="rhRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF2B38"/>
+      <stop offset="100%" stop-color="#C8102E"/>
+    </linearGradient>
+  </defs>
+  <!-- Stylized Geometric Industrial Dock Shield / Arrow Symbol -->
+  <g transform="translate(10, 10)">
+    <rect x="0" y="2" width="48" height="48" rx="8" fill="url(#rhRedGrad)"/>
+    <!-- Angled modern loading dock leveler / chevron -->
+    <path d="M12 36 L24 16 L36 36 Z" fill="#FFFFFF" opacity="0.95"/>
+    <path d="M18 36 L24 26 L30 36 Z" fill="#C8102E"/>
+  </g>
+  <!-- Brand Wordmark -->
+  <text x="72" y="42" font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="1.5" fill="#FFFFFF">
+    RITE<tspan fill="#EF2B38">-</tspan>HITE
+  </text>
+  <!-- Official Tagline -->
+  <text x="74" y="58" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="3" fill="#94A3B8">
+    ALWAYS LOOKING AHEAD
+  </text>
+</svg>
