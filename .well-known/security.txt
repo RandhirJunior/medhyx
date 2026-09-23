@@ -8,3 +8,4 @@ Preferred-Languages: en
 Canonical: https://medhyx.com/.well-known/security.txt
 Policy: https://medhyx.com/#security
 Hiring: https://medhyx.com/careers.html
+
