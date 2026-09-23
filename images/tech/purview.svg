@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="purviewGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0078D4"/>
+      <stop offset="100%" stop-color="#002050"/>
+    </linearGradient>
+    <linearGradient id="shieldCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#50E6FF"/>
+      <stop offset="100%" stop-color="#0078D4"/>
+    </linearGradient>
+  </defs>
+  <!-- Microsoft Purview Governance Shield & Data Graph -->
+  <g fill="none" fill-rule="evenodd">
+    <!-- Security Shield Outline -->
+    <path d="M24 4 L40 10 L40 23 C40 33.2 33.2 42.4 24 45 C14.8 42.4 8 33.2 8 23 L8 10 Z" fill="url(#purviewGrad)"/>
+    <path d="M24 8 L36 13 L36 23 C36 31 31 38 24 40.5 C17 38 12 31 12 23 L12 13 Z" stroke="url(#shieldCyan)" stroke-width="2" fill="none" opacity="0.8"/>
+    <!-- Central Data Mesh Node & Synapses -->
+    <circle cx="24" cy="23" r="4.5" fill="#50E6FF"/>
+    <circle cx="18" cy="18" r="2.5" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="30" cy="18" r="2.5" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="24" cy="31" r="2.5" fill="#FFFFFF" opacity="0.9"/>
+    <!-- Connecting Edges -->
+    <line x1="24" y1="23" x2="18" y2="18" stroke="#FFFFFF" stroke-width="1.5" opacity="0.7"/>
+    <line x1="24" y1="23" x2="30" y2="18" stroke="#FFFFFF" stroke-width="1.5" opacity="0.7"/>
+    <line x1="24" y1="23" x2="24" y2="31" stroke="#FFFFFF" stroke-width="1.5" opacity="0.7"/>
+  </g>
+</svg>

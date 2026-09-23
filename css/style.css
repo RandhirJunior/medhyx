@@ -1381,17 +1381,36 @@ button {
 }
 
 .tech-icon-wrap {
-  width: 42px;
-  height: 42px;
-  border-radius: 8px;
-  background: white;
-  border: 1px solid var(--border-light);
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: rgba(14, 165, 233, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
   margin-bottom: 16px;
-  color: var(--blue-600);
+  padding: 8px;
+  transition: all var(--transition-base);
+}
+
+.tech-card:hover .tech-icon-wrap {
+  background: rgba(14, 165, 233, 0.14);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.2);
+}
+
+.tech-icon-img {
+  width: 100%;
+  height: 100%;
+  max-width: 30px;
+  max-height: 30px;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.tech-card:hover .tech-icon-img {
+  transform: scale(1.1);
 }
 
 .tech-card h4 {
