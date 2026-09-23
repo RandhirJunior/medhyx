@@ -8,14 +8,60 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Medhyx Solutions | Enterprise Data Engineering & Cloud Analytics</title>
+  <title>Medhyx Solutions | Enterprise Data Engineering &amp; Cloud Analytics</title>
+  <link rel="canonical" href="https://medhyx.com/">
+  
+  <!-- Open Graph / LinkedIn / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://medhyx.com/">
+  <meta property="og:title" content="Medhyx Solutions | Enterprise Data Engineering &amp; Cloud Analytics">
+  <meta property="og:description" content="Premier Enterprise Cloud Data Engineering, Microsoft Fabric, Databricks Lakehouse, and Real-Time Event Streaming Consultancy.">
+  <meta property="og:image" content="https://medhyx.com/images/medhyx-logo.png">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://medhyx.com/">
+  <meta name="twitter:title" content="Medhyx Solutions | Enterprise Data Engineering &amp; Cloud Analytics">
+  <meta name="twitter:description" content="Premier Enterprise Cloud Data Engineering, Microsoft Fabric, Databricks Lakehouse, and Real-Time Event Streaming Consultancy.">
+  <meta name="twitter:image" content="https://medhyx.com/images/medhyx-logo.png">
+
+  <!-- JSON-LD Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Medhyx Solutions",
+    "url": "https://medhyx.com",
+    "logo": "https://medhyx.com/images/medhyx-logo.png",
+    "description": "Specialized enterprise data engineering consultancy for cloud lakehouse platforms, real-time analytics, and production AI architectures.",
+    "email": "hello@medhyx.com",
+    "sameAs": [
+      "https://www.linkedin.com/company/medhyx-solutions/"
+    ],
+    "areaServed": ["North America", "Europe", "APAC"],
+    "knowsAbout": [
+      "Azure Data Factory",
+      "Azure Databricks",
+      "Microsoft Fabric",
+      "Delta Lake",
+      "Data Migration",
+      "Apache Spark",
+      "Snowflake",
+      "Real-Time Event Streaming"
+    ]
+  }
+  </script>
+
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=1.6">
+  <link rel="stylesheet" href="css/style.css?v=1.7">
 </head>
 <body>
+
+  <!-- Top Reading Progress Indicator -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
 
   <!-- Top Announcement Bar -->
   <div class="top-banner">
@@ -552,6 +598,70 @@
           </div>
 
         </div>
+
+        <!-- Interactive Architecture Solution Matcher -->
+        <div class="matcher-card-modern" id="solutionMatcher">
+          <div class="matcher-header">
+            <span class="badge-pulse"><span class="pulse-dot"></span> Interactive Assessment</span>
+            <h3>Architecture Solution Matcher</h3>
+            <p>Select your current platform and engineering objective to generate an immediate architectural blueprint recommendation.</p>
+          </div>
+
+          <div class="matcher-grid">
+            <div class="matcher-col">
+              <div class="matcher-col-title">1. Your Current Data Estate</div>
+              <div class="matcher-btn-group" id="matcherPlatformGroup">
+                <button type="button" class="matcher-btn active" data-platform="on-prem">
+                  <span>Legacy On-Prem / SQL Server / Oracle</span>
+                  <span>&rarr;</span>
+                </button>
+                <button type="button" class="matcher-btn" data-platform="cloud-dw">
+                  <span>Cloud Data Warehouse (Snowflake / Synapse)</span>
+                  <span>&rarr;</span>
+                </button>
+                <button type="button" class="matcher-btn" data-platform="fragmented">
+                  <span>Fragmented S3 / ADLS Data Lakes</span>
+                  <span>&rarr;</span>
+                </button>
+                <button type="button" class="matcher-btn" data-platform="greenfield">
+                  <span>Greenfield Cloud Build / Modernization</span>
+                  <span>&rarr;</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="matcher-col">
+              <div class="matcher-col-title">2. Primary Engineering Objective</div>
+              <div class="matcher-btn-group" id="matcherGoalGroup">
+                <button type="button" class="matcher-btn active" data-goal="lakehouse">
+                  <span>Modernize to Databricks Lakehouse &amp; Delta Lake</span>
+                  <span>✓</span>
+                </button>
+                <button type="button" class="matcher-btn" data-goal="finops">
+                  <span>Cut Cloud &amp; Compute Costs by 30-50% (FinOps)</span>
+                  <span>✓</span>
+                </button>
+                <button type="button" class="matcher-btn" data-goal="streaming">
+                  <span>Real-Time Event Streaming &amp; Kafka / Service Bus</span>
+                  <span>✓</span>
+                </button>
+                <button type="button" class="matcher-btn" data-goal="ai">
+                  <span>Enterprise Generative AI, RAG &amp; Feature Store</span>
+                  <span>✓</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="matcher-result-box" id="matcherResultBox">
+            <div class="matcher-result-content">
+              <h4 id="matcherResultTitle">Recommended Blueprint: Phased Medallion Lakehouse Migration</h4>
+              <p id="matcherResultDesc">Automate database schema conversion and CDC ingestion from legacy systems into Delta Lake bronze/silver/gold layers with zero business downtime.</p>
+            </div>
+            <a href="#contact" class="btn btn-primary" id="matcherActionBtn">Book Architecture Session &rarr;</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -878,6 +988,136 @@
       </div>
     </section>
 
+    <!-- Enterprise FAQ Accordion Section -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-eyebrow">FREQUENTLY ASKED QUESTIONS</div>
+          <h2 class="section-title">Everything You Need to Know About Partnering with Medhyx.</h2>
+          <p class="section-subtitle">
+            Direct, transparent answers regarding our engagement models, technical delivery, security protocols, and ramp-up timelines.
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <!-- FAQ 1 -->
+          <div class="faq-item active">
+            <button type="button" class="faq-question" aria-expanded="true">
+              <span>What engagement models does Medhyx offer?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" style="max-height: 220px;">
+              <p>
+                We offer two flexible engagement models: <strong>Turnkey Platform Delivery</strong> (fixed scope, clear milestones, complete end-to-end design, migration, and cutover with guaranteed SLAs) and <strong>Dedicated Senior Engineering Pods</strong> (embedded principal data architects and senior engineers integrated with your internal engineering teams on a continuous sprint basis).
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>How do you handle enterprise security, IP, and confidentiality?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                We execute mutual Non-Disclosure Agreements (NDAs) before architectural discovery begins. All engineering work is performed directly inside your secure cloud subscriptions using role-based access control (RBAC), least-privilege principles, and zero data exfiltration. 100% of all intellectual property, infrastructure code, and pipeline configurations belong exclusively to your organization.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Can Medhyx execute petabyte-scale data migrations with zero business downtime?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. We implement automated Change Data Capture (CDC), dual-run reconciliation frameworks, and phased shadow deployments. Whether migrating from legacy on-premises SQL Server/Oracle or proprietary warehouses to Azure Lakehouse or Snowflake, your daily operational reporting and transactional applications continue running without interruption.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Do you assist with cloud cost optimization (FinOps) for existing workloads?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. Our architectural FinOps assessments typically eliminate 25%–45% of unnecessary monthly cloud expenditure through compute cluster rightsizing, spot instance orchestration, Delta Lake file compaction (vacuum &amp; optimize), storage lifecycle rules, and decommissioning redundant automated trigger runs.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>How quickly can a specialized Azure or Databricks engineering pod ramp up?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Because our team consists strictly of verified senior practitioners and architects rather than junior generalists, technical discovery sessions begin within 48 hours of engagement kickoff, with full sprint deployment typically operational within 1 to 2 weeks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQPage JSON-LD Schema for Google Rich Snippets -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What engagement models does Medhyx offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We offer two flexible engagement models: Turnkey Platform Delivery (fixed scope, clear milestones, complete end-to-end design, migration, and cutover with guaranteed SLAs) and Dedicated Senior Engineering Pods (embedded principal data architects and senior engineers integrated with your internal engineering teams)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you handle enterprise security, IP, and confidentiality?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We execute mutual Non-Disclosure Agreements (NDAs) before architectural discovery begins. All engineering work is performed directly inside your secure cloud subscriptions using role-based access control (RBAC), least-privilege principles, and zero data exfiltration. 100% of IP belongs exclusively to your organization."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Medhyx execute petabyte-scale data migrations with zero business downtime?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We implement automated Change Data Capture (CDC), dual-run reconciliation frameworks, and phased shadow deployments to ensure zero operational interruption during migration."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you assist with cloud cost optimization (FinOps) for existing workloads?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Our architectural FinOps assessments typically eliminate 25%–45% of unnecessary monthly cloud expenditure through compute rightsizing, spot instance orchestration, Delta Lake file compaction, and storage lifecycle policies."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How quickly can a specialized Azure or Databricks engineering pod ramp up?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Technical discovery sessions begin within 48 hours of engagement kickoff, with full sprint deployment typically operational within 1 to 2 weeks."
+            }
+          }
+        ]
+      }
+      </script>
+    </section>
+
     <!-- Interactive Consultation / Contact Section -->
     <section class="section contact-section" id="contact">
       <div class="container">
@@ -1024,11 +1264,11 @@
           &copy; <span id="year">2026</span> Medhyx Solutions. All rights reserved.
         </div>
         <div class="footer-legal">
-          <a href="#contact">Privacy Policy</a>
+          <a href="#privacy" class="legal-trigger" data-modal="privacy">Privacy Policy</a>
           <span>&bull;</span>
-          <a href="#contact">Terms of Engagement</a>
+          <a href="#terms" class="legal-trigger" data-modal="terms">Terms of Engagement</a>
           <span>&bull;</span>
-          <a href="#contact">Security Posture</a>
+          <a href="#security" class="legal-trigger" data-modal="security">Security Posture</a>
         </div>
       </div>
     </div>
@@ -1262,7 +1502,311 @@ document.addEventListener('DOMContentLoaded', () => {
   if (metricsSection) {
     observer.observe(metricsSection);
   }
+
+  // 9. Scroll Progress Bar & Floating Back to Top Button
+  const scrollProgressBar = document.getElementById('scrollProgressBar');
+  const backToTopBtn = document.getElementById('backToTopBtn');
+
+  window.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    if (scrollProgressBar) {
+      scrollProgressBar.style.width = scrolled + '%';
+    }
+
+    if (backToTopBtn) {
+      if (winScroll > 350) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+  });
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // 10. Enterprise FAQ Accordion Toggle
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    if (questionBtn && answer) {
+      questionBtn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Close all other items
+        faqItems.forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            const otherBtn = other.querySelector('.faq-question');
+            const otherAns = other.querySelector('.faq-answer');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            if (otherAns) otherAns.style.maxHeight = null;
+          }
+        });
+
+        // Toggle current item
+        if (isActive) {
+          item.classList.remove('active');
+          questionBtn.setAttribute('aria-expanded', 'false');
+          answer.style.maxHeight = null;
+        } else {
+          item.classList.add('active');
+          questionBtn.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    }
+  });
+
+  // 11. Interactive Architecture Solution Matcher
+  const platformBtns = document.querySelectorAll('#matcherPlatformGroup .matcher-btn');
+  const goalBtns = document.querySelectorAll('#matcherGoalGroup .matcher-btn');
+  const resultTitle = document.getElementById('matcherResultTitle');
+  const resultDesc = document.getElementById('matcherResultDesc');
+  const matcherActionBtn = document.getElementById('matcherActionBtn');
+
+  const recommendations = {
+    'on-prem_lakehouse': {
+      title: 'Phased Medallion Lakehouse Migration (Databricks + ADF)',
+      desc: 'Zero-downtime cutover from legacy databases to Azure Data Lake Storage & Delta Lake. Automated CDC ingestion, schema translation, and silver/gold layer enrichment.',
+      focus: 'Lakehouse Engineering'
+    },
+    'on-prem_finops': {
+      title: 'Cloud Modernization & Compute Rightsizing Audit',
+      desc: 'Decommission costly on-prem licensing into optimized, pay-as-you-go serverless Azure SQL and scheduled auto-pausing compute tiers.',
+      focus: 'Cloud Migration'
+    },
+    'on-prem_streaming': {
+      title: 'Hybrid Event-Driven Ingestion Backbone',
+      desc: 'Stream live on-premises database transaction logs via Kafka / Azure Event Hubs into cloud analytical models with sub-second latency.',
+      focus: 'Event Streaming'
+    },
+    'on-prem_ai': {
+      title: 'Enterprise Lakehouse Foundation for AI & LLMs',
+      desc: 'Consolidate legacy relational data silos into clean, conformed Delta tables ready for vector search, context embeddings, and model training.',
+      focus: 'Applied AI & LLMs'
+    },
+    'cloud-dw_lakehouse': {
+      title: 'Lakehouse Open-Format Architecture (Delta / Iceberg)',
+      desc: 'Modernize proprietary data warehouses to open Delta Lake storage with Microsoft Fabric and Databricks Unity Catalog for total vendor independence.',
+      focus: 'Lakehouse Engineering'
+    },
+    'cloud-dw_finops': {
+      title: 'FinOps Workload & Warehouse Compute Optimization',
+      desc: 'Audit query execution plans, eliminate redundant clustering overhead, and rightsize warehouse scaling policies to slash monthly consumption by 30%–50%.',
+      focus: 'FinOps Optimization'
+    },
+    'cloud-dw_streaming': {
+      title: 'Continuous Micro-Batch & Streaming ETL Integration',
+      desc: 'Replace batch SQL ingestion jobs with real-time streaming pipelines feeding low-latency reporting views and operational telemetry.',
+      focus: 'Event Streaming'
+    },
+    'cloud-dw_ai': {
+      title: 'Governed LLM Context & Vector Embedding Layer',
+      desc: 'Integrate LangChain and Databricks Model Serving directly with curated warehouse data for deterministic enterprise GenAI applications.',
+      focus: 'Applied AI & LLMs'
+    },
+    'fragmented_lakehouse': {
+      title: 'Unified Databricks Lakehouse & Unity Catalog Governance',
+      desc: 'Unify disparate storage buckets into a single governed Lakehouse with centralized row/column level access controls and automated lineage.',
+      focus: 'Governance & Purview'
+    },
+    'fragmented_finops': {
+      title: 'Storage Lifecycle & Query Acceleration Re-Architecture',
+      desc: 'Eliminate cold storage bloat, configure automated vacuuming/Z-ordering, and eliminate runaway compute queries across unpartitioned files.',
+      focus: 'FinOps Optimization'
+    },
+    'fragmented_streaming': {
+      title: 'Real-Time Event Hub & Delta Live Tables (DLT) Pipeline',
+      desc: 'Orchestrate declarative Delta Live Tables with automated quality check constraints to handle bursting IoT and operational event streams.',
+      focus: 'Event Streaming'
+    },
+    'fragmented_ai': {
+      title: 'Curated Feature Store & LLMOps Pipeline',
+      desc: 'Transform scattered data into a validated, version-controlled feature repository for zero-data-leakage enterprise AI inference.',
+      focus: 'Applied AI & LLMs'
+    },
+    'greenfield_lakehouse': {
+      title: 'Turnkey Azure & Databricks Modern Lakehouse Implementation',
+      desc: 'Production-ready IaC (Terraform) blueprint implementing 4-stage medallion architecture, CI/CD pipelines, and enterprise security from day one.',
+      focus: 'Lakehouse Engineering'
+    },
+    'greenfield_finops': {
+      title: 'Built-in FinOps & Cost Governance Architecture',
+      desc: 'Architect auto-scaling clusters, spot compute pools, and budget alert gates before production workloads generate unexpected billing spikes.',
+      focus: 'FinOps Optimization'
+    },
+    'greenfield_streaming': {
+      title: 'Serverless Real-Time Event-Driven Architecture',
+      desc: 'Deploy Azure Function Apps, Event Hubs, and Service Bus pub/sub messaging layers capable of scaling to hundreds of thousands of events per second.',
+      focus: 'Event Streaming'
+    },
+    'greenfield_ai': {
+      title: 'Production Generative AI & Autonomous Agent Architecture',
+      desc: 'End-to-end cloud infrastructure designed specifically for semantic search, private LLM fine-tuning, and production RAG evaluation.',
+      focus: 'Applied AI & LLMs'
+    }
+  };
+
+  let currentPlatform = 'on-prem';
+  let currentGoal = 'lakehouse';
+
+  function updateMatcher() {
+    const key = `${currentPlatform}_${currentGoal}`;
+    const rec = recommendations[key] || recommendations['on-prem_lakehouse'];
+    if (resultTitle && resultDesc && rec) {
+      resultTitle.textContent = 'Recommended Blueprint: ' + rec.title;
+      resultDesc.textContent = rec.desc;
+    }
+
+    if (matcherActionBtn && rec) {
+      matcherActionBtn.onclick = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        // Activate matching chip in form
+        const chips = document.querySelectorAll('#focusAreaGroup .chip-btn');
+        chips.forEach(chip => {
+          if (chip.getAttribute('data-value') === rec.focus || chip.textContent.includes(rec.focus.split(' ')[0])) {
+            chip.click();
+          }
+        });
+      };
+    }
+  }
+
+  platformBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      platformBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentPlatform = btn.getAttribute('data-platform');
+      updateMatcher();
+    });
+  });
+
+  goalBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      goalBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentGoal = btn.getAttribute('data-goal');
+      updateMatcher();
+    });
+  });
+
+  updateMatcher();
+
+  // 12. Enterprise Legal & Compliance Modals
+  const legalModalBackdrop = document.getElementById('legalModalBackdrop');
+  const legalModalClose = document.getElementById('legalModalClose');
+  const legalModalTitle = document.getElementById('legalModalTitle');
+  const legalModalBody = document.getElementById('legalModalBody');
+  const legalTriggers = document.querySelectorAll('.legal-trigger');
+
+  const legalContent = {
+    privacy: {
+      title: 'Enterprise Privacy Policy',
+      html: `
+        <h4>1. Commitment to Data Privacy</h4>
+        <p>Medhyx Solutions operates under a strict, privacy-first engineering philosophy. We do not sell, rent, or trade client personal or corporate information. All client data and contact submissions are processed strictly for business engagement and architecture consultation.</p>
+        <h4>2. Data Collection & Usage</h4>
+        <p>Information collected via consultation or candidate application forms (such as names, corporate emails, phone numbers, and technical stack details) is used exclusively for evaluating technical project scopes and scheduling exploratory architecture sessions.</p>
+        <h4>3. Security & Retention</h4>
+        <p>All web transmissions are encrypted via modern TLS 1.3 encryption. We do not retain unnecessary candidate or consultation telemetry on external third-party tracking networks.</p>
+        <h4>4. Contact for Privacy Inquiries</h4>
+        <p>For data removal requests or privacy inquiries, contact our Data Protection Officer at <a href="mailto:hello@medhyx.com" style="color: #0284c7;">hello@medhyx.com</a>.</p>
+      `
+    },
+    terms: {
+      title: 'Terms of Professional Engagement',
+      html: `
+        <h4>1. Scope of Advisory Services</h4>
+        <p>Medhyx Solutions provides enterprise cloud engineering, Lakehouse architecture, FinOps assessment, and technical consultancy. Statements and roadmap deliverables are structured around industry best practices.</p>
+        <h4>2. Intellectual Property (IP) Ownership</h4>
+        <p>All custom scripts, infrastructure-as-code (Terraform), pipeline configurations, and architectural models produced during paid client engagements belong 100% exclusively to the client upon milestone settlement.</p>
+        <h4>3. Mutual Confidentiality</h4>
+        <p>We execute standard corporate Non-Disclosure Agreements (NDAs) prior to accessing any internal repositories, architecture diagrams, or cloud subscription environments.</p>
+        <h4>4. Governing Law</h4>
+        <p>Terms of engagement are governed by international commercial arbitration standards and designated enterprise master services agreements (MSAs).</p>
+      `
+    },
+    security: {
+      title: 'Enterprise Security Posture',
+      html: `
+        <h4>1. Zero-Trust Access Architecture</h4>
+        <p>Our engineers access client environments strictly through client-managed identities, Multi-Factor Authentication (MFA), and Least Privilege Role-Based Access Control (RBAC). No client production data is ever downloaded to local developer workstations.</p>
+        <h4>2. Cloud Isolation & Compliance</h4>
+        <p>All pipeline deployments are conducted directly inside client cloud subscriptions (Azure, AWS, GCP). We adhere to SOC 2, HIPAA, and GDPR compliance guidelines by ensuring encryption at rest (AES-256) and in transit (TLS 1.3).</p>
+        <h4>3. Modular Infrastructure as Code</h4>
+        <p>Deployments are codified and audited through automated Terraform CI/CD checks, preventing manual configuration drift and security oversights.</p>
+        <h4>4. Vulnerability Disclosure</h4>
+        <p>To report potential security observations, please email <a href="mailto:hello@medhyx.com" style="color: #0284c7;">hello@medhyx.com</a> for immediate triage within 24 hours.</p>
+      `
+    }
+  };
+
+  function openLegalModal(type) {
+    const data = legalContent[type] || legalContent.privacy;
+    if (legalModalTitle && legalModalBody) {
+      legalModalTitle.textContent = data.title;
+      legalModalBody.innerHTML = data.html;
+    }
+    if (legalModalBackdrop) {
+      legalModalBackdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeLegalModal() {
+    if (legalModalBackdrop) {
+      legalModalBackdrop.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  legalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const type = trigger.getAttribute('data-modal') || 'privacy';
+      openLegalModal(type);
+    });
+  });
+
+  if (legalModalClose) legalModalClose.addEventListener('click', closeLegalModal);
+  if (legalModalBackdrop) {
+    legalModalBackdrop.addEventListener('click', (e) => {
+      if (e.target === legalModalBackdrop) closeLegalModal();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && legalModalBackdrop && legalModalBackdrop.classList.contains('active')) {
+      closeLegalModal();
+    }
+  });
 });
   </script>
+
+  <!-- Enterprise Legal & Compliance Modal -->
+  <div class="legal-modal-backdrop" id="legalModalBackdrop">
+    <div class="legal-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+      <div class="legal-modal-header">
+        <h3 class="legal-modal-title" id="legalModalTitle">Enterprise Privacy Policy</h3>
+        <button type="button" class="legal-modal-close" id="legalModalClose" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="legal-modal-body" id="legalModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top" title="Back to Top">&uarr;</button>
 </body>
 </html>

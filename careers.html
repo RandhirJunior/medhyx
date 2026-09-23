@@ -9,13 +9,32 @@
   <meta http-equiv="Expires" content="0">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Careers &amp; Engineering Opportunities | Medhyx Solutions</title>
+  <link rel="canonical" href="https://medhyx.com/careers.html">
+  
+  <!-- Open Graph / LinkedIn / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://medhyx.com/careers.html">
+  <meta property="og:title" content="Careers &amp; Engineering Opportunities | Medhyx Solutions">
+  <meta property="og:description" content="Explore open roles for Senior Azure Data Engineers, Databricks Lakehouse Architects, and Cloud Data Migration Specialists at Medhyx Solutions.">
+  <meta property="og:image" content="https://medhyx.com/images/medhyx-logo.png">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://medhyx.com/careers.html">
+  <meta name="twitter:title" content="Careers &amp; Engineering Opportunities | Medhyx Solutions">
+  <meta name="twitter:description" content="Explore open roles for Senior Azure Data Engineers, Databricks Lakehouse Architects, and Cloud Data Migration Specialists at Medhyx Solutions.">
+  <meta name="twitter:image" content="https://medhyx.com/images/medhyx-logo.png">
+
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=1.6">
+  <link rel="stylesheet" href="css/style.css?v=1.7">
 </head>
 <body>
+
+  <!-- Top Reading Progress Indicator -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
 
   <!-- Top Announcement Bar -->
   <div class="top-banner">
@@ -373,11 +392,11 @@
           &copy; <span id="year">2026</span> Medhyx Solutions. All rights reserved.
         </div>
         <div class="footer-legal">
-          <a href="index.html#contact">Privacy Policy</a>
+          <a href="#privacy" class="legal-trigger" data-modal="privacy">Privacy Policy</a>
           <span>&bull;</span>
-          <a href="index.html#contact">Terms of Engagement</a>
+          <a href="#terms" class="legal-trigger" data-modal="terms">Terms of Engagement</a>
           <span>&bull;</span>
-          <a href="index.html#contact">Security Posture</a>
+          <a href="#security" class="legal-trigger" data-modal="security">Security Posture</a>
         </div>
       </div>
     </div>
@@ -421,15 +440,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const drawerLinks = document.querySelectorAll('.drawer-link');
   drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
 
-  // 3. Navbar Sticky Effect
+  // 3. Navbar Sticky Effect & Scroll Progress & Back to Top
   const navbar = document.getElementById('navbar');
+  const scrollProgressBar = document.getElementById('scrollProgressBar');
+  const backToTopBtn = document.getElementById('backToTopBtn');
+
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    if (scrollProgressBar) {
+      scrollProgressBar.style.width = scrolled + '%';
+    }
+
+    if (navbar) {
+      if (winScroll > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }
+
+    if (backToTopBtn) {
+      if (winScroll > 350) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
     }
   });
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // 4. Careers: Role Selector & Smooth Scroll
   const applyRoleBtns = document.querySelectorAll('.apply-role-btn');
@@ -546,7 +591,111 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 6. Enterprise Legal & Compliance Modals
+  const legalModalBackdrop = document.getElementById('legalModalBackdrop');
+  const legalModalClose = document.getElementById('legalModalClose');
+  const legalModalTitle = document.getElementById('legalModalTitle');
+  const legalModalBody = document.getElementById('legalModalBody');
+  const legalTriggers = document.querySelectorAll('.legal-trigger');
+
+  const legalContent = {
+    privacy: {
+      title: 'Enterprise Privacy Policy',
+      html: `
+        <h4>1. Commitment to Data Privacy</h4>
+        <p>Medhyx Solutions operates under a strict, privacy-first engineering philosophy. We do not sell, rent, or trade client personal or corporate information. All client data and contact submissions are processed strictly for business engagement and architecture consultation.</p>
+        <h4>2. Data Collection & Usage</h4>
+        <p>Information collected via consultation or candidate application forms (such as names, corporate emails, phone numbers, and technical stack details) is used exclusively for evaluating technical project scopes and scheduling exploratory architecture sessions.</p>
+        <h4>3. Security & Retention</h4>
+        <p>All web transmissions are encrypted via modern TLS 1.3 encryption. We do not retain unnecessary candidate or consultation telemetry on external third-party tracking networks.</p>
+        <h4>4. Contact for Privacy Inquiries</h4>
+        <p>For data removal requests or privacy inquiries, contact our Data Protection Officer at <a href="mailto:hello@medhyx.com" style="color: #0284c7;">hello@medhyx.com</a>.</p>
+      `
+    },
+    terms: {
+      title: 'Terms of Professional Engagement',
+      html: `
+        <h4>1. Scope of Advisory Services</h4>
+        <p>Medhyx Solutions provides enterprise cloud engineering, Lakehouse architecture, FinOps assessment, and technical consultancy. Statements and roadmap deliverables are structured around industry best practices.</p>
+        <h4>2. Intellectual Property (IP) Ownership</h4>
+        <p>All custom scripts, infrastructure-as-code (Terraform), pipeline configurations, and architectural models produced during paid client engagements belong 100% exclusively to the client upon milestone settlement.</p>
+        <h4>3. Mutual Confidentiality</h4>
+        <p>We execute standard corporate Non-Disclosure Agreements (NDAs) prior to accessing any internal repositories, architecture diagrams, or cloud subscription environments.</p>
+        <h4>4. Governing Law</h4>
+        <p>Terms of engagement are governed by international commercial arbitration standards and designated enterprise master services agreements (MSAs).</p>
+      `
+    },
+    security: {
+      title: 'Enterprise Security Posture',
+      html: `
+        <h4>1. Zero-Trust Access Architecture</h4>
+        <p>Our engineers access client environments strictly through client-managed identities, Multi-Factor Authentication (MFA), and Least Privilege Role-Based Access Control (RBAC). No client production data is ever downloaded to local developer workstations.</p>
+        <h4>2. Cloud Isolation & Compliance</h4>
+        <p>All pipeline deployments are conducted directly inside client cloud subscriptions (Azure, AWS, GCP). We adhere to SOC 2, HIPAA, and GDPR compliance guidelines by ensuring encryption at rest (AES-256) and in transit (TLS 1.3).</p>
+        <h4>3. Modular Infrastructure as Code</h4>
+        <p>Deployments are codified and audited through automated Terraform CI/CD checks, preventing manual configuration drift and security oversights.</p>
+        <h4>4. Vulnerability Disclosure</h4>
+        <p>To report potential security observations, please email <a href="mailto:hello@medhyx.com" style="color: #0284c7;">hello@medhyx.com</a> for immediate triage within 24 hours.</p>
+      `
+    }
+  };
+
+  function openLegalModal(type) {
+    const data = legalContent[type] || legalContent.privacy;
+    if (legalModalTitle && legalModalBody) {
+      legalModalTitle.textContent = data.title;
+      legalModalBody.innerHTML = data.html;
+    }
+    if (legalModalBackdrop) {
+      legalModalBackdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeLegalModal() {
+    if (legalModalBackdrop) {
+      legalModalBackdrop.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  legalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const type = trigger.getAttribute('data-modal') || 'privacy';
+      openLegalModal(type);
+    });
+  });
+
+  if (legalModalClose) legalModalClose.addEventListener('click', closeLegalModal);
+  if (legalModalBackdrop) {
+    legalModalBackdrop.addEventListener('click', (e) => {
+      if (e.target === legalModalBackdrop) closeLegalModal();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && legalModalBackdrop && legalModalBackdrop.classList.contains('active')) {
+      closeLegalModal();
+    }
+  });
 });
   </script>
+
+  <!-- Enterprise Legal & Compliance Modal -->
+  <div class="legal-modal-backdrop" id="legalModalBackdrop">
+    <div class="legal-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+      <div class="legal-modal-header">
+        <h3 class="legal-modal-title" id="legalModalTitle">Enterprise Privacy Policy</h3>
+        <button type="button" class="legal-modal-close" id="legalModalClose" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="legal-modal-body" id="legalModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top" title="Back to Top">&uarr;</button>
 </body>
 </html>
+
