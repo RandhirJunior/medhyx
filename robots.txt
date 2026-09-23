@@ -4,3 +4,4 @@ Allow: /
 
 # Sitemap Location
 Sitemap: https://medhyx.com/sitemap.xml
+

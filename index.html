@@ -57,11 +57,13 @@
   }
   </script>
 
+  <meta name="theme-color" content="#0284c7">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=1.7">
+  <link rel="stylesheet" href="css/style.css?v=1.8">
 </head>
 <body>
 
@@ -1363,6 +1365,11 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerLinks.forEach(link => {
       link.addEventListener('click', closeDrawer);
     });
+
+    const drawerActionBtns = mobileDrawer.querySelectorAll('.drawer-action a, .drawer-action button');
+    drawerActionBtns.forEach(btn => {
+      btn.addEventListener('click', closeDrawer);
+    });
   }
 
   // 3. Solutions Matrix Tabs
@@ -1841,8 +1848,51 @@ document.addEventListener('DOMContentLoaded', () => {
       closeLegalModal();
     }
   });
+
+  // 7. Enterprise Cookie & Privacy Consent Banner
+  const cookieBanner = document.getElementById('cookieBanner');
+  const acceptCookieBtn = document.getElementById('acceptCookieBtn');
+  const declineCookieBtn = document.getElementById('declineCookieBtn');
+
+  if (cookieBanner) {
+    const hasConsented = localStorage.getItem('medhyx_cookie_consent');
+    if (!hasConsented) {
+      setTimeout(() => {
+        cookieBanner.classList.add('show');
+      }, 1200);
+    }
+
+    if (acceptCookieBtn) {
+      acceptCookieBtn.addEventListener('click', () => {
+        localStorage.setItem('medhyx_cookie_consent', 'accepted');
+        cookieBanner.classList.remove('show');
+      });
+    }
+
+    if (declineCookieBtn) {
+      declineCookieBtn.addEventListener('click', () => {
+        localStorage.setItem('medhyx_cookie_consent', 'declined');
+        cookieBanner.classList.remove('show');
+      });
+    }
+  }
 });
   </script>
+
+  <!-- Enterprise Cookie & Privacy Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie and Privacy Notice">
+    <div class="cookie-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <span>Privacy &amp; Data Security</span>
+    </div>
+    <p class="cookie-text">
+      Medhyx Solutions uses essential cookies and anonymized telemetry to ensure enterprise platform security and optimize user workflows. Review our <a href="#privacy" class="legal-trigger" data-modal="privacy">Privacy Policy</a> to learn more.
+    </p>
+    <div class="cookie-actions">
+      <button class="cookie-btn-accept" id="acceptCookieBtn">Accept &amp; Continue</button>
+      <button class="cookie-btn-decline" id="declineCookieBtn">Decline Non-Essential</button>
+    </div>
+  </div>
 
   <!-- Enterprise Legal & Compliance Modal -->
   <div class="legal-modal-backdrop" id="legalModalBackdrop">

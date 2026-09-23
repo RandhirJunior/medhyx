@@ -1,0 +1,21 @@
+{
+  "name": "Medhyx Solutions",
+  "short_name": "Medhyx",
+  "description": "Enterprise Data Engineering, Cloud Lakehouse Platforms & AI Architecture",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090f1d",
+  "theme_color": "#0284c7",
+  "icons": [
+    {
+      "src": "/images/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/medhyx-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

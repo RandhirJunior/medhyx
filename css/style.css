@@ -59,6 +59,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -68,6 +70,9 @@ body {
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 img {
@@ -315,7 +320,8 @@ button {
   flex-direction: column;
 }
 
-.mobile-drawer.open {
+.mobile-drawer.open,
+.mobile-drawer.active {
   right: 0;
 }
 
@@ -868,12 +874,19 @@ button {
 
 @media (max-width: 520px) {
   .clients-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
   .client-logo-card {
-    padding: 16px;
-    min-height: 90px;
+    padding: 14px 10px;
+    min-height: 80px;
+  }
+  .client-logo {
+    max-height: 32px;
+  }
+  .client-name-caption {
+    font-size: 10.5px;
+    margin-top: 6px;
   }
 }
 
@@ -2670,7 +2683,7 @@ button {
 
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
   
   .workflow-grid,
@@ -2701,23 +2714,123 @@ button {
   
   .mobile-toggle {
     display: flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
   }
   
+  .nav-inner {
+    height: 68px;
+    padding: 0 18px;
+  }
+
   .section {
-    padding: 70px 0;
+    padding: 60px 0;
+  }
+  
+  .hero-section {
+    padding: 40px 0 60px;
+  }
+
+  .hero-title {
+    font-size: clamp(30px, 6.2vw, 44px);
+    letter-spacing: -0.8px;
+    line-height: 1.15;
+  }
+
+  .hero-lead {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .telemetry-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  .pipeline-flow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .flow-arrow {
+    display: none;
+  }
+
+  .flow-stage {
+    padding: 10px 8px;
   }
   
   .case-grid {
     grid-template-columns: 1fr;
   }
   
+  .solutions-tabs-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+    gap: 8px;
+    scrollbar-width: none;
+  }
+
+  .solutions-tabs-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 10px 16px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .tab-panel {
+    padding: 28px 20px;
+    border-radius: 14px;
+  }
+
+  .matcher-card-modern {
+    padding: 28px 20px;
+    margin-top: 32px;
+    border-radius: 14px;
+  }
+
   .matcher-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  .matcher-result-box {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 18px 16px;
+  }
+
+  .matcher-result-box .btn {
+    width: 100%;
+    justify-content: center;
+  }
   
   .contact-inner-grid {
     grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .contact-card-modern {
+    padding: 32px 20px;
+    border-radius: 14px;
+  }
+
+  .consultation-form {
+    padding: 24px 18px;
   }
   
   .footer-top {
@@ -2729,40 +2842,268 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .contact-card-modern {
-    padding: 36px 24px;
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+  }
+
+  .cert-strip-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .careers-hero {
+    padding: 100px 0 40px;
+  }
+
+  .careers-hero-title {
+    font-size: clamp(28px, 6.5vw, 38px);
+    letter-spacing: -0.6px;
+  }
+
+  .application-card {
+    padding: 24px 18px;
+    border-radius: 14px;
   }
 }
 
 @media (max-width: 600px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .top-banner {
+    padding: 6px 12px;
+    font-size: 11.5px;
+  }
+
+  .top-banner-inner span:not(.badge-pulse) {
+    display: none;
+  }
+
+  .nav-inner {
+    height: 62px;
+    padding: 0 14px;
+  }
+
+  .brand-logo {
+    height: 34px;
+  }
+
+  .btn-nav {
+    display: none;
+  }
+
+  .hero-section {
+    padding: 30px 0 50px;
+  }
+
+  .eyebrow-pill {
+    font-size: 10.5px;
+    padding: 4px 10px;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(26px, 7vw, 36px);
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+  }
+
+  .hero-lead {
+    font-size: 14.5px;
+    margin-bottom: 24px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 18px;
+    font-size: 14px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .hero-trust-badges {
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 18px;
+  }
+
+  .console-card {
+    border-radius: 12px;
+  }
+
+  .console-header {
+    padding: 10px 14px;
+  }
+
+  .console-body {
+    padding: 14px;
+  }
+
+  .telemetry-bar {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 8px 10px;
+    margin-bottom: 14px;
+  }
+
+  .tele-label {
+    font-size: 8.5px;
+  }
+
+  .tele-val {
+    font-size: 11px;
+  }
+
+  .pipeline-flow {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .stage-tag {
+    font-size: 8px;
+  }
+
+  .stage-name {
+    font-size: 10px;
+  }
+
+  .stage-sub {
+    font-size: 8px;
+  }
+
+  .terminal-log {
+    font-size: 10px;
+    padding: 10px;
+  }
+
   .workflow-grid,
   .tech-grid,
   .metrics-grid,
   .footer-links-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
   
+  .workflow-card,
+  .tech-card,
+  .case-card {
+    padding: 22px 16px;
+    border-radius: 12px;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
   }
-  
+
+  .tab-panel {
+    padding: 20px 14px;
+  }
+
+  .matcher-card-modern {
+    padding: 20px 14px;
+  }
+
+  .matcher-btn {
+    padding: 10px 12px;
+    font-size: 12.5px;
+  }
+
+  .contact-card-modern {
+    padding: 24px 14px;
+  }
+
+  .consultation-form {
+    padding: 18px 12px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-select {
+    padding: 10px 12px;
+    font-size: 13.5px;
+  }
+
+  .legal-modal-dialog {
+    max-width: 95vw;
+    max-height: 90vh;
+    border-radius: 12px;
+  }
+
+  .legal-modal-header {
+    padding: 14px 16px;
+  }
+
+  .legal-modal-body {
+    padding: 16px 14px;
+    font-size: 13px;
+  }
+
+  .back-to-top-btn {
+    bottom: 18px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .perks-strip {
+    gap: 6px;
+  }
+
+  .perk-chip {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .job-card {
+    padding: 18px 14px;
+  }
+
+  .application-card {
+    padding: 20px 14px;
+  }
+
+  .cert-badges-grid {
+    gap: 6px;
+  }
+
+  .cert-badge-pill {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .clients-grid {
+    grid-template-columns: 1fr;
+  }
+
   .pipeline-flow {
     grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  
-  .flow-arrow {
-    transform: rotate(90deg);
-    margin: 4px 0;
-    text-align: center;
-  }
-  
-  .telemetry-bar {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .tab-panel {
-    padding: 24px 16px;
   }
 }
 
@@ -2866,6 +3207,118 @@ button {
 }
 
 /* ==========================================================================
+   ENTERPRISE COOKIE & PRIVACY CONSENT BANNER
+   ========================================================================== */
+.cookie-banner {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  max-width: 480px;
+  background: #090f1d;
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 18px 22px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 30px rgba(14, 165, 233, 0.15);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transform: translateY(120%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.cookie-banner.show {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.cookie-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.cookie-text {
+  font-size: 12.5px;
+  color: #94a3b8;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.cookie-text a {
+  color: var(--blue-400);
+  text-decoration: underline;
+}
+
+.cookie-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookie-btn-accept {
+  padding: 8px 18px;
+  border-radius: 6px;
+  background: var(--blue-600);
+  color: white;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.cookie-btn-accept:hover {
+  background: #026aa2;
+}
+
+.cookie-btn-decline {
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all var(--transition-fast);
+}
+
+.cookie-btn-decline:hover {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 600px) {
+  .cookie-banner {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    max-width: calc(100vw - 28px);
+    padding: 16px;
+    gap: 12px;
+  }
+  .cookie-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cookie-btn-accept,
+  .cookie-btn-decline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
    PRINT / PDF EXPORT STYLESHEET
    ========================================================================== */
 @media print {
@@ -2875,6 +3328,7 @@ button {
   .drawer-backdrop,
   .scroll-progress-bar,
   .back-to-top-btn,
+  .cookie-banner,
   .legal-modal-backdrop,
   .availability-chip,
   .btn,
