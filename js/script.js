@@ -101,42 +101,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. Contact Form Submission
+  // 6. Contact Form Submission (Live via Web3Forms)
   const consultationForm = document.getElementById('consultationForm');
   const formStatus = document.getElementById('formStatus');
   const submitBtn = document.getElementById('submitFormBtn');
 
   if (consultationForm) {
-    consultationForm.addEventListener('submit', (e) => {
+    consultationForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('clientName').value.trim();
-      const email = document.getElementById('clientEmail').value.trim();
-      const focus = focusAreaInput ? focusAreaInput.value : 'Lakehouse';
+      const nameInput = document.getElementById('clientName');
+      const emailInput = document.getElementById('clientEmail');
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const focus = focusAreaInput ? focusAreaInput.value : 'Lakehouse Engineering';
 
       if (!name || !email) return;
 
       // Show processing state
       submitBtn.disabled = true;
+      const originalBtnHTML = submitBtn.innerHTML;
       submitBtn.innerHTML = '<span>Transmitting Request...</span>';
+      formStatus.style.display = 'none';
 
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<span>Request Received</span>';
-        
-        formStatus.className = 'form-status success';
+      try {
+        const formData = new FormData(consultationForm);
+        formData.set('subject', `[Medhyx Lead] Consultation Request from ${name}`);
+
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.status === 200 && data.success) {
+          submitBtn.innerHTML = '<span>Request Delivered ✓</span>';
+          formStatus.className = 'form-status success';
+          formStatus.style.display = 'block';
+          formStatus.innerHTML = `
+            <strong>Thank you, ${name}!</strong><br>
+            Your inquiry regarding <em>${focus}</em> has been securely sent. A principal cloud data architect will review your project details and reach out to <code>${email}</code> within 1 business day.
+          `;
+
+          consultationForm.reset();
+          chipButtons.forEach((c, idx) => {
+            if (idx === 0) c.classList.add('active');
+            else c.classList.remove('active');
+          });
+          if (focusAreaInput) {
+            focusAreaInput.value = 'Lakehouse Engineering';
+          }
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (err) {
+        console.error('Submission error:', err);
+        submitBtn.innerHTML = originalBtnHTML;
+        formStatus.className = 'form-status error';
         formStatus.style.display = 'block';
         formStatus.innerHTML = `
-          <strong>Thank you, ${name}!</strong><br>
-          Your discovery request for <em>${focus}</em> has been securely submitted. A principal cloud data architect will contact you at <code>${email}</code> within 1 business day.
+          <strong>Transmission issue encountered.</strong><br>
+          Please email us directly at <a href="mailto:hello@medhyx.com" style="color: #60a5fa; text-decoration: underline;">hello@medhyx.com</a>.
         `;
-
-        consultationForm.reset();
-        chipButtons.forEach((c, idx) => {
-          if (idx === 0) c.classList.add('active');
-          else c.classList.remove('active');
-        });
-      }, 750);
+      } finally {
+        submitBtn.disabled = false;
+      }
     });
   }
 
