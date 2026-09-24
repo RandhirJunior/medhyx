@@ -790,8 +790,8 @@ button {
 
 .clients-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
   align-items: stretch;
 }
 
@@ -800,7 +800,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 18px;
+  padding: 18px 14px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
@@ -851,6 +851,14 @@ button {
   max-height: 36px;
 }
 
+.client-logo.booking-logo {
+  max-height: 28px;
+}
+
+.client-logo.schneider-logo {
+  max-height: 38px;
+}
+
 .client-logo.kcl-logo {
   max-height: 40px;
   border-radius: 4px;
@@ -865,14 +873,14 @@ button {
   text-align: center;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1120px) {
   .clients-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 600px) {
   .clients-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
