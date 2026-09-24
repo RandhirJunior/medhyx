@@ -52,7 +52,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2.0">
+  <link rel="stylesheet" href="css/style.css?v=2.1">
 </head>
 <body>
 
@@ -134,19 +134,19 @@
         </p>
 
         <div class="perks-strip">
-          <div class="perk-chip">
+          <div class="perk-chip reveal-on-scroll stagger-1">
             <span class="perk-chip-icon">🌍</span>
             <span>Remote-First &amp; Hybrid Options</span>
           </div>
-          <div class="perk-chip">
+          <div class="perk-chip reveal-on-scroll stagger-2">
             <span class="perk-chip-icon">⚡</span>
             <span>Production Azure &amp; Databricks Stacks</span>
           </div>
-          <div class="perk-chip">
+          <div class="perk-chip reveal-on-scroll stagger-3">
             <span class="perk-chip-icon">🏆</span>
             <span>Enterprise Clients (Booking.com, PepsiCo, Schneider Electric, ISC2)</span>
           </div>
-          <div class="perk-chip">
+          <div class="perk-chip reveal-on-scroll stagger-4">
             <span class="perk-chip-icon">🚀</span>
             <span>Fast-Track Engineering Growth</span>
           </div>
@@ -157,7 +157,7 @@
     <!-- Open Positions & Candidate Form Section -->
     <section class="section careers-section" id="openings" style="padding-top: 60px;">
       <div class="container">
-        <div class="section-header text-center">
+        <div class="section-header text-center reveal-on-scroll">
           <div class="section-eyebrow">TALENT NETWORK &amp; ACTIVE ROLES</div>
           <h2 class="section-title">Explore Engineering Opportunities</h2>
           <p class="section-subtitle">
@@ -175,7 +175,7 @@
 
             <div class="openings-list">
               <!-- Role 1: Senior Azure Data Engineer -->
-              <div class="job-card" id="role-azure-data-engineer">
+              <div class="job-card reveal-on-scroll stagger-1" id="role-azure-data-engineer">
                 <div class="job-card-top">
                   <div class="job-tags">
                     <span class="job-tag tag-urgent">Immediate Requirement</span>
@@ -202,7 +202,7 @@
               </div>
 
               <!-- Role 2: Azure Data Migration & SQL Specialist -->
-              <div class="job-card" id="role-data-migration">
+              <div class="job-card reveal-on-scroll stagger-2" id="role-data-migration">
                 <div class="job-card-top">
                   <div class="job-tags">
                     <span class="job-tag tag-featured">High Priority</span>
@@ -229,7 +229,7 @@
               </div>
 
               <!-- Role 3: Azure Integration & Event-Driven Engineer -->
-              <div class="job-card" id="role-integration-engineer">
+              <div class="job-card reveal-on-scroll stagger-3" id="role-integration-engineer">
                 <div class="job-card-top">
                   <div class="job-tags">
                     <span class="job-tag">Full-Time / Remote</span>
@@ -255,7 +255,7 @@
               </div>
 
               <!-- Role 4: Databricks & Lakehouse Analytics Engineer -->
-              <div class="job-card" id="role-databricks-architect">
+              <div class="job-card reveal-on-scroll stagger-4" id="role-databricks-architect">
                 <div class="job-card-top">
                   <div class="job-tags">
                     <span class="job-tag">Full-Time / Remote</span>
@@ -284,7 +284,7 @@
 
           <!-- Application Form Column -->
           <div class="application-column" id="candidateApplySection">
-            <div class="application-card" id="candidateAppCard">
+            <div class="application-card reveal-scale" id="candidateAppCard">
               <div class="app-card-header">
                 <span class="app-badge">APPLY NOW</span>
                 <h3 class="app-title">Candidate Application</h3>
@@ -743,6 +743,49 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  // Smooth Scroll-Reveal Observer & Internal Page Transition Suite
+  const revealElements = document.querySelectorAll('.reveal-on-scroll, .reveal-scale');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+  }
+
+  // Smooth Internal Page Exit Transition
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    if (!href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !href.startsWith('http') && !link.target) {
+      link.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+        e.preventDefault();
+        document.body.classList.add('page-transitioning');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 200);
+      });
+    }
+  });
+
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      document.body.classList.remove('page-transitioning');
+    }
+  });
 });
   </script>
 

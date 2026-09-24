@@ -63,7 +63,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2.0">
+  <link rel="stylesheet" href="css/style.css?v=2.1">
 </head>
 <body>
 
@@ -287,53 +287,93 @@
         <div class="clients-header">
           <span class="clients-label">Trusted by Industry Leaders &amp; Global Institutions</span>
         </div>
-        <div class="clients-grid">
-          <!-- Client 1: Booking.com -->
-          <div class="client-logo-card">
-            <div class="client-logo-wrap">
-              <img src="images/booking-logo.svg" alt="Booking.com Logo" class="client-logo booking-logo">
+        <div class="clients-marquee-container" aria-label="Trusted client logos">
+          <div class="clients-marquee-track">
+            <!-- Set 1: Client Logos -->
+            <div class="client-logo-card marquee-card">
+              <div class="client-logo-wrap">
+                <img src="images/booking-logo.svg" alt="Booking.com Logo" class="client-logo booking-logo">
+              </div>
+              <span class="client-name-caption">Global Travel Technology</span>
             </div>
-            <span class="client-name-caption">Global Travel Technology</span>
-          </div>
 
-          <!-- Client 2: PepsiCo -->
-          <div class="client-logo-card">
-            <div class="client-logo-wrap">
-              <img src="images/pepsico-logo.svg" alt="PepsiCo Logo" class="client-logo pepsico-logo">
+            <div class="client-logo-card marquee-card">
+              <div class="client-logo-wrap">
+                <img src="images/pepsico-logo.svg" alt="PepsiCo Logo" class="client-logo pepsico-logo">
+              </div>
+              <span class="client-name-caption">Fortune 50 Enterprise</span>
             </div>
-            <span class="client-name-caption">Fortune 50 Enterprise</span>
-          </div>
 
-          <!-- Client 3: Schneider Electric -->
-          <div class="client-logo-card">
-            <div class="client-logo-wrap">
-              <img src="images/schneider-logo.svg" alt="Schneider Electric Logo" class="client-logo schneider-logo">
+            <div class="client-logo-card marquee-card">
+              <div class="client-logo-wrap">
+                <img src="images/schneider-logo.svg" alt="Schneider Electric Logo" class="client-logo schneider-logo">
+              </div>
+              <span class="client-name-caption">Global Energy &amp; Automation</span>
             </div>
-            <span class="client-name-caption">Global Energy &amp; Automation</span>
-          </div>
 
-          <!-- Client 4: ISC2 -->
-          <div class="client-logo-card">
-            <div class="client-logo-wrap">
-              <img src="images/isc2-logo.svg" alt="ISC2 Logo" class="client-logo isc2-logo">
+            <div class="client-logo-card marquee-card">
+              <div class="client-logo-wrap">
+                <img src="images/isc2-logo.svg" alt="ISC2 Logo" class="client-logo isc2-logo">
+              </div>
+              <span class="client-name-caption">Global Cybersecurity Leader</span>
             </div>
-            <span class="client-name-caption">Global Cybersecurity Leader</span>
-          </div>
 
-          <!-- Client 5: Rite-Hite -->
-          <div class="client-logo-card">
-            <div class="client-logo-wrap">
-              <img src="images/rite-hite-logo.svg" alt="Rite-Hite Logo" class="client-logo rite-hite-logo">
+            <div class="client-logo-card marquee-card">
+              <div class="client-logo-wrap">
+                <img src="images/rite-hite-logo.svg" alt="Rite-Hite Logo" class="client-logo rite-hite-logo">
+              </div>
+              <span class="client-name-caption">Industrial &amp; Supply Chain Safety</span>
             </div>
-            <span class="client-name-caption">Industrial &amp; Supply Chain Safety</span>
-          </div>
 
-          <!-- Client 6: King's College London (KCL) -->
-          <div class="client-logo-card">
-            <div class="client-logo-wrap">
-              <img src="images/kcl-logo.svg" alt="King's College London (KCL) Logo" class="client-logo kcl-logo">
+            <div class="client-logo-card marquee-card">
+              <div class="client-logo-wrap">
+                <img src="images/kcl-logo.svg" alt="King's College London (KCL) Logo" class="client-logo kcl-logo">
+              </div>
+              <span class="client-name-caption">King's College London (KCL)</span>
             </div>
-            <span class="client-name-caption">King's College London (KCL)</span>
+
+            <!-- Set 2: Duplicate Set for Seamless Infinite Glide -->
+            <div class="client-logo-card marquee-card" aria-hidden="true">
+              <div class="client-logo-wrap">
+                <img src="images/booking-logo.svg" alt="" class="client-logo booking-logo">
+              </div>
+              <span class="client-name-caption">Global Travel Technology</span>
+            </div>
+
+            <div class="client-logo-card marquee-card" aria-hidden="true">
+              <div class="client-logo-wrap">
+                <img src="images/pepsico-logo.svg" alt="" class="client-logo pepsico-logo">
+              </div>
+              <span class="client-name-caption">Fortune 50 Enterprise</span>
+            </div>
+
+            <div class="client-logo-card marquee-card" aria-hidden="true">
+              <div class="client-logo-wrap">
+                <img src="images/schneider-logo.svg" alt="" class="client-logo schneider-logo">
+              </div>
+              <span class="client-name-caption">Global Energy &amp; Automation</span>
+            </div>
+
+            <div class="client-logo-card marquee-card" aria-hidden="true">
+              <div class="client-logo-wrap">
+                <img src="images/isc2-logo.svg" alt="" class="client-logo isc2-logo">
+              </div>
+              <span class="client-name-caption">Global Cybersecurity Leader</span>
+            </div>
+
+            <div class="client-logo-card marquee-card" aria-hidden="true">
+              <div class="client-logo-wrap">
+                <img src="images/rite-hite-logo.svg" alt="" class="client-logo rite-hite-logo">
+              </div>
+              <span class="client-name-caption">Industrial &amp; Supply Chain Safety</span>
+            </div>
+
+            <div class="client-logo-card marquee-card" aria-hidden="true">
+              <div class="client-logo-wrap">
+                <img src="images/kcl-logo.svg" alt="" class="client-logo kcl-logo">
+              </div>
+              <span class="client-name-caption">King's College London (KCL)</span>
+            </div>
           </div>
         </div>
       </div>
@@ -343,22 +383,22 @@
     <section class="metrics-strip">
       <div class="container">
         <div class="metrics-grid">
-          <div class="metric-card">
+          <div class="metric-card reveal-on-scroll stagger-1">
             <div class="metric-number"><span class="counter" data-target="500">500</span>M+</div>
             <div class="metric-label">Daily Events Streamed</div>
             <div class="metric-sub">Across real-time enterprise pipelines</div>
           </div>
-          <div class="metric-card">
+          <div class="metric-card reveal-on-scroll stagger-2">
             <div class="metric-number"><span class="counter" data-target="42">42</span>%</div>
             <div class="metric-label">Avg. Cloud TCO Reduction</div>
             <div class="metric-sub">Through FinOps pipeline optimization</div>
           </div>
-          <div class="metric-card">
+          <div class="metric-card reveal-on-scroll stagger-3">
             <div class="metric-number"><span class="counter" data-target="99">99.99</span>%</div>
             <div class="metric-label">Production Pipeline SLA</div>
             <div class="metric-sub">High availability &amp; fault-tolerant architecture</div>
           </div>
-          <div class="metric-card">
+          <div class="metric-card reveal-on-scroll stagger-4">
             <div class="metric-number"><span class="counter" data-target="25">25</span>+</div>
             <div class="metric-label">Cloud Migrations Delivered</div>
             <div class="metric-sub">Zero unplanned business downtime</div>
@@ -370,7 +410,7 @@
     <!-- Enterprise Certifications & Partner Ecosystem Strip -->
     <section class="certifications-strip">
       <div class="container">
-        <div class="cert-strip-inner">
+        <div class="cert-strip-inner reveal-on-scroll">
           <div class="cert-title-col">
             <span class="cert-title-eyebrow">PRACTICE STANDARDS</span>
             <span class="cert-title-heading">Certified Cloud &amp; Lakehouse Practitioners</span>
@@ -400,7 +440,7 @@
     <!-- Enterprise Solutions Matrix (Interactive Tabs) -->
     <section class="section solutions-section" id="solutions">
       <div class="container">
-        <div class="section-header text-center">
+        <div class="section-header text-center reveal-on-scroll">
           <div class="section-eyebrow">CORE CAPABILITIES</div>
           <h2 class="section-title">Built for complex enterprise data demands.</h2>
           <p class="section-subtitle">
@@ -725,7 +765,7 @@
     <!-- Architecture & Delivery Framework -->
     <section class="section workflow-section" id="pipeline">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal-on-scroll">
           <div class="section-eyebrow">OUR METHODOLOGY</div>
           <h2 class="section-title">The Enterprise Data Acceleration Framework.</h2>
           <p class="section-subtitle">
@@ -734,28 +774,28 @@
         </div>
 
         <div class="workflow-grid">
-          <div class="workflow-card">
+          <div class="workflow-card reveal-on-scroll stagger-1">
             <div class="wf-step">01</div>
             <h3>Discovery &amp; Architectural Blueprint</h3>
             <p>We audit legacy bottlenecks, data schema debt, and cloud compute inefficiencies to produce a target-state architecture and TCO savings model.</p>
             <div class="wf-deliverable"><strong>Deliverable:</strong> Target Architecture &amp; FinOps Blueprint</div>
           </div>
 
-          <div class="workflow-card">
+          <div class="workflow-card reveal-on-scroll stagger-2">
             <div class="wf-step">02</div>
             <h3>Foundation &amp; Lakehouse Infrastructure</h3>
             <p>Deploy secure Infrastructure-as-Code (Terraform) landing zones, identity access management, network isolation, and Delta Lake clusters.</p>
             <div class="wf-deliverable"><strong>Deliverable:</strong> Production-ready Cloud Lakehouse</div>
           </div>
 
-          <div class="workflow-card">
+          <div class="workflow-card reveal-on-scroll stagger-3">
             <div class="wf-step">03</div>
             <h3>Pipeline Migration &amp; Automation</h3>
             <p>Implement resilient PySpark ELT pipelines, automated orchestration with Azure Data Factory or Airflow, and automated data quality validation.</p>
             <div class="wf-deliverable"><strong>Deliverable:</strong> CI/CD Pipelines with 99.99% Uptime</div>
           </div>
 
-          <div class="workflow-card">
+          <div class="workflow-card reveal-on-scroll stagger-4">
             <div class="wf-step">04</div>
             <h3>BI, AI Serving &amp; Team Enablement</h3>
             <p>Connect semantic models, launch real-time Power BI Direct Lake dashboards, operationalize ML/AI endpoints, and train your internal teams.</p>
@@ -764,7 +804,7 @@
         </div>
 
         <!-- Interactive Medallion Architecture Visualizer -->
-        <div class="medallion-box" id="medallionVisualizer">
+        <div class="medallion-box reveal-scale" id="medallionVisualizer">
           <div class="medallion-top-bar">
             <div>
               <span class="medallion-badge">INTERACTIVE ARCHITECTURE DEEP DIVE</span>
@@ -798,7 +838,7 @@
     <!-- Filterable Technology Stack Radar -->
     <section class="section tech-radar-section" id="technologies">
       <div class="container">
-        <div class="section-header text-center">
+        <div class="section-header text-center reveal-on-scroll">
           <div class="section-eyebrow">TECHNOLOGY ECOSYSTEM</div>
           <h2 class="section-title">Built with premier enterprise technologies.</h2>
           <p class="section-subtitle">
@@ -806,7 +846,7 @@
           </p>
         </div>
 
-        <div class="tech-filter-bar">
+        <div class="tech-filter-bar reveal-on-scroll">
           <button class="filter-btn active" data-filter="all">All Technologies</button>
           <button class="filter-btn" data-filter="cloud">Cloud &amp; Lakehouse</button>
           <button class="filter-btn" data-filter="pipeline">Pipelines &amp; Compute</button>
@@ -814,7 +854,7 @@
           <button class="filter-btn" data-filter="analytics">Analytics &amp; AI</button>
         </div>
 
-        <div class="tech-grid">
+        <div class="tech-grid reveal-on-scroll">
           <div class="tech-card" data-category="cloud">
             <div class="tech-icon-wrap">
               <img src="images/tech/azure.svg" alt="Microsoft Azure Logo" class="tech-icon-img">
@@ -929,14 +969,14 @@
     <!-- Case Studies / Measurable Impact -->
     <section class="section impact-section" id="impact">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal-on-scroll">
           <div class="section-eyebrow">PROVEN OUTCOMES</div>
           <h2 class="section-title">Delivering measurable enterprise impact.</h2>
           <p class="section-subtitle">Real-world results achieved for high-growth tech firms and enterprise organizations.</p>
         </div>
 
         <div class="case-grid">
-          <div class="case-card">
+          <div class="case-card reveal-on-scroll stagger-1">
             <div class="case-tag">FINTECH &amp; CAPITAL MARKETS</div>
             <h3>Real-Time Fraud Detection &amp; Lakehouse Acceleration</h3>
             <p class="case-desc">
@@ -958,7 +998,7 @@
             </div>
           </div>
 
-          <div class="case-card">
+          <div class="case-card reveal-on-scroll stagger-2">
             <div class="case-tag">HEALTHCARE &amp; LIFE SCIENCES</div>
             <h3>HIPAA-Compliant Unified Data Platform on Azure</h3>
             <p class="case-desc">
@@ -980,7 +1020,7 @@
             </div>
           </div>
 
-          <div class="case-card">
+          <div class="case-card reveal-on-scroll stagger-3">
             <div class="case-tag">RETAIL &amp; GLOBAL SUPPLY CHAIN</div>
             <h3>Event-Driven IoT Telemetry &amp; Inventory Engine</h3>
             <p class="case-desc">
@@ -1008,7 +1048,7 @@
     <!-- Client Testimonials & Social Proof Carousel -->
     <section class="section testimonials-section" id="testimonials">
       <div class="container">
-        <div class="section-header text-center">
+        <div class="section-header text-center reveal-on-scroll">
           <div class="section-eyebrow">VERIFIED CLIENT ENDORSEMENTS</div>
           <h2 class="section-title">What engineering leaders say about our work.</h2>
           <p class="section-subtitle">
@@ -1016,7 +1056,7 @@
           </p>
         </div>
 
-        <div class="testimonials-carousel" id="testimonialsCarousel">
+        <div class="testimonials-carousel reveal-scale" id="testimonialsCarousel">
           <div class="testimonial-track" id="testimonialTrack">
             <!-- Testimonial 1 -->
             <div class="testimonial-card active" data-index="0">
@@ -1084,7 +1124,7 @@
     <section class="section why-section" id="why-us">
       <div class="container">
         <div class="why-grid">
-          <div class="why-copy">
+          <div class="why-copy reveal-on-scroll">
             <div class="section-eyebrow">THE MEDHYX ADVANTAGE</div>
             <h2 class="section-title">Why senior technology leaders partner with us.</h2>
             <p class="lead-text">
@@ -1116,7 +1156,7 @@
             </div>
           </div>
 
-          <div class="why-card">
+          <div class="why-card reveal-on-scroll stagger-2">
             <div class="engagement-box">
               <h3>Engagement Models</h3>
               <p>Flexible technical collaboration aligned to your organization's stage and timeline:</p>
@@ -1153,7 +1193,7 @@
     <!-- Enterprise FAQ Accordion Section -->
     <section class="section faq-section" id="faq">
       <div class="container">
-        <div class="section-header text-center">
+        <div class="section-header text-center reveal-on-scroll">
           <div class="section-eyebrow">FREQUENTLY ASKED QUESTIONS</div>
           <h2 class="section-title">Everything You Need to Know About Partnering with Medhyx.</h2>
           <p class="section-subtitle">
@@ -1161,7 +1201,7 @@
           </p>
         </div>
 
-        <div class="faq-container">
+        <div class="faq-container reveal-on-scroll">
           <!-- FAQ 1 -->
           <div class="faq-item active">
             <button type="button" class="faq-question" aria-expanded="true">
@@ -1283,7 +1323,7 @@
     <!-- Interactive Cloud ROI & FinOps Savings Calculator -->
     <section class="section roi-section" id="roi-calculator">
       <div class="container">
-        <div class="section-header text-center">
+        <div class="section-header text-center reveal-on-scroll">
           <div class="section-eyebrow">FINOPS COMPUTATION ESTIMATOR</div>
           <h2 class="section-title">Calculate your projected cloud lakehouse savings.</h2>
           <p class="section-subtitle">
@@ -1291,7 +1331,7 @@
           </p>
         </div>
 
-        <div class="roi-calculator-card">
+        <div class="roi-calculator-card reveal-scale">
           <div class="roi-calc-grid">
             <!-- Left: Interactive Inputs -->
             <div class="calc-inputs-col">
@@ -1370,7 +1410,7 @@
     <!-- Interactive Consultation / Contact Section -->
     <section class="section contact-section" id="contact">
       <div class="container">
-        <div class="contact-card-modern">
+        <div class="contact-card-modern reveal-scale">
           <div class="contact-header text-center">
             <div class="section-eyebrow eyebrow-light">START A CONVERSATION</div>
             <h2 class="contact-title">Let's solve your enterprise data challenges.</h2>
@@ -2374,6 +2414,49 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  // 8. Smooth Scroll-Reveal Observer & Internal Page Transition Suite
+  const revealElements = document.querySelectorAll('.reveal-on-scroll, .reveal-scale');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+  }
+
+  // Smooth Internal Page Exit Transition
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    if (!href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !href.startsWith('http') && !link.target) {
+      link.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+        e.preventDefault();
+        document.body.classList.add('page-transitioning');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 200);
+      });
+    }
+  });
+
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      document.body.classList.remove('page-transitioning');
+    }
+  });
 });
   </script>
 
