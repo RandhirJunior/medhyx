@@ -2027,6 +2027,7 @@ button {
 /* ==========================================================================
    CAREERS & TALENT NETWORK SECTION
    ========================================================================== */
+.page-hero,
 .careers-hero {
   padding: 130px 0 60px;
   background: radial-gradient(circle at 50% 15%, rgba(14, 165, 233, 0.08) 0%, transparent 65%), #ffffff;
@@ -2036,6 +2037,7 @@ button {
   border-bottom: 1px solid var(--border-light);
 }
 
+.page-hero-title,
 .careers-hero-title {
   font-family: var(--font-heading);
   font-size: clamp(32px, 5vw, 50px);
@@ -2049,6 +2051,7 @@ button {
   margin-right: auto;
 }
 
+.page-hero-subtitle,
 .careers-hero-subtitle {
   font-size: 17px;
   color: var(--ink-600);

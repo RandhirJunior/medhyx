@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Technology Stack &amp; FinOps Estimator | Medhyx Solutions</title>
+  <meta name="description" content="Explore our enterprise data engineering technology stack: Microsoft Azure, Databricks, Apache Spark, Delta Lake, Snowflake, Microsoft Fabric, and cloud FinOps optimization.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://medhyx.com/technologies.html">
+  <meta name="theme-color" content="#0284c7">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2.2">
+</head>
+<body>
+
+  <!-- Accessibility Skip Link -->
+  <a href="#technologies" class="skip-to-content">Skip to technology content</a>
+
+  <!-- Top Reading Progress Indicator -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-banner">
+    <div class="top-banner-inner">
+      <span class="badge-pulse"><span class="pulse-dot"></span> Ecosystem Standards</span>
+      <span>Certified Cloud &amp; Lakehouse Practitioners across Azure, Databricks &amp; Microsoft Fabric.</span>
+      <a href="contact.html" class="banner-link">Book FinOps Review &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Medhyx Solutions Home">
+        <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" class="brand-logo">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="solutions.html" class="nav-item">Solutions</a>
+        <a href="architecture.html" class="nav-item">Architecture</a>
+        <a href="technologies.html" class="nav-item active">Tech Stack</a>
+        <a href="case-studies.html" class="nav-item">Case Studies</a>
+        <a href="careers.html" class="nav-item">Careers</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary btn-nav-cta" href="contact.html">Contact Us</a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" style="max-height: 38px;">
+      <button class="close-drawer" id="closeDrawerBtn" aria-label="Close Menu">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="solutions.html" class="drawer-link">Solutions</a>
+      <a href="architecture.html" class="drawer-link">Architecture</a>
+      <a href="technologies.html" class="drawer-link active" style="color: var(--blue-600); font-weight: 700;">Technology Stack</a>
+      <a href="case-studies.html" class="drawer-link">Case Studies</a>
+      <a href="careers.html" class="drawer-link">Careers &amp; Openings</a>
+      <a href="contact.html" class="drawer-link">Contact</a>
+      <div class="drawer-action">
+        <a class="btn btn-primary btn-block" href="contact.html">Book FinOps Review</a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <main>
+    <!-- Tech Stack Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="section-eyebrow eyebrow-light" style="display: inline-block; margin-bottom: 14px;">ENTERPRISE TECHNOLOGY ECOSYSTEM</div>
+        <h1 class="page-hero-title">Premier Cloud Data, Lakehouse &amp; AI Stack.</h1>
+        <p class="page-hero-subtitle">
+          We engineer across premier cloud infrastructure platforms, open-source distributed engines, and modern data stack standards with proven FinOps cost governance.
+        </p>
+
+        <div class="perks-strip">
+          <div class="perk-chip reveal-on-scroll stagger-1">
+            <span class="perk-chip-icon">☁️</span>
+            <span>Microsoft Azure &amp; Fabric</span>
+          </div>
+          <div class="perk-chip reveal-on-scroll stagger-2">
+            <span class="perk-chip-icon">⚡</span>
+            <span>Databricks &amp; Delta Lake</span>
+          </div>
+          <div class="perk-chip reveal-on-scroll stagger-3">
+            <span class="perk-chip-icon">❄️</span>
+            <span>Snowflake &amp; Iceberg</span>
+          </div>
+          <div class="perk-chip reveal-on-scroll stagger-4">
+            <span class="perk-chip-icon">🤖</span>
+            <span>Azure OpenAI &amp; LangChain</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filterable Technology Stack Radar -->
+    <section class="section tech-radar-section" id="technologies" style="padding-top: 50px;">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-eyebrow">TECHNOLOGY RADAR</div>
+          <h2 class="section-title">Battle-Tested Enterprise Tooling</h2>
+          <p class="section-subtitle">
+            Filter our core toolchain by infrastructure category to inspect our standard deployment patterns and production capabilities.
+          </p>
+        </div>
+
+        <div class="tech-filter-bar reveal-on-scroll">
+          <button class="filter-btn active" data-filter="all">All Technologies</button>
+          <button class="filter-btn" data-filter="cloud">Cloud &amp; Lakehouse</button>
+          <button class="filter-btn" data-filter="pipeline">Pipelines &amp; Compute</button>
+          <button class="filter-btn" data-filter="storage">Storage &amp; Data Mesh</button>
+          <button class="filter-btn" data-filter="analytics">Analytics &amp; AI</button>
+        </div>
+
+        <div class="tech-grid reveal-on-scroll">
+          <div class="tech-card" data-category="cloud">
+            <div class="tech-icon-wrap">
+              <img src="images/tech/azure.svg" alt="Microsoft Azure Logo" class="tech-icon-img">
+            </div>
+            <h4>Microsoft Azure</h4>
+            <p>Azure Data Factory, Synapse, Blob Storage, Managed Identities, VNet isolation.</p>
+            <span class="tech-pill">Cloud Platform</span>
+          </div>
+
+          <div class="tech-card" data-category="cloud">
+            <div class="tech-icon-wrap">
+              <img src="images/tech/databricks.svg" alt="Databricks Logo" class="tech-icon-img">
+            </div>
+            <h4>Databricks</h4>
+            <p>Unified Lakehouse, Delta Lake, Unity Catalog, Photon engine acceleration.</p>
+            <span class="tech-pill">Lakehouse</span>
+          </div>
+
+          <div class="tech-card" data-category="cloud">
+            <div class="tech-icon-wrap">
+              <img src="images/tech/fabric.svg" alt="Microsoft Fabric Logo" class="tech-icon-img">
+            </div>
+            <h4>Microsoft Fabric</h4>
+            <p>Next-gen unified analytics, OneLake SaaS data lake, Synapse Data Engineering.</p>
+            <span class="tech-pill">SaaS Lakehouse</span>
+          </div>
+
+          <div class="tech-card" data-category="pipeline">
+            <div class="tech-icon-wrap">
+              <img src="images/tech/spark.svg" alt="Apache Spark Logo" class="tech-icon-img">
+            </div>
+            <h4>Apache Spark &amp; PySpark</h4>
+            <p>Distributed parallel compute, optimized shuffle algorithms, vector operations.</p>
+            <span class="tech-pill">Data Processing</span>
+          </div>
+
+          <div class="tech-card" data-category="storage">
+            <div class="tech-icon-wrap">
+              <img src="images/tech/deltalake.svg" alt="Delta Lake Logo" class="tech-icon-img">
+            </div>
+            <h4>Delta Lake</h4>
+            <p>ACID transactional storage, time-travel versioning, auto-compaction.</p>
+            <span class="tech-pill">Storage Format</span>
+          </div>
+
+          <div class="tech-card" data-category="pipeline">
+            <div class="tech-icon-wrap">
+              <img src="images/tech/kafka.svg" alt="Apache Kafka Logo" class="tech-icon-img">
+            </div>
+            <h4>Apache Kafka</h4>
+            <p>Distributed streaming platform, event replayability, low-latency queues.</p>
+            <span class="tech-pill">Streaming</span>
+          </div>
+
+          <div class="tech-card" data-category="analytics">
+            <div class="tech-icon-wrap">
+              <img src="images/tech/powerbi.svg" alt="Microsoft Power BI Logo" class="tech-icon-img">
+            </div>
+            <h4>Microsoft Power BI</h4>
+            <p>Direct Lake query mode, paginated reporting, enterprise semantic models.</p>
+            <span class="tech-pill">Enterprise BI</span>
+          </div>
+
+          <div class="tech-card" data-category="storage">
+            <div class="tech-icon-wrap">
+              <img src="images/tech/snowflake.svg" alt="Snowflake Logo" class="tech-icon-img">
+            </div>
+            <h4>Snowflake</h4>
+            <p>Multi-cluster shared data architecture, secure data sharing, Snowpipe streaming.</p>
+            <span class="tech-pill">Cloud DWH</span>
+          </div>
+
+          <div class="tech-card" data-category="analytics">
+            <div class="tech-icon-wrap">
+              <img src="images/tech/purview.svg" alt="Microsoft Purview Logo" class="tech-icon-img">
+            </div>
+            <h4>Microsoft Purview</h4>
+            <p>Automated metadata discovery, data lineage mapping, sensitive PII classification.</p>
+            <span class="tech-pill">Data Governance</span>
+          </div>
+
+          <div class="tech-card" data-category="pipeline">
+            <div class="tech-icon-wrap">
+              <img src="images/tech/dbt.svg" alt="dbt Labs Logo" class="tech-icon-img">
+            </div>
+            <h4>dbt (Data Build Tool)</h4>
+            <p>Modular transformations, version-controlled testing, documentation lineage.</p>
+            <span class="tech-pill">Transformation</span>
+          </div>
+
+          <div class="tech-card" data-category="cloud">
+            <div class="tech-icon-wrap">
+              <img src="images/tech/terraform.svg" alt="Terraform Logo" class="tech-icon-img">
+            </div>
+            <h4>Terraform IaC</h4>
+            <p>Declarative infrastructure as code, automated state locking, zero vendor lock-in.</p>
+            <span class="tech-pill">Infrastructure</span>
+          </div>
+
+          <div class="tech-card" data-category="analytics">
+            <div class="tech-icon-wrap">
+              <img src="images/tech/openai.svg" alt="Azure OpenAI Logo" class="tech-icon-img">
+            </div>
+            <h4>Azure OpenAI &amp; LLMs</h4>
+            <p>Enterprise private models, semantic search, automated RAG pipelines.</p>
+            <span class="tech-pill">Applied AI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Cloud ROI & FinOps Savings Calculator -->
+    <section class="section roi-section" id="roi-calculator" style="border-top: 1px solid var(--border-light); padding-top: 60px;">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-eyebrow">FINOPS COMPUTATION ESTIMATOR</div>
+          <h2 class="section-title">Calculate Your Projected Cloud Lakehouse Savings.</h2>
+          <p class="section-subtitle">
+            See how much your organization can eliminate in redundant compute spend while dramatically accelerating data transformation SLAs.
+          </p>
+        </div>
+
+        <div class="roi-calculator-card reveal-scale">
+          <div class="roi-calc-grid">
+            <!-- Left: Interactive Inputs -->
+            <div class="calc-inputs-col">
+              <div class="calc-group">
+                <div class="calc-label-row">
+                  <label for="spendRange" class="calc-label">Current Monthly Cloud Compute &amp; Storage Spend</label>
+                  <span class="calc-spend-badge" id="spendDisplay">$50,000 / mo</span>
+                </div>
+                <input type="range" class="calc-range" id="spendRange" min="10000" max="200000" step="5000" value="50000">
+                <div class="range-labels">
+                  <span>$10k/mo</span>
+                  <span>$50k/mo</span>
+                  <span>$100k/mo</span>
+                  <span>$200k+/mo</span>
+                </div>
+              </div>
+
+              <div class="calc-group">
+                <label class="calc-label">Primary Cloud Platform</label>
+                <div class="platform-chips" id="platformChips">
+                  <button type="button" class="plat-chip active" data-platform="Databricks">Azure Databricks</button>
+                  <button type="button" class="plat-chip" data-platform="Fabric">Microsoft Fabric</button>
+                  <button type="button" class="plat-chip" data-platform="AzureADF">Azure Data Lake / ADF</button>
+                  <button type="button" class="plat-chip" data-platform="Snowflake">Snowflake on Azure</button>
+                </div>
+              </div>
+
+              <div class="calc-group">
+                <label class="calc-label">Primary Technical Objective</label>
+                <div class="platform-chips" id="objectiveChips">
+                  <button type="button" class="plat-chip active" data-ratio="0.42" data-speed="3.2" data-obj="FinOps Cost Reduction">Cut Cloud Compute Overhead</button>
+                  <button type="button" class="plat-chip" data-ratio="0.35" data-speed="4.5" data-obj="Query Performance">Accelerate Slow Queries</button>
+                  <button type="button" class="plat-chip" data-ratio="0.38" data-speed="2.8" data-obj="Pipeline Reliability">Fix Pipeline Failures &amp; SLAs</button>
+                  <button type="button" class="plat-chip" data-ratio="0.45" data-speed="3.5" data-obj="Legacy Migration">Migrate from Legacy DWH</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Dynamic Results Box -->
+            <div class="calc-results-col">
+              <div class="results-inner-card">
+                <span class="results-eyebrow">PROJECTED ANNUAL OPTIMIZATION</span>
+                <div class="savings-number" id="annualSavings">$252,000</div>
+                <div class="savings-subtext">Estimated annual savings recovered from compute &amp; storage rightsizing</div>
+
+                <div class="metric-breakdown-row">
+                  <div class="breakdown-stat">
+                    <span class="breakdown-val" id="querySpeedup">3.2x</span>
+                    <span class="breakdown-lbl">Faster Pipeline Latency</span>
+                  </div>
+                  <div class="breakdown-stat">
+                    <span class="breakdown-val" id="monthlySavings">$21,000</span>
+                    <span class="breakdown-lbl">Monthly Cashflow Saved</span>
+                  </div>
+                  <div class="breakdown-stat">
+                    <span class="breakdown-val" id="slaUptime">99.99%</span>
+                    <span class="breakdown-lbl">Production Pipeline SLA</span>
+                  </div>
+                </div>
+
+                <div class="recommended-arch-box">
+                  <div class="arch-box-title">Recommended Architecture Blueprint:</div>
+                  <p class="arch-box-desc" id="archDesc">Delta Lake Medallion with Databricks Serverless autoscaling, Photon runtime optimization, and automated spot-cluster fallback.</p>
+                </div>
+
+                <a href="contact.html" class="btn btn-primary btn-block" id="claimAuditBtn">
+                  <span>Claim Your Custom FinOps Audit &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <a class="brand" href="index.html" aria-label="Medhyx Solutions Home">
+          <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" class="brand-logo footer-logo">
+        </a>
+        <p class="footer-bio">
+          Premier Enterprise Cloud Data Engineering, Microsoft Fabric, Databricks Lakehouse, and Real-Time Event Streaming Consultancy.
+        </p>
+        <div class="footer-contact-links">
+          <a href="mailto:hello@medhyx.com" class="footer-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            hello@medhyx.com
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="solutions.html">Solutions Matrix</a></li>
+          <li><a href="architecture.html">Architecture &amp; Framework</a></li>
+          <li><a href="technologies.html">Technology Ecosystem</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="careers.html">Careers &amp; Openings</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Capabilities</h4>
+        <ul>
+          <li><a href="solutions.html">Cloud Lakehouse Engineering</a></li>
+          <li><a href="solutions.html">Zero-Downtime Data Migration</a></li>
+          <li><a href="solutions.html">Real-Time Event Streaming</a></li>
+          <li><a href="solutions.html">FinOps &amp; Cluster Optimization</a></li>
+          <li><a href="solutions.html">Applied AI &amp; LLMOps</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Governance</h4>
+        <ul>
+          <li><a href="#privacy" class="legal-trigger" data-modal="privacy">Privacy Policy</a></li>
+          <li><a href="#terms" class="legal-trigger" data-modal="terms">Terms of Engagement</a></li>
+          <li><a href="#security" class="legal-trigger" data-modal="security">Security &amp; Compliance</a></li>
+          <li><a href="#cookies" class="legal-trigger" data-modal="cookies">Cookie Declaration</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-bottom-flex">
+        <p>&copy; 2026 Medhyx Solutions. All rights reserved. Enterprise Cloud Data &amp; AI Engineering Consultancy.</p>
+        <div class="footer-legal-links">
+          <a href="#privacy" class="legal-trigger" data-modal="privacy">Privacy Policy</a>
+          <a href="#terms" class="legal-trigger" data-modal="terms">Terms</a>
+          <a href="#security" class="legal-trigger" data-modal="security">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Enterprise Cookie & Privacy Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie and Privacy Notice">
+    <div class="cookie-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <span>Privacy &amp; Data Security</span>
+    </div>
+    <p class="cookie-text">
+      Medhyx Solutions uses essential cookies and anonymized telemetry to ensure enterprise platform security and optimize user workflows. Review our <a href="#privacy" class="legal-trigger" data-modal="privacy">Privacy Policy</a> to learn more.
+    </p>
+    <div class="cookie-actions">
+      <button class="cookie-btn-accept" id="acceptCookieBtn">Accept &amp; Continue</button>
+      <button class="cookie-btn-decline" id="declineCookieBtn">Decline Non-Essential</button>
+    </div>
+  </div>
+
+  <!-- Enterprise Legal & Compliance Modal -->
+  <div class="legal-modal-backdrop" id="legalModalBackdrop">
+    <div class="legal-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+      <div class="legal-modal-header">
+        <h3 class="legal-modal-title" id="legalModalTitle">Enterprise Privacy Policy</h3>
+        <button type="button" class="legal-modal-close" id="legalModalClose" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="legal-modal-body" id="legalModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top" title="Back to Top">&uarr;</button>
+
+  <!-- Interactive Scripts -->
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Reading Progress Bar & Back-to-Top Button
+  const progressBar = document.getElementById('scrollProgressBar');
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.pageYOffset / totalHeight) * 100;
+    if (progressBar) progressBar.style.width = progress + '%';
+
+    if (window.pageYOffset > 50) {
+      if (navbar) navbar.classList.add('scrolled');
+    } else {
+      if (navbar) navbar.classList.remove('scrolled');
+    }
+
+    if (backToTopBtn) {
+      if (window.pageYOffset > 450) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+  });
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // 2. Mobile Drawer Navigation
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const drawerBackdrop = document.getElementById('drawerBackdrop');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
+
+  const openDrawer = () => {
+    if (mobileDrawer) mobileDrawer.classList.add('open');
+    if (drawerBackdrop) drawerBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
+  };
+
+  const closeDrawer = () => {
+    if (mobileDrawer) mobileDrawer.classList.remove('open');
+    if (drawerBackdrop) drawerBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+  };
+
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openDrawer);
+  if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+  if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+  drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
+
+  // 3. Technology Stack Filter Bar
+  const filterButtons = document.querySelectorAll('.tech-filter-bar .filter-btn');
+  const techCards = document.querySelectorAll('.tech-grid .tech-card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterVal = btn.getAttribute('data-filter');
+
+      techCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filterVal === 'all' || category === filterVal) {
+          card.style.display = 'flex';
+          card.style.animation = 'fadeIn 0.25s ease';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // 4. FinOps ROI & Cloud Savings Calculator
+  const spendRange = document.getElementById('spendRange');
+  const spendDisplay = document.getElementById('spendDisplay');
+  const annualSavings = document.getElementById('annualSavings');
+  const monthlySavings = document.getElementById('monthlySavings');
+  const querySpeedup = document.getElementById('querySpeedup');
+  const archDesc = document.getElementById('archDesc');
+  const platformChips = document.querySelectorAll('#platformChips .plat-chip');
+  const objectiveChips = document.querySelectorAll('#objectiveChips .plat-chip');
+
+  let currentSpend = 50000;
+  let currentRatio = 0.42;
+  let currentSpeed = 3.2;
+  let currentPlatform = 'Databricks';
+
+  const architectureBlueprints = {
+    'Databricks': 'Delta Lake Medallion with Databricks Serverless autoscaling, Photon runtime optimization, and automated spot-cluster fallback.',
+    'Fabric': 'Microsoft Fabric OneLake integration with Direct Lake semantic models and automated delta parquet file vacuuming.',
+    'AzureADF': 'Azure Data Lake Gen2 storage tiering (Hot to Cold archive) with Azure Data Factory parallelized pipeline triggers.',
+    'Snowflake': 'Snowflake Virtual Warehouse auto-suspend optimization, multi-cluster concurrency limits, and Iceberg open-table formats.'
+  };
+
+  const calculateROI = () => {
+    const monthlySaved = Math.round(currentSpend * currentRatio);
+    const annualSaved = monthlySaved * 12;
+
+    if (spendDisplay) spendDisplay.textContent = `$${currentSpend.toLocaleString()} / mo`;
+    if (annualSavings) annualSavings.textContent = `$${annualSaved.toLocaleString()}`;
+    if (monthlySavings) monthlySavings.textContent = `$${monthlySaved.toLocaleString()}`;
+    if (querySpeedup) querySpeedup.textContent = `${currentSpeed}x`;
+    if (archDesc) archDesc.textContent = architectureBlueprints[currentPlatform] || architectureBlueprints['Databricks'];
+  };
+
+  if (spendRange) {
+    spendRange.addEventListener('input', (e) => {
+      currentSpend = parseInt(e.target.value, 10);
+      calculateROI();
+    });
+  }
+
+  platformChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      platformChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      currentPlatform = chip.getAttribute('data-platform');
+      calculateROI();
+    });
+  });
+
+  objectiveChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      objectiveChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      currentRatio = parseFloat(chip.getAttribute('data-ratio'));
+      currentSpeed = parseFloat(chip.getAttribute('data-speed'));
+      calculateROI();
+    });
+  });
+
+  calculateROI();
+
+  // 5. Legal Modal
+  const legalModalBackdrop = document.getElementById('legalModalBackdrop');
+  const legalModalTitle = document.getElementById('legalModalTitle');
+  const legalModalBody = document.getElementById('legalModalBody');
+  const legalModalClose = document.getElementById('legalModalClose');
+  const legalTriggers = document.querySelectorAll('.legal-trigger');
+
+  const legalContent = {
+    privacy: {
+      title: "Enterprise Privacy Policy",
+      content: `<p><strong>Effective Date:</strong> January 1, 2026</p><p>Medhyx Solutions processes technical specifications and client inquiries strictly for consultation execution and security telemetry.</p>`
+    },
+    terms: {
+      title: "Terms of Engagement",
+      content: `<p>All client consulting engagements are governed by custom Master Services Agreements (MSAs) and strict mutual Non-Disclosure Agreements (NDAs).</p>`
+    },
+    security: {
+      title: "Enterprise Security & Compliance",
+      content: `<p>Medhyx enforces Zero-Trust cloud security across all enterprise landing zones.</p>`
+    },
+    cookies: {
+      title: "Cookie Declaration",
+      content: `<p>Medhyx utilizes essential session cookies to ensure secure platform operation.</p>`
+    }
+  };
+
+  const openLegalModal = (type) => {
+    const data = legalContent[type] || legalContent.privacy;
+    if (legalModalTitle) legalModalTitle.textContent = data.title;
+    if (legalModalBody) legalModalBody.innerHTML = data.content;
+    if (legalModalBackdrop) legalModalBackdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLegalModal = () => {
+    if (legalModalBackdrop) legalModalBackdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  legalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const type = trigger.getAttribute('data-modal') || 'privacy';
+      openLegalModal(type);
+    });
+  });
+
+  if (legalModalClose) legalModalClose.addEventListener('click', closeLegalModal);
+  if (legalModalBackdrop) {
+    legalModalBackdrop.addEventListener('click', (e) => {
+      if (e.target === legalModalBackdrop) closeLegalModal();
+    });
+  }
+
+  // 6. Cookie Consent
+  const cookieBanner = document.getElementById('cookieBanner');
+  const acceptCookieBtn = document.getElementById('acceptCookieBtn');
+  const declineCookieBtn = document.getElementById('declineCookieBtn');
+
+  if (cookieBanner) {
+    const hasConsented = localStorage.getItem('medhyx_cookie_consent');
+    if (!hasConsented) {
+      setTimeout(() => {
+        cookieBanner.classList.add('show');
+      }, 1200);
+    }
+    if (acceptCookieBtn) {
+      acceptCookieBtn.addEventListener('click', () => {
+        localStorage.setItem('medhyx_cookie_consent', 'accepted');
+        cookieBanner.classList.remove('show');
+      });
+    }
+    if (declineCookieBtn) {
+      declineCookieBtn.addEventListener('click', () => {
+        localStorage.setItem('medhyx_cookie_consent', 'declined');
+        cookieBanner.classList.remove('show');
+      });
+    }
+  }
+
+  // 7. Scroll-Reveal Observer & Internal Page Transition Suite
+  const revealElements = document.querySelectorAll('.reveal-on-scroll, .reveal-scale');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+  }
+
+  // Smooth Internal Page Exit Transition
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    if (!href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !href.startsWith('http') && !link.target) {
+      link.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+        e.preventDefault();
+        document.body.classList.add('page-transitioning');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 200);
+      });
+    }
+  });
+
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      document.body.classList.remove('page-transitioning');
+    }
+  });
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Cloud Data &amp; AI Solutions | Medhyx Solutions</title>
+  <meta name="description" content="Modern cloud lakehouse engineering, real-time event streaming, zero-downtime database migrations, and production applied AI &amp; LLMOps solutions.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://medhyx.com/solutions.html">
+  <meta name="theme-color" content="#0284c7">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2.2">
+</head>
+<body>
+
+  <!-- Accessibility Skip Link -->
+  <a href="#solutions" class="skip-to-content">Skip to solutions content</a>
+
+  <!-- Top Reading Progress Indicator -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-banner">
+    <div class="top-banner-inner">
+      <span class="badge-pulse"><span class="pulse-dot"></span> Core Practice</span>
+      <span>Databricks Lakehouse, Microsoft Fabric, Apache Spark &amp; Applied LLMOps.</span>
+      <a href="contact.html" class="banner-link">Book Solution Consultation &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Medhyx Solutions Home">
+        <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" class="brand-logo">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="solutions.html" class="nav-item active">Solutions</a>
+        <a href="architecture.html" class="nav-item">Architecture</a>
+        <a href="technologies.html" class="nav-item">Tech Stack</a>
+        <a href="case-studies.html" class="nav-item">Case Studies</a>
+        <a href="careers.html" class="nav-item">Careers</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary btn-nav-cta" href="contact.html">Contact Us</a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" style="max-height: 38px;">
+      <button class="close-drawer" id="closeDrawerBtn" aria-label="Close Menu">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="solutions.html" class="drawer-link active" style="color: var(--blue-600); font-weight: 700;">Solutions</a>
+      <a href="architecture.html" class="drawer-link">Architecture</a>
+      <a href="technologies.html" class="drawer-link">Technology Stack</a>
+      <a href="case-studies.html" class="drawer-link">Case Studies</a>
+      <a href="careers.html" class="drawer-link">Careers &amp; Openings</a>
+      <a href="contact.html" class="drawer-link">Contact</a>
+      <div class="drawer-action">
+        <a class="btn btn-primary btn-block" href="contact.html">Book Solution Consultation</a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <main>
+    <!-- Solutions Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="section-eyebrow eyebrow-light" style="display: inline-block; margin-bottom: 14px;">ENTERPRISE PRACTICE CAPABILITIES</div>
+        <h1 class="page-hero-title">Engineered for Complex Enterprise Data &amp; AI Demands.</h1>
+        <p class="page-hero-subtitle">
+          From foundational cloud lakehouses and zero-downtime migrations to real-time event streaming and applied LLMOps, we build scalable architectures designed for mission-critical enterprise intelligence.
+        </p>
+
+        <div class="perks-strip">
+          <div class="perk-chip reveal-on-scroll stagger-1">
+            <span class="perk-chip-icon">🏛️</span>
+            <span>Cloud Lakehouses</span>
+          </div>
+          <div class="perk-chip reveal-on-scroll stagger-2">
+            <span class="perk-chip-icon">🔄</span>
+            <span>Zero-Downtime Migration</span>
+          </div>
+          <div class="perk-chip reveal-on-scroll stagger-3">
+            <span class="perk-chip-icon">⚡</span>
+            <span>Real-Time Streaming</span>
+          </div>
+          <div class="perk-chip reveal-on-scroll stagger-4">
+            <span class="perk-chip-icon">🤖</span>
+            <span>Applied AI &amp; LLMOps</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enterprise Solutions Matrix (Interactive Tabs) -->
+    <section class="section solutions-section" id="solutions" style="padding-top: 50px;">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-eyebrow">CORE CAPABILITIES</div>
+          <h2 class="section-title">The Enterprise Solutions Matrix</h2>
+          <p class="section-subtitle">
+            Explore our specialized practice disciplines. Each solution combines battle-tested Infrastructure-as-Code with production SLA guarantees.
+          </p>
+        </div>
+
+        <div class="solutions-tabs-wrapper">
+          <div class="solutions-tabs-nav" role="tablist">
+            <button class="tab-btn active" data-tab="tab-lakehouse" role="tab" aria-selected="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              <span>Lakehouse &amp; Engineering</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-migration" role="tab" aria-selected="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+              <span>Cloud Migration</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-streaming" role="tab" aria-selected="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              <span>Real-Time Streaming</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-governance" role="tab" aria-selected="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Governance &amp; BI</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-ai" role="tab" aria-selected="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span>Applied AI &amp; LLMOps</span>
+            </button>
+          </div>
+
+          <!-- Tab 1: Lakehouse -->
+          <div class="tab-panel active" id="tab-lakehouse" role="tabpanel">
+            <div class="tab-panel-grid">
+              <div class="panel-details">
+                <span class="panel-tag">ENTERPRISE FOUNDATION</span>
+                <h3>Modern Cloud Lakehouse Engineering</h3>
+                <p>
+                  Break down data silos with unified Databricks Lakehouse and Microsoft Fabric architectures. We construct performant Bronze-Silver-Gold medallion pipelines with ACID compliance, schema enforcement, and time-travel querying.
+                </p>
+                <ul class="feature-bullets">
+                  <li><strong>High-Throughput PySpark &amp; SQL:</strong> Scalable batch transformations optimized for petabyte-scale workloads.</li>
+                  <li><strong>Delta Lake Storage Engine:</strong> ACID transactions, compaction, and automatic partition pruning.</li>
+                  <li><strong>Medallion Architecture:</strong> Clean segregation from raw ingestion to business-ready analytics cubes.</li>
+                  <li><strong>FinOps Cluster Autoscaling:</strong> Prevent compute overspending with automated idle timeouts and spot instances.</li>
+                </ul>
+                <div class="panel-meta">
+                  <span class="meta-label">Primary Stack:</span>
+                  <span class="meta-badge">Databricks</span>
+                  <span class="meta-badge">Delta Lake</span>
+                  <span class="meta-badge">PySpark</span>
+                  <span class="meta-badge">Microsoft Fabric</span>
+                  <span class="meta-badge">Azure Data Lake</span>
+                </div>
+              </div>
+              <div class="panel-card-preview">
+                <div class="panel-visual-wrap">
+                  <img src="images/cloud-lakehouse-mesh.jpg" alt="High-Tech Modern Cloud Lakehouse and Distributed Data Engineering" class="panel-visual-img" loading="lazy">
+                  <div class="panel-visual-badge">
+                    <span class="badge-dot"></span> Delta Lakehouse &amp; Spark
+                  </div>
+                </div>
+                <div class="preview-box">
+                  <div class="preview-title">Architecture Highlights</div>
+                  <div class="arch-layer-item">
+                    <span class="badge-gold">GOLD</span>
+                    <div>
+                      <strong>Business Aggregate Layer</strong>
+                      <span>Star-schema metrics, executive KPIs, automated dbt tests</span>
+                    </div>
+                  </div>
+                  <div class="arch-layer-item">
+                    <span class="badge-silver">SILVER</span>
+                    <div>
+                      <strong>Cleaned &amp; Enriched Conformed Models</strong>
+                      <span>De-duplicated, schema-validated, SCD Type-2 tracking</span>
+                    </div>
+                  </div>
+                  <div class="arch-layer-item">
+                    <span class="badge-bronze">BRONZE</span>
+                    <div>
+                      <strong>Raw Append-Only Ingestion</strong>
+                      <span>Streaming &amp; batch landing with original source fidelity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Migration -->
+          <div class="tab-panel" id="tab-migration" role="tabpanel">
+            <div class="tab-panel-grid">
+              <div class="panel-details">
+                <span class="panel-tag">MODERNIZATION</span>
+                <h3>Legacy Modernization &amp; Zero-Downtime Migration</h3>
+                <p>
+                  Transition seamlessly from legacy on-premises SQL Server, Oracle, or aging data warehouses to scalable cloud-native lakehouses on Microsoft Azure and modern cloud ecosystems.
+                </p>
+                <ul class="feature-bullets">
+                  <li><strong>Automated Change Data Capture (CDC):</strong> Continuous real-time syncing during migration phases.</li>
+                  <li><strong>Dual-Run Reconciliation:</strong> Automated mathematical reconciliation between legacy and target datasets.</li>
+                  <li><strong>Refactored Stored Procedures:</strong> Modernized legacy T-SQL into modular, testable PySpark notebooks and dbt models.</li>
+                  <li><strong>Guaranteed Zero Downtime:</strong> Phased cutover strategies that safeguard business continuity.</li>
+                </ul>
+                <div class="panel-meta">
+                  <span class="meta-label">Primary Stack:</span>
+                  <span class="meta-badge">Azure DMS</span>
+                  <span class="meta-badge">ADF Ingestion</span>
+                  <span class="meta-badge">Snowflake</span>
+                  <span class="meta-badge">Azure SQL</span>
+                  <span class="meta-badge">Debezium CDC</span>
+                </div>
+              </div>
+              <div class="panel-card-preview">
+                <div class="preview-box">
+                  <div class="preview-title">Migration Assurance</div>
+                  <ul class="bullet-list-sm">
+                    <li>✓ 100% Data Parity Verification across all historical snapshots</li>
+                    <li>✓ Zero unplanned operational downtime during production cutover</li>
+                    <li>✓ Automated rollback checkpoints embedded into release pipelines</li>
+                    <li>✓ 40%+ average operational TCO savings post-migration</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Streaming -->
+          <div class="tab-panel" id="tab-streaming" role="tabpanel">
+            <div class="tab-panel-grid">
+              <div class="panel-details">
+                <span class="panel-tag">LOW LATENCY</span>
+                <h3>Real-Time Stream Processing &amp; Event Telemetry</h3>
+                <p>
+                  Transform streaming events into instant business intelligence. We design low-latency distributed streaming pipelines capable of processing millions of events per second with exactly-once semantics.
+                </p>
+                <ul class="feature-bullets">
+                  <li><strong>Event Broker Integration:</strong> Scalable Apache Kafka, Azure Event Hubs, and Service Bus backbones.</li>
+                  <li><strong>Spark Structured Streaming:</strong> Micro-batch and continuous processing with watermark handling.</li>
+                  <li><strong>Real-Time Anomaly Detection:</strong> Sub-second fraud alerting, telemetry monitoring, and threshold triggering.</li>
+                  <li><strong>Stateful Stream Operations:</strong> Windowed aggregations, sessionization, and complex event processing.</li>
+                </ul>
+                <div class="panel-meta">
+                  <span class="meta-label">Primary Stack:</span>
+                  <span class="meta-badge">Apache Kafka</span>
+                  <span class="meta-badge">Azure Event Hubs</span>
+                  <span class="meta-badge">Spark Streaming</span>
+                  <span class="meta-badge">Redis Cache</span>
+                </div>
+              </div>
+              <div class="panel-card-preview">
+                <div class="preview-box">
+                  <div class="preview-title">Throughput Benchmark</div>
+                  <div class="metric-row-sm">
+                    <span class="mr-val">35M+</span>
+                    <span class="mr-lbl">Daily Ingested Events</span>
+                  </div>
+                  <div class="metric-row-sm">
+                    <span class="mr-val">&lt; 15ms</span>
+                    <span class="mr-lbl">Streaming Transit Latency</span>
+                  </div>
+                  <div class="metric-row-sm">
+                    <span class="mr-val">99.99%</span>
+                    <span class="mr-lbl">Pipeline Availability SLA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: Governance -->
+          <div class="tab-panel" id="tab-governance" role="tabpanel">
+            <div class="tab-panel-grid">
+              <div class="panel-details">
+                <span class="panel-tag">TRUST &amp; COMPLIANCE</span>
+                <h3>Unified Governance, BI &amp; Semantic Layer</h3>
+                <p>
+                  Ensure complete trust, compliance, and rapid self-service analytics. We configure automated data catalogs, end-to-end lineage, and high-performance semantic layers for executive decision-makers.
+                </p>
+                <ul class="feature-bullets">
+                  <li><strong>Direct Lake Acceleration:</strong> Connect Power BI directly to OneLake with sub-second queries.</li>
+                  <li><strong>Unity Catalog Implementation:</strong> Centralized access governance across tables, files, and ML models.</li>
+                  <li><strong>Regulatory Compliance:</strong> Automated HIPAA, GDPR, SOC2, and ISO27001 data masking policies.</li>
+                  <li><strong>Data Quality Frameworks:</strong> Automated Great Expectations / Soda quality checks in CI/CD.</li>
+                </ul>
+                <div class="panel-meta">
+                  <span class="meta-label">Primary Stack:</span>
+                  <span class="meta-badge">Power BI</span>
+                  <span class="meta-badge">Microsoft Purview</span>
+                  <span class="meta-badge">dbt</span>
+                  <span class="meta-badge">Direct Lake</span>
+                </div>
+              </div>
+              <div class="panel-card-preview">
+                <div class="preview-box">
+                  <div class="preview-title">Governance Guarantees</div>
+                  <ul class="bullet-list-sm">
+                    <li>✓ Automated sensitive PII masking &amp; encryption</li>
+                    <li>✓ Complete visual column-level data lineage</li>
+                    <li>✓ Audit logging &amp; compliance reporting ready</li>
+                    <li>✓ Single source of truth metrics repository</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 5: AI -->
+          <div class="tab-panel" id="tab-ai" role="tabpanel">
+            <div class="tab-panel-grid">
+              <div class="panel-details">
+                <span class="panel-tag">INTELLIGENCE</span>
+                <h3>Applied AI, ML Engineering &amp; LLMOps</h3>
+                <p>
+                  Move AI from experimental notebooks to resilient enterprise production. We build the data plumbing, vector storage, feature stores, and automated model deployment pipelines required for enterprise-grade generative and predictive AI.
+                </p>
+                <ul class="feature-bullets">
+                  <li><strong>Retrieval-Augmented Generation (RAG):</strong> Production vector pipelines indexing enterprise documents with Azure AI Search.</li>
+                  <li><strong>MLflow Model Governance:</strong> Versioning, evaluation metrics, and automated deployment registries.</li>
+                  <li><strong>Automated Data Quality Agents:</strong> AI-powered drift monitoring and anomaly classification.</li>
+                  <li><strong>Cost-Controlled LLM Gateways:</strong> Token caching, rate limiting, and fallback routing for mission-critical apps.</li>
+                </ul>
+                <div class="panel-meta">
+                  <span class="meta-label">Primary Stack:</span>
+                  <span class="meta-badge">Azure OpenAI</span>
+                  <span class="meta-badge">MLflow</span>
+                  <span class="meta-badge">LangChain</span>
+                  <span class="meta-badge">Vector DBs</span>
+                  <span class="meta-badge">PyTorch</span>
+                </div>
+              </div>
+              <div class="panel-card-preview">
+                <div class="panel-visual-wrap">
+                  <img src="images/applied-ai-llmops.jpg" alt="Enterprise Applied AI, LLMOps and Neural Intelligence Platform" class="panel-visual-img" loading="lazy">
+                  <div class="panel-visual-badge">
+                    <span class="badge-dot"></span> LLMOps &amp; RAG Vectors
+                  </div>
+                </div>
+                <div class="preview-box">
+                  <div class="preview-title">Production AI Pipeline</div>
+                  <div class="arch-layer-item">
+                    <span class="badge-gold">AGENTS</span>
+                    <div><strong>Autonomous Data Agents</strong><span>Action execution, automated ETL repair</span></div>
+                  </div>
+                  <div class="arch-layer-item">
+                    <span class="badge-silver">RAG</span>
+                    <div><strong>Context Embedding Engine</strong><span>Vector search over conformed Lakehouse data</span></div>
+                  </div>
+                  <div class="arch-layer-item">
+                    <span class="badge-bronze">DATA</span>
+                    <div><strong>Curated Feature Store</strong><span>Zero-leakage training and inference data</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Architecture Solution Matcher -->
+        <div class="matcher-card-modern reveal-scale" id="solutionMatcher" style="margin-top: 56px;">
+          <div class="matcher-header">
+            <span class="badge-pulse"><span class="pulse-dot"></span> Interactive Assessment</span>
+            <h3>Architecture Solution Matcher</h3>
+            <p>Select your current platform and engineering objective to generate an immediate architectural blueprint recommendation.</p>
+          </div>
+
+          <div class="matcher-grid">
+            <div class="matcher-col">
+              <div class="matcher-col-title">1. Your Current Data Estate</div>
+              <div class="matcher-btn-group" id="matcherPlatformGroup">
+                <button type="button" class="match-btn active" data-value="legacy_sql">On-Prem SQL / Oracle</button>
+                <button type="button" class="match-btn" data-value="azure_synapse">Azure Synapse / ADF</button>
+                <button type="button" class="match-btn" data-value="databricks">Databricks (Unoptimized)</button>
+                <button type="button" class="match-btn" data-value="snowflake">Snowflake / Hybrid Cloud</button>
+              </div>
+            </div>
+
+            <div class="matcher-col">
+              <div class="matcher-col-title">2. Primary Engineering Goal</div>
+              <div class="matcher-btn-group" id="matcherGoalGroup">
+                <button type="button" class="match-btn active" data-value="cost">Cut Cloud Compute Spend (FinOps)</button>
+                <button type="button" class="match-btn" data-value="speed">Accelerate Slow Query SLAs</button>
+                <button type="button" class="match-btn" data-value="streaming">Build Real-Time Ingestion</button>
+                <button type="button" class="match-btn" data-value="ai">Integrate LLMs &amp; Vector Search</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="matcher-result-box" id="matcherResultBox">
+            <div class="matcher-result-content">
+              <h4 id="matcherResultTitle">Recommended Blueprint: Phased Medallion Lakehouse Migration</h4>
+              <p id="matcherResultDesc">Automate database schema conversion and CDC ingestion from legacy systems into Delta Lake bronze/silver/gold layers with zero business downtime.</p>
+            </div>
+            <a href="contact.html" class="btn btn-primary" id="matcherActionBtn">Book Architecture Session &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <a class="brand" href="index.html" aria-label="Medhyx Solutions Home">
+          <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" class="brand-logo footer-logo">
+        </a>
+        <p class="footer-bio">
+          Premier Enterprise Cloud Data Engineering, Microsoft Fabric, Databricks Lakehouse, and Real-Time Event Streaming Consultancy.
+        </p>
+        <div class="footer-contact-links">
+          <a href="mailto:hello@medhyx.com" class="footer-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            hello@medhyx.com
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="solutions.html">Solutions Matrix</a></li>
+          <li><a href="architecture.html">Architecture &amp; Framework</a></li>
+          <li><a href="technologies.html">Technology Ecosystem</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="careers.html">Careers &amp; Openings</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Capabilities</h4>
+        <ul>
+          <li><a href="solutions.html">Cloud Lakehouse Engineering</a></li>
+          <li><a href="solutions.html">Zero-Downtime Data Migration</a></li>
+          <li><a href="solutions.html">Real-Time Event Streaming</a></li>
+          <li><a href="solutions.html">FinOps &amp; Cluster Optimization</a></li>
+          <li><a href="solutions.html">Applied AI &amp; LLMOps</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Governance</h4>
+        <ul>
+          <li><a href="#privacy" class="legal-trigger" data-modal="privacy">Privacy Policy</a></li>
+          <li><a href="#terms" class="legal-trigger" data-modal="terms">Terms of Engagement</a></li>
+          <li><a href="#security" class="legal-trigger" data-modal="security">Security &amp; Compliance</a></li>
+          <li><a href="#cookies" class="legal-trigger" data-modal="cookies">Cookie Declaration</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-bottom-flex">
+        <p>&copy; 2026 Medhyx Solutions. All rights reserved. Enterprise Cloud Data &amp; AI Engineering Consultancy.</p>
+        <div class="footer-legal-links">
+          <a href="#privacy" class="legal-trigger" data-modal="privacy">Privacy Policy</a>
+          <a href="#terms" class="legal-trigger" data-modal="terms">Terms</a>
+          <a href="#security" class="legal-trigger" data-modal="security">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Enterprise Cookie & Privacy Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie and Privacy Notice">
+    <div class="cookie-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <span>Privacy &amp; Data Security</span>
+    </div>
+    <p class="cookie-text">
+      Medhyx Solutions uses essential cookies and anonymized telemetry to ensure enterprise platform security and optimize user workflows. Review our <a href="#privacy" class="legal-trigger" data-modal="privacy">Privacy Policy</a> to learn more.
+    </p>
+    <div class="cookie-actions">
+      <button class="cookie-btn-accept" id="acceptCookieBtn">Accept &amp; Continue</button>
+      <button class="cookie-btn-decline" id="declineCookieBtn">Decline Non-Essential</button>
+    </div>
+  </div>
+
+  <!-- Enterprise Legal & Compliance Modal -->
+  <div class="legal-modal-backdrop" id="legalModalBackdrop">
+    <div class="legal-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+      <div class="legal-modal-header">
+        <h3 class="legal-modal-title" id="legalModalTitle">Enterprise Privacy Policy</h3>
+        <button type="button" class="legal-modal-close" id="legalModalClose" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="legal-modal-body" id="legalModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top" title="Back to Top">&uarr;</button>
+
+  <!-- Interactive Scripts -->
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Reading Progress Bar & Back-to-Top Button
+  const progressBar = document.getElementById('scrollProgressBar');
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.pageYOffset / totalHeight) * 100;
+    if (progressBar) progressBar.style.width = progress + '%';
+
+    if (window.pageYOffset > 50) {
+      if (navbar) navbar.classList.add('scrolled');
+    } else {
+      if (navbar) navbar.classList.remove('scrolled');
+    }
+
+    if (backToTopBtn) {
+      if (window.pageYOffset > 450) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+  });
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // 2. Mobile Drawer Navigation
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const drawerBackdrop = document.getElementById('drawerBackdrop');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
+
+  const openDrawer = () => {
+    if (mobileDrawer) mobileDrawer.classList.add('open');
+    if (drawerBackdrop) drawerBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
+  };
+
+  const closeDrawer = () => {
+    if (mobileDrawer) mobileDrawer.classList.remove('open');
+    if (drawerBackdrop) drawerBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+  };
+
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openDrawer);
+  if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+  if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+  drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
+
+  // 3. Solutions Matrix Tab Switcher
+  const tabButtons = document.querySelectorAll('.solutions-tabs-nav .tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      tabPanels.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      const targetId = btn.getAttribute('data-tab');
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    });
+  });
+
+  // 4. Solution Matcher Recommendations
+  const matchPlatforms = document.querySelectorAll('#matcherPlatformGroup .match-btn');
+  const matchGoals = document.querySelectorAll('#matcherGoalGroup .match-btn');
+  const resultTitle = document.getElementById('matcherResultTitle');
+  const resultDesc = document.getElementById('matcherResultDesc');
+
+  const blueprintDatabase = {
+    "legacy_sql-cost": {
+      title: "Target Blueprint: Phased Medallion Lakehouse Migration with Serverless Auto-Shutdown",
+      desc: "Migrate legacy on-premises SQL workloads into Delta Lake with serverless auto-scaling clusters, cutting legacy licensing and idle compute spend by up to 45%."
+    },
+    "legacy_sql-speed": {
+      title: "Target Blueprint: Photon-Accelerated Delta Lakehouse with Partition Compaction",
+      desc: "Modernize legacy transactional schemas into Delta Parquet with Z-Order clustering and Databricks Photon compute to accelerate analytic queries by 5x-10x."
+    },
+    "legacy_sql-streaming": {
+      title: "Target Blueprint: Change Data Capture (CDC) with Kafka & Spark Structured Streaming",
+      desc: "Implement automated Debezium or ADF CDC connectors feeding raw tables directly into Delta Lake bronze layers with sub-30 second propagation."
+    },
+    "legacy_sql-ai": {
+      title: "Target Blueprint: Feature Store Integration & Enterprise Vector Search with Azure OpenAI",
+      desc: "Ingest legacy enterprise text and metrics into Azure AI Search vector embeddings and conformed feature stores for real-time RAG applications."
+    },
+    "azure_synapse-cost": {
+      title: "Target Blueprint: Microsoft Fabric OneLake & Direct Lake Migration",
+      desc: "Transition heavy Synapse dedicated pools into Microsoft Fabric OneLake Direct Lake mode, eliminating ETL synchronization costs and redundant compute."
+    },
+    "azure_synapse-speed": {
+      title: "Target Blueprint: Direct Lake Semantic Models on Azure Fabric",
+      desc: "Eliminate import-mode refreshes in Power BI by querying OneLake Delta tables in-memory via Direct Lake for instantaneous sub-second dashboard rendering."
+    },
+    "azure_synapse-streaming": {
+      title: "Target Blueprint: Fabric Real-Time Analytics & Eventhouse Stream Processing",
+      desc: "Implement KQL databases and Eventstream pipelines for continuous high-throughput event ingestion and real-time dashboarding."
+    },
+    "azure_synapse-ai": {
+      title: "Target Blueprint: Azure Machine Learning & OpenAI Model Serving on OneLake",
+      desc: "Integrate Azure OpenAI endpoints natively with Fabric data engineering pipelines to generate automated summaries and semantic classifications."
+    },
+    "databricks-cost": {
+      title: "Target Blueprint: FinOps Engine - Single-Node Rightsizing & Spot Cluster Guardrails",
+      desc: "Refactor unoptimized Databricks clusters into spot-instance pools with aggressive auto-termination policies to recover 30%–50% in wasted monthly DBU spend."
+    },
+    "databricks-speed": {
+      title: "Target Blueprint: Liquid Clustering, Delta 3.0 & PySpark Code Vectorization",
+      desc: "Upgrade legacy Delta tables to Delta 3.0 with Liquid Clustering and refactor inefficient Python loops into distributed PySpark vector operations."
+    },
+    "databricks-streaming": {
+      title: "Target Blueprint: Delta Live Tables (DLT) Streaming Pipeline with Unity Catalog",
+      desc: "Deploy self-healing Delta Live Tables with built-in expectations, automated schema evolution, and declarative pipeline governance."
+    },
+    "databricks-ai": {
+      title: "Target Blueprint: Mosaic AI, MLflow Registry & LLMOps RAG Architecture",
+      desc: "Deploy Databricks Model Serving with MLflow governance, LangChain vector retrieval, and automated LLM drift evaluation."
+    },
+    "snowflake-cost": {
+      title: "Target Blueprint: Snowflake Virtual Warehouse Rightsizing & Iceberg Table Federation",
+      desc: "Optimize Snowflake auto-suspend timers, eliminate spilling to remote storage, and adopt open Apache Iceberg tables to avoid proprietary storage lock-in."
+    },
+    "snowflake-speed": {
+      title: "Target Blueprint: Dynamic Tables, Search Optimization & Clustered Keys",
+      desc: "Implement Snowflake Dynamic Tables with automated incremental refreshes and search optimization service for sub-second query execution."
+    },
+    "snowflake-streaming": {
+      title: "Target Blueprint: Snowpipe Streaming with Apache Kafka Integration",
+      desc: "Implement Snowpipe Streaming to ingest event payloads with sub-second latency directly into analytics-ready staging tables."
+    },
+    "snowflake-ai": {
+      title: "Target Blueprint: Snowflake Cortex AI & Vector Search Engine",
+      desc: "Deploy serverless LLMs and vector search functions natively inside Snowflake Cortex without moving sensitive data outside the perimeter."
+    }
+  };
+
+  const updateRecommendation = () => {
+    const activePlatform = document.querySelector('#matcherPlatformGroup .match-btn.active')?.getAttribute('data-value') || 'legacy_sql';
+    const activeGoal = document.querySelector('#matcherGoalGroup .match-btn.active')?.getAttribute('data-value') || 'cost';
+    const key = `${activePlatform}-${activeGoal}`;
+    const result = blueprintDatabase[key] || blueprintDatabase["legacy_sql-cost"];
+
+    if (resultTitle && resultDesc) {
+      resultTitle.textContent = result.title;
+      resultDesc.textContent = result.desc;
+    }
+  };
+
+  matchPlatforms.forEach(btn => {
+    btn.addEventListener('click', () => {
+      matchPlatforms.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateRecommendation();
+    });
+  });
+
+  matchGoals.forEach(btn => {
+    btn.addEventListener('click', () => {
+      matchGoals.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateRecommendation();
+    });
+  });
+
+  // 5. Legal Modal
+  const legalModalBackdrop = document.getElementById('legalModalBackdrop');
+  const legalModalTitle = document.getElementById('legalModalTitle');
+  const legalModalBody = document.getElementById('legalModalBody');
+  const legalModalClose = document.getElementById('legalModalClose');
+  const legalTriggers = document.querySelectorAll('.legal-trigger');
+
+  const legalContent = {
+    privacy: {
+      title: "Enterprise Privacy Policy",
+      content: `<p><strong>Effective Date:</strong> January 1, 2026</p><p>Medhyx Solutions processes technical specifications and client inquiries strictly for consultation execution and security telemetry.</p>`
+    },
+    terms: {
+      title: "Terms of Engagement",
+      content: `<p>All client consulting engagements are governed by custom Master Services Agreements (MSAs) and strict mutual Non-Disclosure Agreements (NDAs).</p>`
+    },
+    security: {
+      title: "Enterprise Security & Compliance",
+      content: `<p>Medhyx enforces Zero-Trust cloud security across all enterprise landing zones.</p>`
+    },
+    cookies: {
+      title: "Cookie Declaration",
+      content: `<p>Medhyx utilizes essential session cookies to ensure secure platform operation.</p>`
+    }
+  };
+
+  const openLegalModal = (type) => {
+    const data = legalContent[type] || legalContent.privacy;
+    if (legalModalTitle) legalModalTitle.textContent = data.title;
+    if (legalModalBody) legalModalBody.innerHTML = data.content;
+    if (legalModalBackdrop) legalModalBackdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLegalModal = () => {
+    if (legalModalBackdrop) legalModalBackdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  legalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const type = trigger.getAttribute('data-modal') || 'privacy';
+      openLegalModal(type);
+    });
+  });
+
+  if (legalModalClose) legalModalClose.addEventListener('click', closeLegalModal);
+  if (legalModalBackdrop) {
+    legalModalBackdrop.addEventListener('click', (e) => {
+      if (e.target === legalModalBackdrop) closeLegalModal();
+    });
+  }
+
+  // 6. Cookie Consent
+  const cookieBanner = document.getElementById('cookieBanner');
+  const acceptCookieBtn = document.getElementById('acceptCookieBtn');
+  const declineCookieBtn = document.getElementById('declineCookieBtn');
+
+  if (cookieBanner) {
+    const hasConsented = localStorage.getItem('medhyx_cookie_consent');
+    if (!hasConsented) {
+      setTimeout(() => {
+        cookieBanner.classList.add('show');
+      }, 1200);
+    }
+    if (acceptCookieBtn) {
+      acceptCookieBtn.addEventListener('click', () => {
+        localStorage.setItem('medhyx_cookie_consent', 'accepted');
+        cookieBanner.classList.remove('show');
+      });
+    }
+    if (declineCookieBtn) {
+      declineCookieBtn.addEventListener('click', () => {
+        localStorage.setItem('medhyx_cookie_consent', 'declined');
+        cookieBanner.classList.remove('show');
+      });
+    }
+  }
+
+  // 7. Scroll-Reveal Observer & Internal Page Transition Suite
+  const revealElements = document.querySelectorAll('.reveal-on-scroll, .reveal-scale');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+  }
+
+  // Smooth Internal Page Exit Transition
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    if (!href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !href.startsWith('http') && !link.target) {
+      link.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+        e.preventDefault();
+        document.body.classList.add('page-transitioning');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 200);
+      });
+    }
+  });
+
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      document.body.classList.remove('page-transitioning');
+    }
+  });
+});
+  </script>
+</body>
+</html>

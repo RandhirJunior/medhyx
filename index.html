@@ -78,23 +78,23 @@
     <div class="top-banner-inner">
       <span class="badge-pulse"><span class="pulse-dot"></span> Enterprise Acceleration</span>
       <span>Now offering Microsoft Fabric &amp; Databricks Lakehouse architecture assessments.</span>
-      <a href="#contact" class="banner-link">Book a Session &rarr;</a>
+      <a href="contact.html" class="banner-link">Book a Session &rarr;</a>
     </div>
   </div>
 
   <!-- Main Navigation -->
   <header class="nav" id="navbar">
     <div class="nav-inner">
-      <a class="brand" href="#home" aria-label="Medhyx Solutions Home">
+      <a class="brand" href="index.html" aria-label="Medhyx Solutions Home">
         <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" class="brand-logo">
       </a>
 
       <nav class="desktop-nav" aria-label="Primary Navigation">
-        <a href="#solutions" class="nav-item">Solutions</a>
-        <a href="#pipeline" class="nav-item">Architecture</a>
-        <a href="#technologies" class="nav-item">Tech Stack</a>
-        <a href="#impact" class="nav-item">Case Studies</a>
-        <a href="#roi-calculator" class="nav-item">ROI Calculator</a>
+        <a href="index.html" class="nav-item active">Home</a>
+        <a href="solutions.html" class="nav-item">Solutions</a>
+        <a href="architecture.html" class="nav-item">Architecture</a>
+        <a href="technologies.html" class="nav-item">Tech Stack</a>
+        <a href="case-studies.html" class="nav-item">Case Studies</a>
         <a href="careers.html" class="nav-item">Careers</a>
       </nav>
 
@@ -103,7 +103,7 @@
           <span class="dot-green"></span>
           <span>Consulting Available</span>
         </div>
-        <a class="btn btn-nav" href="#contact">Schedule a Call</a>
+        <a class="btn btn-primary btn-nav-cta" href="contact.html">Contact Us</a>
         <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Open Mobile Menu" aria-expanded="false">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -120,16 +120,15 @@
       <button class="close-drawer" id="closeDrawerBtn" aria-label="Close Menu">&times;</button>
     </div>
     <div class="drawer-body">
-      <a href="#solutions" class="drawer-link">Solutions</a>
-      <a href="#pipeline" class="drawer-link">Architecture (Delta Lake)</a>
-      <a href="#technologies" class="drawer-link">Technology Stack</a>
-      <a href="#impact" class="drawer-link">Case Studies &amp; Impact</a>
-      <a href="#testimonials" class="drawer-link">Client Endorsements</a>
-      <a href="#roi-calculator" class="drawer-link">FinOps ROI Calculator</a>
+      <a href="index.html" class="drawer-link active" style="color: var(--blue-600); font-weight: 700;">Home</a>
+      <a href="solutions.html" class="drawer-link">Solutions</a>
+      <a href="architecture.html" class="drawer-link">Architecture</a>
+      <a href="technologies.html" class="drawer-link">Technology Stack</a>
+      <a href="case-studies.html" class="drawer-link">Case Studies</a>
       <a href="careers.html" class="drawer-link">Careers &amp; Openings</a>
-      <a href="#contact" class="drawer-link">Contact &amp; 30-Min Call</a>
+      <a href="contact.html" class="drawer-link">Contact Us</a>
       <div class="drawer-action">
-        <a class="btn btn-primary btn-block" href="#contact">Schedule a Consultation</a>
+        <a class="btn btn-primary btn-block" href="contact.html">Schedule a Consultation</a>
       </div>
     </div>
   </div>
@@ -156,11 +155,11 @@
           </p>
 
           <div class="hero-cta-group">
-            <a class="btn btn-primary btn-lg" href="#contact">
+            <a class="btn btn-primary btn-lg" href="contact.html">
               <span>Book Architecture Consultation</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a class="btn btn-secondary btn-lg" href="#pipeline">
+            <a class="btn btn-secondary btn-lg" href="architecture.html">
               <span>Explore Interactive Pipeline</span>
             </a>
           </div>
@@ -437,645 +436,111 @@
       </div>
     </section>
 
-    <!-- Enterprise Solutions Matrix (Interactive Tabs) -->
-    <section class="section solutions-section" id="solutions">
+        <!-- Executive Solutions & Architecture Overview -->
+    <section class="section solutions-overview-section" id="solutions-overview" style="padding: 90px 0; background: #ffffff;">
       <div class="container">
         <div class="section-header text-center reveal-on-scroll">
-          <div class="section-eyebrow">CORE CAPABILITIES</div>
-          <h2 class="section-title">Built for complex enterprise data demands.</h2>
+          <div class="section-eyebrow">ENTERPRISE PRACTICE AREAS</div>
+          <h2 class="section-title">High-Performance Data Architecture &amp; Applied AI.</h2>
           <p class="section-subtitle">
-            From foundational lakehouse infrastructure to real-time stream processing and production AI engineering, we deliver robust, production-grade solutions.
+            We partner with enterprise data leaders to architect resilient cloud lakehouses, execute mission-critical cloud migrations, and operationalize enterprise LLMs.
           </p>
         </div>
 
-        <div class="solutions-tabs-wrapper">
-          <div class="solutions-tabs-nav" role="tablist">
-            <button class="tab-btn active" data-tab="tab-lakehouse" role="tab" aria-selected="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-              <span>Lakehouse &amp; Engineering</span>
-            </button>
-            <button class="tab-btn" data-tab="tab-migration" role="tab" aria-selected="false">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
-              <span>Cloud Migration</span>
-            </button>
-            <button class="tab-btn" data-tab="tab-streaming" role="tab" aria-selected="false">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-              <span>Real-Time Streaming</span>
-            </button>
-            <button class="tab-btn" data-tab="tab-governance" role="tab" aria-selected="false">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              <span>Governance &amp; BI</span>
-            </button>
-            <button class="tab-btn" data-tab="tab-ai" role="tab" aria-selected="false">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              <span>Applied AI &amp; LLMOps</span>
-            </button>
-          </div>
-
-          <!-- Tab 1: Lakehouse -->
-          <div class="tab-panel active" id="tab-lakehouse" role="tabpanel">
-            <div class="tab-panel-grid">
-              <div class="panel-details">
-                <span class="panel-tag">ENTERPRISE FOUNDATION</span>
-                <h3>Modern Cloud Lakehouse Engineering</h3>
-                <p>
-                  Break down data silos with unified Databricks Lakehouse and Microsoft Fabric architectures. We construct performant Bronze-Silver-Gold medallion pipelines with ACID compliance, schema enforcement, and time-travel querying.
-                </p>
-                <ul class="feature-bullets">
-                  <li><strong>High-Throughput PySpark &amp; SQL:</strong> Scalable batch transformations optimized for petabyte-scale workloads.</li>
-                  <li><strong>Delta Lake Storage Engine:</strong> ACID transactions, compaction, and automatic partition pruning.</li>
-                  <li><strong>Medallion Architecture:</strong> Clean segregation from raw ingestion to business-ready analytics cubes.</li>
-                  <li><strong>FinOps Cluster Autoscaling:</strong> Prevent compute overspending with automated idle timeouts and spot instances.</li>
-                </ul>
-                <div class="panel-meta">
-                  <span class="meta-label">Primary Stack:</span>
-                  <span class="meta-badge">Databricks</span>
-                  <span class="meta-badge">Delta Lake</span>
-                  <span class="meta-badge">PySpark</span>
-                  <span class="meta-badge">Microsoft Fabric</span>
-                  <span class="meta-badge">Azure Data Lake</span>
-                </div>
-              </div>
-              <div class="panel-card-preview">
-                <div class="panel-visual-wrap">
-                  <img src="images/cloud-lakehouse-mesh.jpg" alt="High-Tech Modern Cloud Lakehouse and Distributed Data Engineering" class="panel-visual-img" loading="lazy">
-                  <div class="panel-visual-badge">
-                    <span class="badge-dot"></span> Delta Lakehouse &amp; Spark
-                  </div>
-                </div>
-                <div class="preview-box">
-                  <div class="preview-title">Architecture Highlights</div>
-                  <div class="arch-layer-item">
-                    <span class="badge-gold">GOLD</span>
-                    <div>
-                      <strong>Business Aggregate Layer</strong>
-                      <span>Star-schema metrics, executive KPIs, automated dbt tests</span>
-                    </div>
-                  </div>
-                  <div class="arch-layer-item">
-                    <span class="badge-silver">SILVER</span>
-                    <div>
-                      <strong>Cleaned &amp; Enriched Conformed Models</strong>
-                      <span>De-duplicated, schema-validated, SCD Type-2 tracking</span>
-                    </div>
-                  </div>
-                  <div class="arch-layer-item">
-                    <span class="badge-bronze">BRONZE</span>
-                    <div>
-                      <strong>Raw Append-Only Ingestion</strong>
-                      <span>Streaming &amp; batch landing with original source fidelity</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab 2: Migration -->
-          <div class="tab-panel" id="tab-migration" role="tabpanel">
-            <div class="tab-panel-grid">
-              <div class="panel-details">
-                <span class="panel-tag">MODERNIZATION</span>
-                <h3>Legacy Modernization &amp; Zero-Downtime Migration</h3>
-                <p>
-                  Transition seamlessly from legacy on-premises SQL Server, Oracle, or aging data warehouses to scalable cloud-native lakehouses on Microsoft Azure and modern cloud ecosystems.
-                </p>
-                <ul class="feature-bullets">
-                  <li><strong>Dual-Run Validation Framework:</strong> Automated reconciliation checking 100% of data parity before cutover.</li>
-                  <li><strong>Stored Procedure to PySpark Refactoring:</strong> Convert brittle procedural SQL into modular, testable PySpark code.</li>
-                  <li><strong>Phased Cutover Strategies:</strong> Zero interruption to 24/7 business applications and downstream reporting.</li>
-                  <li><strong>Infrastructure as Code:</strong> Reproducible Terraform scripts across Dev, Staging, and Production environments.</li>
-                </ul>
-                <div class="panel-meta">
-                  <span class="meta-label">Primary Stack:</span>
-                  <span class="meta-badge">Azure Data Factory</span>
-                  <span class="meta-badge">Synapse</span>
-                  <span class="meta-badge">Snowflake</span>
-                  <span class="meta-badge">Terraform</span>
-                </div>
-              </div>
-              <div class="panel-card-preview">
-                <div class="preview-box">
-                  <div class="preview-title">Migration ROI Roadmap</div>
-                  <div class="kpi-row">
-                    <span class="kpi-num">65%</span>
-                    <span class="kpi-desc">Query latency reduction following columnar Delta Lake migration</span>
-                  </div>
-                  <div class="kpi-row">
-                    <span class="kpi-num">0 Hrs</span>
-                    <span class="kpi-desc">Unplanned downtime through dual-write change-data-capture (CDC)</span>
-                  </div>
-                  <div class="kpi-row">
-                    <span class="kpi-num">100%</span>
-                    <span class="kpi-desc">Automated data lineage &amp; pipeline testing</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab 3: Streaming -->
-          <div class="tab-panel" id="tab-streaming" role="tabpanel">
-            <div class="tab-panel-grid">
-              <div class="panel-details">
-                <span class="panel-tag">LOW-LATENCY</span>
-                <h3>Real-Time Streaming &amp; Event-Driven Systems</h3>
-                <p>
-                  Empower operations with sub-second event processing. We design robust Kafka, Azure Event Hubs, and Spark Structured Streaming architectures that ingest, validate, and alert on telemetry instantly.
-                </p>
-                <ul class="feature-bullets">
-                  <li><strong>Spark Structured Streaming:</strong> Exactly-once processing guarantees with checkpointing and stateful aggregations.</li>
-                  <li><strong>Event Broker Hardening:</strong> Highly available Apache Kafka &amp; Azure Event Hubs partitioning.</li>
-                  <li><strong>Real-Time Anomaly Detection:</strong> Catch fraud, system anomalies, or supply chain disruptions in milliseconds.</li>
-                  <li><strong>Dead Letter Queue &amp; Auto-Healing:</strong> Fail-safe handling for malformed payloads without pipeline crashes.</li>
-                </ul>
-                <div class="panel-meta">
-                  <span class="meta-label">Primary Stack:</span>
-                  <span class="meta-badge">Apache Kafka</span>
-                  <span class="meta-badge">Event Hubs</span>
-                  <span class="meta-badge">Spark Streaming</span>
-                  <span class="meta-badge">Redis</span>
-                </div>
-              </div>
-              <div class="panel-card-preview">
-                <div class="preview-box">
-                  <div class="preview-title">Streaming Architecture SLA</div>
-                  <div class="stream-stats">
-                    <div class="stream-item">
-                      <span class="label">End-to-End Latency</span>
-                      <span class="val">&lt; 150 ms</span>
-                    </div>
-                    <div class="stream-item">
-                      <span class="label">Burst Concurrency</span>
-                      <span class="val">100K msg/sec</span>
-                    </div>
-                    <div class="stream-item">
-                      <span class="label">Data Delivery</span>
-                      <span class="val">Exactly-Once</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab 4: Governance -->
-          <div class="tab-panel" id="tab-governance" role="tabpanel">
-            <div class="tab-panel-grid">
-              <div class="panel-details">
-                <span class="panel-tag">TRUST &amp; COMPLIANCE</span>
-                <h3>Enterprise BI, Data Governance &amp; Purview</h3>
-                <p>
-                  High-velocity data is only valuable if it is trusted, compliant, and easy to consume. We implement automated governance catalogs with Microsoft Purview, robust semantic models, and self-service Power BI architectures.
-                </p>
-                <ul class="feature-bullets">
-                  <li><strong>Microsoft Purview Cataloging:</strong> Automated classification, end-to-end lineage tracking, and data discovery.</li>
-                  <li><strong>dbt Semantic Layer:</strong> Centralized metrics definitions eliminating discrepancies between dashboards.</li>
-                  <li><strong>Enterprise Power BI Direct Lake:</strong> Query billions of records with zero refresh lag directly from OneLake.</li>
-                  <li><strong>Row &amp; Column-Level Security:</strong> Role-based access control (RBAC) ensuring adherence to GDPR and HIPAA.</li>
-                </ul>
-                <div class="panel-meta">
-                  <span class="meta-label">Primary Stack:</span>
-                  <span class="meta-badge">Power BI</span>
-                  <span class="meta-badge">Microsoft Purview</span>
-                  <span class="meta-badge">dbt</span>
-                  <span class="meta-badge">Direct Lake</span>
-                </div>
-              </div>
-              <div class="panel-card-preview">
-                <div class="preview-box">
-                  <div class="preview-title">Governance Guarantees</div>
-                  <ul class="bullet-list-sm">
-                    <li>✓ Automated sensitive PII masking &amp; encryption</li>
-                    <li>✓ Complete visual column-level data lineage</li>
-                    <li>✓ Audit logging &amp; compliance reporting ready</li>
-                    <li>✓ Single source of truth metrics repository</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab 5: AI -->
-          <div class="tab-panel" id="tab-ai" role="tabpanel">
-            <div class="tab-panel-grid">
-              <div class="panel-details">
-                <span class="panel-tag">INTELLIGENCE</span>
-                <h3>Applied AI, ML Engineering &amp; LLMOps</h3>
-                <p>
-                  Move AI from experimental notebooks to resilient enterprise production. We build the data plumbing, vector storage, feature stores, and automated model deployment pipelines required for enterprise-grade generative and predictive AI.
-                </p>
-                <ul class="feature-bullets">
-                  <li><strong>Retrieval-Augmented Generation (RAG):</strong> Production vector pipelines indexing enterprise documents with Azure AI Search.</li>
-                  <li><strong>MLflow Model Governance:</strong> Versioning, evaluation metrics, and automated deployment registries.</li>
-                  <li><strong>Automated Data Quality Agents:</strong> AI-powered drift monitoring and anomaly classification.</li>
-                  <li><strong>Cost-Controlled LLM Gateways:</strong> Token caching, rate limiting, and fallback routing for mission-critical apps.</li>
-                </ul>
-                <div class="panel-meta">
-                  <span class="meta-label">Primary Stack:</span>
-                  <span class="meta-badge">Azure OpenAI</span>
-                  <span class="meta-badge">MLflow</span>
-                  <span class="meta-badge">LangChain</span>
-                  <span class="meta-badge">Vector DBs</span>
-                  <span class="meta-badge">PyTorch</span>
-                </div>
-              </div>
-              <div class="panel-card-preview">
-                <div class="panel-visual-wrap">
-                  <img src="images/applied-ai-llmops.jpg" alt="Enterprise Applied AI, LLMOps and Neural Intelligence Platform" class="panel-visual-img" loading="lazy">
-                  <div class="panel-visual-badge">
-                    <span class="badge-dot"></span> LLMOps &amp; RAG Vectors
-                  </div>
-                </div>
-                <div class="preview-box">
-                  <div class="preview-title">Production AI Pipeline</div>
-                  <div class="arch-layer-item">
-                    <span class="badge-gold">AGENTS</span>
-                    <div><strong>Autonomous Data Agents</strong><span>Action execution, automated ETL repair</span></div>
-                  </div>
-                  <div class="arch-layer-item">
-                    <span class="badge-silver">RAG</span>
-                    <div><strong>Context Embedding Engine</strong><span>Vector search over conformed Lakehouse data</span></div>
-                  </div>
-                  <div class="arch-layer-item">
-                    <span class="badge-bronze">DATA</span>
-                    <div><strong>Curated Feature Store</strong><span>Zero-leakage training and inference data</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Interactive Architecture Solution Matcher -->
-        <div class="matcher-card-modern" id="solutionMatcher">
-          <div class="matcher-header">
-            <span class="badge-pulse"><span class="pulse-dot"></span> Interactive Assessment</span>
-            <h3>Architecture Solution Matcher</h3>
-            <p>Select your current platform and engineering objective to generate an immediate architectural blueprint recommendation.</p>
-          </div>
-
-          <div class="matcher-grid">
-            <div class="matcher-col">
-              <div class="matcher-col-title">1. Your Current Data Estate</div>
-              <div class="matcher-btn-group" id="matcherPlatformGroup">
-                <button type="button" class="matcher-btn active" data-platform="on-prem">
-                  <span>Legacy On-Prem / SQL Server / Oracle</span>
-                  <span>&rarr;</span>
-                </button>
-                <button type="button" class="matcher-btn" data-platform="cloud-dw">
-                  <span>Cloud Data Warehouse (Snowflake / Synapse)</span>
-                  <span>&rarr;</span>
-                </button>
-                <button type="button" class="matcher-btn" data-platform="fragmented">
-                  <span>Fragmented S3 / ADLS Data Lakes</span>
-                  <span>&rarr;</span>
-                </button>
-                <button type="button" class="matcher-btn" data-platform="greenfield">
-                  <span>Greenfield Cloud Build / Modernization</span>
-                  <span>&rarr;</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="matcher-col">
-              <div class="matcher-col-title">2. Primary Engineering Objective</div>
-              <div class="matcher-btn-group" id="matcherGoalGroup">
-                <button type="button" class="matcher-btn active" data-goal="lakehouse">
-                  <span>Modernize to Databricks Lakehouse &amp; Delta Lake</span>
-                  <span>✓</span>
-                </button>
-                <button type="button" class="matcher-btn" data-goal="finops">
-                  <span>Cut Cloud &amp; Compute Costs by 30-50% (FinOps)</span>
-                  <span>✓</span>
-                </button>
-                <button type="button" class="matcher-btn" data-goal="streaming">
-                  <span>Real-Time Event Streaming &amp; Kafka / Service Bus</span>
-                  <span>✓</span>
-                </button>
-                <button type="button" class="matcher-btn" data-goal="ai">
-                  <span>Enterprise Generative AI, RAG &amp; Feature Store</span>
-                  <span>✓</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="matcher-result-box" id="matcherResultBox">
-            <div class="matcher-result-content">
-              <h4 id="matcherResultTitle">Recommended Blueprint: Phased Medallion Lakehouse Migration</h4>
-              <p id="matcherResultDesc">Automate database schema conversion and CDC ingestion from legacy systems into Delta Lake bronze/silver/gold layers with zero business downtime.</p>
-            </div>
-            <a href="#contact" class="btn btn-primary" id="matcherActionBtn">Book Architecture Session &rarr;</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Architecture & Delivery Framework -->
-    <section class="section workflow-section" id="pipeline">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="section-eyebrow">OUR METHODOLOGY</div>
-          <h2 class="section-title">The Enterprise Data Acceleration Framework.</h2>
-          <p class="section-subtitle">
-            A battle-tested 4-phase engineering engagement model designed to deliver measurable business ROI within the first 60 days.
-          </p>
-        </div>
-
-        <div class="workflow-grid">
-          <div class="workflow-card reveal-on-scroll stagger-1">
-            <div class="wf-step">01</div>
-            <h3>Discovery &amp; Architectural Blueprint</h3>
-            <p>We audit legacy bottlenecks, data schema debt, and cloud compute inefficiencies to produce a target-state architecture and TCO savings model.</p>
-            <div class="wf-deliverable"><strong>Deliverable:</strong> Target Architecture &amp; FinOps Blueprint</div>
-          </div>
-
-          <div class="workflow-card reveal-on-scroll stagger-2">
-            <div class="wf-step">02</div>
-            <h3>Foundation &amp; Lakehouse Infrastructure</h3>
-            <p>Deploy secure Infrastructure-as-Code (Terraform) landing zones, identity access management, network isolation, and Delta Lake clusters.</p>
-            <div class="wf-deliverable"><strong>Deliverable:</strong> Production-ready Cloud Lakehouse</div>
-          </div>
-
-          <div class="workflow-card reveal-on-scroll stagger-3">
-            <div class="wf-step">03</div>
-            <h3>Pipeline Migration &amp; Automation</h3>
-            <p>Implement resilient PySpark ELT pipelines, automated orchestration with Azure Data Factory or Airflow, and automated data quality validation.</p>
-            <div class="wf-deliverable"><strong>Deliverable:</strong> CI/CD Pipelines with 99.99% Uptime</div>
-          </div>
-
-          <div class="workflow-card reveal-on-scroll stagger-4">
-            <div class="wf-step">04</div>
-            <h3>BI, AI Serving &amp; Team Enablement</h3>
-            <p>Connect semantic models, launch real-time Power BI Direct Lake dashboards, operationalize ML/AI endpoints, and train your internal teams.</p>
-            <div class="wf-deliverable"><strong>Deliverable:</strong> Live Dashboards &amp; Team Runbooks</div>
-          </div>
-        </div>
-
-        <!-- Architectural Blueprint Feature Banner -->
-        <div class="arch-blueprint-card reveal-scale">
-          <div class="arch-blueprint-inner">
-            <div class="arch-blueprint-media">
-              <img src="images/ai-data-architecture.jpg" alt="Delta Lake Medallion Architecture and Applied AI Platform Blueprint" class="arch-blueprint-img" loading="lazy">
-            </div>
-            <div class="arch-blueprint-body">
-              <span class="arch-blueprint-badge">PRODUCTION ENTERPRISE TOPOLOGY</span>
-              <h3 class="arch-blueprint-title">Unified Delta Lakehouse &amp; Applied AI Intelligence</h3>
-              <p class="arch-blueprint-desc">
-                From high-throughput bronze ingestion to vector embeddings and autonomous AI models, our architectures deliver sub-second query latency with 99.99% operational SLA assurance.
-              </p>
-              <div class="arch-blueprint-tags">
-                <span class="arch-tag-pill">Delta Lake 3.0</span>
-                <span class="arch-tag-pill">PySpark Compute</span>
-                <span class="arch-tag-pill">Vector Database</span>
-                <span class="arch-tag-pill">Serverless Cloud</span>
-                <span class="arch-tag-pill">Autonomous Agents</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Interactive Medallion Architecture Visualizer -->
-        <div class="medallion-box reveal-scale" id="medallionVisualizer">
-          <div class="medallion-top-bar">
+        <div class="overview-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 48px;">
+          <!-- Card 1: Lakehouse -->
+          <div class="feature-card reveal-on-scroll stagger-1" style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 16px; padding: 36px 30px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
             <div>
-              <span class="medallion-badge">INTERACTIVE ARCHITECTURE DEEP DIVE</span>
-              <h3 class="medallion-title">The Delta Lake Medallion Pipeline In Detail</h3>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <div class="card-icon" style="width: 52px; height: 52px; border-radius: 12px; background: rgba(2, 132, 199, 0.1); color: var(--blue-600); display: flex; align-items: center; justify-content: center;">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                </div>
+                <span class="badge" style="font-size: 11px; padding: 4px 10px; border-radius: 20px; background: var(--bg-secondary); color: var(--ink-600); font-weight: 600;">FOUNDATION</span>
+              </div>
+              <h3 style="font-size: 21px; font-weight: 700; color: var(--ink-900); margin-bottom: 12px;">Cloud Lakehouse Engineering</h3>
+              <p style="font-size: 14.5px; color: var(--ink-600); line-height: 1.65; margin-bottom: 22px;">
+                Production Delta Lake, PySpark cluster optimization, multi-cloud lakehouse meshes, and sub-second analytical serving layers engineered for petabyte scale.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px;">
+                <span class="chip-sm" style="font-size: 12px; padding: 4px 10px; background: var(--slate-100); border-radius: 6px; color: var(--ink-700); font-family: var(--font-mono);">Azure Databricks</span>
+                <span class="chip-sm" style="font-size: 12px; padding: 4px 10px; background: var(--slate-100); border-radius: 6px; color: var(--ink-700); font-family: var(--font-mono);">Fabric OneLake</span>
+                <span class="chip-sm" style="font-size: 12px; padding: 4px 10px; background: var(--slate-100); border-radius: 6px; color: var(--ink-700); font-family: var(--font-mono);">Delta Lake</span>
+              </div>
             </div>
-            <p class="medallion-sub">Select any architecture layer below to inspect data transformation rules, storage protocols, and enterprise reliability controls.</p>
+            <div>
+              <a href="solutions.html#tab-lakehouse" class="card-link" style="font-size: 14px; font-weight: 600; color: var(--blue-600); display: inline-flex; align-items: center; gap: 6px;">
+                <span>Explore Lakehouse Solutions</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
           </div>
 
-          <div class="medallion-tabs" role="tablist">
-            <button class="medallion-tab-btn active" data-layer="bronze" role="tab" aria-selected="true">
-              <span class="pill-dot dot-bronze"></span>
-              <span>1. Bronze (Raw Ingestion)</span>
-            </button>
-            <button class="medallion-tab-btn" data-layer="silver" role="tab" aria-selected="false">
-              <span class="pill-dot dot-silver"></span>
-              <span>2. Silver (Cleaned &amp; Conformed)</span>
-            </button>
-            <button class="medallion-tab-btn" data-layer="gold" role="tab" aria-selected="false">
-              <span class="pill-dot dot-gold"></span>
-              <span>3. Gold (Curated Business KPIs)</span>
-            </button>
+          <!-- Card 2: Modernization & FinOps -->
+          <div class="feature-card reveal-on-scroll stagger-2" style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 16px; padding: 36px 30px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <div class="card-icon" style="width: 52px; height: 52px; border-radius: 12px; background: rgba(14, 165, 233, 0.1); color: var(--cyan-600); display: flex; align-items: center; justify-content: center;">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+                </div>
+                <span class="badge" style="font-size: 11px; padding: 4px 10px; border-radius: 20px; background: var(--bg-secondary); color: var(--ink-600); font-weight: 600;">MODERNIZATION</span>
+              </div>
+              <h3 style="font-size: 21px; font-weight: 700; color: var(--ink-900); margin-bottom: 12px;">Enterprise Cloud Migration</h3>
+              <p style="font-size: 14.5px; color: var(--ink-600); line-height: 1.65; margin-bottom: 22px;">
+                Zero-downtime migration from legacy on-prem data warehouses (Teradata, Oracle, SQL Server) to modern cloud platforms with dual-run validation and FinOps cost controls.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px;">
+                <span class="chip-sm" style="font-size: 12px; padding: 4px 10px; background: var(--slate-100); border-radius: 6px; color: var(--ink-700); font-family: var(--font-mono);">Zero Data Loss</span>
+                <span class="chip-sm" style="font-size: 12px; padding: 4px 10px; background: var(--slate-100); border-radius: 6px; color: var(--ink-700); font-family: var(--font-mono);">40%+ Cost Reduction</span>
+                <span class="chip-sm" style="font-size: 12px; padding: 4px 10px; background: var(--slate-100); border-radius: 6px; color: var(--ink-700); font-family: var(--font-mono);">Terraform IaC</span>
+              </div>
+            </div>
+            <div>
+              <a href="solutions.html#tab-migration" class="card-link" style="font-size: 14px; font-weight: 600; color: var(--blue-600); display: inline-flex; align-items: center; gap: 6px;">
+                <span>Explore Migration Framework</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
           </div>
 
-          <div class="medallion-display-card" id="medallionDisplay">
-            <!-- Dynamic interactive content populated by script -->
+          <!-- Card 3: Applied AI & LLMOps -->
+          <div class="feature-card reveal-on-scroll stagger-3" style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 16px; padding: 36px 30px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <div class="card-icon" style="width: 52px; height: 52px; border-radius: 12px; background: rgba(59, 130, 246, 0.1); color: var(--blue-500); display: flex; align-items: center; justify-content: center;">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <span class="badge" style="font-size: 11px; padding: 4px 10px; border-radius: 20px; background: var(--bg-secondary); color: var(--ink-600); font-weight: 600;">INTELLIGENCE</span>
+              </div>
+              <h3 style="font-size: 21px; font-weight: 700; color: var(--ink-900); margin-bottom: 12px;">Applied AI &amp; Production LLMOps</h3>
+              <p style="font-size: 14.5px; color: var(--ink-600); line-height: 1.65; margin-bottom: 22px;">
+                Enterprise Retrieval-Augmented Generation (RAG), vector database topology, automated model governance, and continuous LLM evaluation pipelines with zero data leakage.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px;">
+                <span class="chip-sm" style="font-size: 12px; padding: 4px 10px; background: var(--slate-100); border-radius: 6px; color: var(--ink-700); font-family: var(--font-mono);">Azure OpenAI</span>
+                <span class="chip-sm" style="font-size: 12px; padding: 4px 10px; background: var(--slate-100); border-radius: 6px; color: var(--ink-700); font-family: var(--font-mono);">LangChain / RAG</span>
+                <span class="chip-sm" style="font-size: 12px; padding: 4px 10px; background: var(--slate-100); border-radius: 6px; color: var(--ink-700); font-family: var(--font-mono);">MLflow Ops</span>
+              </div>
+            </div>
+            <div>
+              <a href="solutions.html#tab-ai" class="card-link" style="font-size: 14px; font-weight: 600; color: var(--blue-600); display: inline-flex; align-items: center; gap: 6px;">
+                <span>Explore AI &amp; LLMOps Systems</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Filterable Technology Stack Radar -->
-    <section class="section tech-radar-section" id="technologies">
-      <div class="container">
-        <div class="section-header text-center reveal-on-scroll">
-          <div class="section-eyebrow">TECHNOLOGY ECOSYSTEM</div>
-          <h2 class="section-title">Built with premier enterprise technologies.</h2>
-          <p class="section-subtitle">
-            We partner with and engineer across leading cloud platforms, open source frameworks, and modern data stack standards.
-          </p>
-        </div>
-
-        <div class="tech-filter-bar reveal-on-scroll">
-          <button class="filter-btn active" data-filter="all">All Technologies</button>
-          <button class="filter-btn" data-filter="cloud">Cloud &amp; Lakehouse</button>
-          <button class="filter-btn" data-filter="pipeline">Pipelines &amp; Compute</button>
-          <button class="filter-btn" data-filter="storage">Storage &amp; Data Mesh</button>
-          <button class="filter-btn" data-filter="analytics">Analytics &amp; AI</button>
-        </div>
-
-        <div class="tech-grid reveal-on-scroll">
-          <div class="tech-card" data-category="cloud">
-            <div class="tech-icon-wrap">
-              <img src="images/tech/azure.svg" alt="Microsoft Azure Logo" class="tech-icon-img">
-            </div>
-            <h4>Microsoft Azure</h4>
-            <p>Azure Data Factory, Synapse, Blob Storage, Managed Identities, VNet isolation.</p>
-            <span class="tech-pill">Cloud Platform</span>
-          </div>
-
-          <div class="tech-card" data-category="cloud">
-            <div class="tech-icon-wrap">
-              <img src="images/tech/databricks.svg" alt="Databricks Logo" class="tech-icon-img">
-            </div>
-            <h4>Databricks</h4>
-            <p>Unified Lakehouse, Delta Lake, Unity Catalog, Photon engine acceleration.</p>
-            <span class="tech-pill">Lakehouse</span>
-          </div>
-
-          <div class="tech-card" data-category="cloud">
-            <div class="tech-icon-wrap">
-              <img src="images/tech/fabric.svg" alt="Microsoft Fabric Logo" class="tech-icon-img">
-            </div>
-            <h4>Microsoft Fabric</h4>
-            <p>Next-gen unified analytics, OneLake SaaS data lake, Synapse Data Engineering.</p>
-            <span class="tech-pill">SaaS Lakehouse</span>
-          </div>
-
-          <div class="tech-card" data-category="pipeline">
-            <div class="tech-icon-wrap">
-              <img src="images/tech/spark.svg" alt="Apache Spark Logo" class="tech-icon-img">
-            </div>
-            <h4>Apache Spark &amp; PySpark</h4>
-            <p>Distributed parallel compute, optimized shuffle algorithms, vector operations.</p>
-            <span class="tech-pill">Data Processing</span>
-          </div>
-
-          <div class="tech-card" data-category="storage">
-            <div class="tech-icon-wrap">
-              <img src="images/tech/deltalake.svg" alt="Delta Lake Logo" class="tech-icon-img">
-            </div>
-            <h4>Delta Lake</h4>
-            <p>ACID transactional storage, time-travel versioning, auto-compaction.</p>
-            <span class="tech-pill">Storage Format</span>
-          </div>
-
-          <div class="tech-card" data-category="pipeline">
-            <div class="tech-icon-wrap">
-              <img src="images/tech/kafka.svg" alt="Apache Kafka Logo" class="tech-icon-img">
-            </div>
-            <h4>Apache Kafka</h4>
-            <p>Distributed streaming platform, event replayability, low-latency queues.</p>
-            <span class="tech-pill">Streaming</span>
-          </div>
-
-          <div class="tech-card" data-category="analytics">
-            <div class="tech-icon-wrap">
-              <img src="images/tech/powerbi.svg" alt="Microsoft Power BI Logo" class="tech-icon-img">
-            </div>
-            <h4>Microsoft Power BI</h4>
-            <p>Direct Lake query mode, paginated reporting, enterprise semantic models.</p>
-            <span class="tech-pill">Enterprise BI</span>
-          </div>
-
-          <div class="tech-card" data-category="pipeline">
-            <div class="tech-icon-wrap">
-              <img src="images/tech/dbt.svg" alt="dbt Labs Logo" class="tech-icon-img">
-            </div>
-            <h4>dbt (Data Build Tool)</h4>
-            <p>Modular transformations, version-controlled testing, documentation lineage.</p>
-            <span class="tech-pill">Transformation</span>
-          </div>
-
-          <div class="tech-card" data-category="analytics">
-            <div class="tech-icon-wrap">
-              <img src="images/tech/openai.svg" alt="Azure OpenAI Logo" class="tech-icon-img">
-            </div>
-            <h4>Azure OpenAI &amp; LLMs</h4>
-            <p>Enterprise private models, semantic search, automated RAG pipelines.</p>
-            <span class="tech-pill">Applied AI</span>
-          </div>
-
-          <div class="tech-card" data-category="storage">
-            <div class="tech-icon-wrap">
-              <img src="images/tech/snowflake.svg" alt="Snowflake Logo" class="tech-icon-img">
-            </div>
-            <h4>Snowflake</h4>
-            <p>Multi-cluster shared data architecture, zero-copy cloning, data clean rooms.</p>
-            <span class="tech-pill">Data Warehouse</span>
-          </div>
-
-          <div class="tech-card" data-category="pipeline">
-            <div class="tech-icon-wrap">
-              <img src="images/tech/terraform.svg" alt="HashiCorp Terraform Logo" class="tech-icon-img">
-            </div>
-            <h4>Terraform &amp; CI/CD</h4>
-            <p>Declarative cloud provisioning, GitHub Actions &amp; Azure DevOps automation.</p>
-            <span class="tech-pill">DevOps / IaC</span>
-          </div>
-
-          <div class="tech-card" data-category="storage">
-            <div class="tech-icon-wrap">
-              <img src="images/tech/purview.svg" alt="Microsoft Purview Logo" class="tech-icon-img">
-            </div>
-            <h4>Microsoft Purview</h4>
-            <p>Automated governance, catalog discovery, sensitivity labeling, compliance.</p>
-            <span class="tech-pill">Governance</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Case Studies / Measurable Impact -->
-    <section class="section impact-section" id="impact">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="section-eyebrow">PROVEN OUTCOMES</div>
-          <h2 class="section-title">Delivering measurable enterprise impact.</h2>
-          <p class="section-subtitle">Real-world results achieved for high-growth tech firms and enterprise organizations.</p>
-        </div>
-
-        <div class="case-grid">
-          <div class="case-card reveal-on-scroll stagger-1">
-            <div class="case-tag">FINTECH &amp; CAPITAL MARKETS</div>
-            <h3>Real-Time Fraud Detection &amp; Lakehouse Acceleration</h3>
-            <p class="case-desc">
-              Migrated a legacy on-premises transactional SQL database to a high-concurrency Databricks Lakehouse processing 80M daily transactions.
-            </p>
-            <div class="case-metrics">
-              <div class="cm-item">
-                <span class="cm-val">74%</span>
-                <span class="cm-lbl">Faster Query Times</span>
-              </div>
-              <div class="cm-item">
-                <span class="cm-val">$280K</span>
-                <span class="cm-lbl">Annual Cloud Savings</span>
-              </div>
-              <div class="cm-item">
-                <span class="cm-val">&lt; 2 sec</span>
-                <span class="cm-lbl">Fraud Alerting Latency</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="case-card reveal-on-scroll stagger-2">
-            <div class="case-tag">HEALTHCARE &amp; LIFE SCIENCES</div>
-            <h3>HIPAA-Compliant Unified Data Platform on Azure</h3>
-            <p class="case-desc">
-              Constructed an end-to-end conformed patient analytics lakehouse with automated Microsoft Purview data masking and automated clinical telemetry pipelines.
-            </p>
-            <div class="case-metrics">
-              <div class="cm-item">
-                <span class="cm-val">100%</span>
-                <span class="cm-lbl">HIPAA &amp; SOC2 Audit OK</span>
-              </div>
-              <div class="cm-item">
-                <span class="cm-val">90 Days</span>
-                <span class="cm-lbl">Delivery Schedule</span>
-              </div>
-              <div class="cm-item">
-                <span class="cm-val">12x</span>
-                <span class="cm-lbl">Reporting Refresh Rate</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="case-card reveal-on-scroll stagger-3">
-            <div class="case-tag">RETAIL &amp; GLOBAL SUPPLY CHAIN</div>
-            <h3>Event-Driven IoT Telemetry &amp; Inventory Engine</h3>
-            <p class="case-desc">
-              Engineered a distributed Kafka and Spark Streaming ingestion pipeline connecting 1,200 warehouse locations with real-time stock replenishment forecasting.
-            </p>
-            <div class="case-metrics">
-              <div class="cm-item">
-                <span class="cm-val">99.99%</span>
-                <span class="cm-lbl">Pipeline Uptime</span>
-              </div>
-              <div class="cm-item">
-                <span class="cm-val">35M+</span>
-                <span class="cm-lbl">Daily Sensor Events</span>
-              </div>
-              <div class="cm-item">
-                <span class="cm-val">0</span>
-                <span class="cm-lbl">Data Ingestion Loss</span>
-              </div>
-            </div>
-          </div>
+        <div class="overview-cta-bar reveal-on-scroll" style="margin-top: 48px; text-align: center; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="solutions.html" class="btn btn-primary btn-lg">
+            <span>Explore Full Solutions Matrix</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="architecture.html" class="btn btn-secondary btn-lg">
+            <span>View 4-Stage Architecture Blueprint &rarr;</span>
+          </a>
+          <a href="technologies.html" class="btn btn-secondary btn-lg">
+            <span>Explore Technology Radar &rarr;</span>
+          </a>
         </div>
       </div>
     </section>
@@ -1355,210 +820,32 @@
       </script>
     </section>
 
-    <!-- Interactive Cloud ROI & FinOps Savings Calculator -->
-    <section class="section roi-section" id="roi-calculator">
+        <!-- Executive Consultation CTA Banner -->
+    <section class="section home-cta-section" style="padding: 70px 0 90px; background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);">
       <div class="container">
-        <div class="section-header text-center reveal-on-scroll">
-          <div class="section-eyebrow">FINOPS COMPUTATION ESTIMATOR</div>
-          <h2 class="section-title">Calculate your projected cloud lakehouse savings.</h2>
-          <p class="section-subtitle">
-            See how much your organization can eliminate in redundant compute spend while dramatically accelerating data transformation SLAs.
-          </p>
-        </div>
-
-        <div class="roi-calculator-card reveal-scale">
-          <div class="roi-calc-grid">
-            <!-- Left: Interactive Inputs -->
-            <div class="calc-inputs-col">
-              <div class="calc-group">
-                <div class="calc-label-row">
-                  <label for="spendRange" class="calc-label">Current Monthly Cloud Compute &amp; Storage Spend</label>
-                  <span class="calc-spend-badge" id="spendDisplay">$50,000 / mo</span>
-                </div>
-                <input type="range" class="calc-range" id="spendRange" min="10000" max="200000" step="5000" value="50000">
-                <div class="range-labels">
-                  <span>$10k/mo</span>
-                  <span>$50k/mo</span>
-                  <span>$100k/mo</span>
-                  <span>$200k+/mo</span>
-                </div>
-              </div>
-
-              <div class="calc-group">
-                <label class="calc-label">Primary Cloud Platform</label>
-                <div class="platform-chips" id="platformChips">
-                  <button type="button" class="plat-chip active" data-platform="Databricks">Azure Databricks</button>
-                  <button type="button" class="plat-chip" data-platform="Fabric">Microsoft Fabric</button>
-                  <button type="button" class="plat-chip" data-platform="AzureADF">Azure Data Lake / ADF</button>
-                  <button type="button" class="plat-chip" data-platform="Snowflake">Snowflake on Azure</button>
-                </div>
-              </div>
-
-              <div class="calc-group">
-                <label class="calc-label">Primary Technical Objective</label>
-                <div class="platform-chips" id="objectiveChips">
-                  <button type="button" class="plat-chip active" data-ratio="0.42" data-speed="3.2" data-obj="FinOps Cost Reduction">Cut Cloud Compute Overhead</button>
-                  <button type="button" class="plat-chip" data-ratio="0.35" data-speed="4.5" data-obj="Query Performance">Accelerate Slow Queries</button>
-                  <button type="button" class="plat-chip" data-ratio="0.38" data-speed="2.8" data-obj="Pipeline Reliability">Fix Pipeline Failures &amp; SLAs</button>
-                  <button type="button" class="plat-chip" data-ratio="0.45" data-speed="3.5" data-obj="Legacy Migration">Migrate from Legacy DWH</button>
-                </div>
-              </div>
+        <div class="cta-banner-card reveal-scale" style="background: linear-gradient(135deg, #091325 0%, #0f1f3d 100%); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 20px; padding: 56px 40px; color: #ffffff; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-xl);">
+          <div style="position: absolute; top: -60px; right: -60px; width: 220px; height: 220px; background: radial-gradient(circle, rgba(2, 132, 199, 0.3) 0%, transparent 70%); pointer-events: none;"></div>
+          <div style="position: absolute; bottom: -60px; left: -60px; width: 220px; height: 220px; background: radial-gradient(circle, rgba(14, 165, 233, 0.25) 0%, transparent 70%); pointer-events: none;"></div>
+          
+          <div style="position: relative; z-index: 1; max-width: 760px; margin: 0 auto;">
+            <div class="eyebrow-pill" style="display: inline-flex; margin-bottom: 20px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8;">
+              <span class="pill-spark">✦</span>
+              <span>GET STARTED WITH MEDHYX</span>
             </div>
-
-            <!-- Right: Dynamic Results Box -->
-            <div class="calc-results-col">
-              <div class="results-inner-card">
-                <span class="results-eyebrow">PROJECTED ANNUAL OPTIMIZATION</span>
-                <div class="savings-number" id="annualSavings">$252,000</div>
-                <div class="savings-subtext">Estimated annual savings recovered from compute &amp; storage rightsizing</div>
-
-                <div class="metric-breakdown-row">
-                  <div class="breakdown-stat">
-                    <span class="breakdown-val" id="querySpeedup">3.2x</span>
-                    <span class="breakdown-lbl">Faster Pipeline Latency</span>
-                  </div>
-                  <div class="breakdown-stat">
-                    <span class="breakdown-val" id="monthlySavings">$21,000</span>
-                    <span class="breakdown-lbl">Monthly Cashflow Saved</span>
-                  </div>
-                  <div class="breakdown-stat">
-                    <span class="breakdown-val" id="slaUptime">99.99%</span>
-                    <span class="breakdown-lbl">Production Pipeline SLA</span>
-                  </div>
-                </div>
-
-                <div class="recommended-arch-box">
-                  <div class="arch-box-title">Recommended Architecture Blueprint:</div>
-                  <p class="arch-box-desc" id="archDesc">Delta Lake Medallion with Databricks Serverless autoscaling, Photon runtime optimization, and automated spot-cluster fallback.</p>
-                </div>
-
-                <button type="button" class="btn btn-primary btn-block" id="claimAuditBtn">
-                  <span>Claim Your Custom FinOps Audit &rarr;</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Consultation / Contact Section -->
-    <section class="section contact-section" id="contact">
-      <div class="container">
-        <div class="contact-card-modern reveal-scale">
-          <div class="contact-header text-center">
-            <div class="section-eyebrow eyebrow-light">START A CONVERSATION</div>
-            <h2 class="contact-title">Let's solve your enterprise data challenges.</h2>
-            <p class="contact-subtitle">
-              Schedule an exploratory architecture review with our principal engineers. No generic sales pitch &mdash; just technical clarity and actionable roadmap insights.
+            <h2 style="font-family: var(--font-heading); font-size: clamp(28px, 3.6vw, 42px); font-weight: 700; color: #ffffff; line-height: 1.25; margin-bottom: 18px;">
+              Ready to architect your next-generation data platform?
+            </h2>
+            <p style="font-size: 16.5px; color: #94a3b8; line-height: 1.65; margin-bottom: 32px; max-width: 660px; margin-left: auto; margin-right: auto;">
+              Schedule a 30-minute discovery call with our Principal Cloud Architects. Discuss your migration roadmap, lakehouse topology, or LLMOps readiness with zero sales pressure.
             </p>
-          </div>
-
-          <div class="contact-inner-grid">
-            <div class="contact-info-col">
-              <div class="contact-method">
-                <span class="cm-icon">✉</span>
-                <div>
-                  <span class="cm-title">Direct Email</span>
-                  <a href="mailto:hello@medhyx.com" class="cm-link">hello@medhyx.com</a>
-                </div>
-              </div>
-              <div class="contact-method">
-                <span class="cm-icon">🌐</span>
-                <div>
-                  <span class="cm-title">LinkedIn</span>
-                  <a href="https://www.linkedin.com/company/medhyx-solutions/" target="_blank" rel="noopener noreferrer" class="cm-link">linkedin.com/company/medhyx-solutions &rarr;</a>
-                </div>
-              </div>
-              <div class="contact-method">
-                <span class="cm-icon">🏢</span>
-                <div>
-                  <span class="cm-title">Corporate Headquarters</span>
-                  <span class="cm-text">New Delhi, India</span>
-                </div>
-              </div>
-              <div class="contact-method">
-                <span class="cm-icon">📍</span>
-                <div>
-                  <span class="cm-title">Global Reach</span>
-                  <span class="cm-text">Serving clients across North America, Europe &amp; APAC</span>
-                </div>
-              </div>
-
-              <!-- Direct 30-Min Discovery Session Card -->
-              <div class="instant-booking-card">
-                <div class="ibc-header">
-                  <span class="ibc-icon">📅</span>
-                  <div>
-                    <h4>Direct 30-Min Discovery Call</h4>
-                    <span class="ibc-subtitle">Skip the email back-and-forth</span>
-                  </div>
-                </div>
-                <p class="ibc-desc">
-                  Connect 1-on-1 with a Lead Cloud Data Architect to evaluate your pipeline challenges, data models, or cloud migration timeline.
-                </p>
-                <div class="ibc-features">
-                  <span>✓ 30-minute private consultation</span>
-                  <span>✓ Signed mutual NDA available</span>
-                  <span>✓ Actionable architecture roadmap</span>
-                </div>
-                <a href="mailto:hello@medhyx.com?subject=Schedule%2030-Min%20Architecture%20Discovery%20Call%20-%20Medhyx&body=Hi%20Medhyx%20Team%2C%0A%0AI%20would%20like%20to%20schedule%20a%2030-minute%20technical%20architecture%20discovery%20call%20to%20discuss%20our%20cloud%20data%20platform.%0A%0ACompany%3A%0APreferred%20Dates%2FTimes%3A%0AWorkload%20Focus%20(Azure%2FDatabricks%2FFabric)%3A" class="btn btn-secondary btn-block ibc-btn">
-                  <span>Request Calendar Slot &rarr;</span>
-                </a>
-              </div>
-
-              <div class="nda-badge">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                <span>Enterprise NDAs respected before initial architectural discovery.</span>
-              </div>
-            </div>
-
-            <div class="contact-form-col">
-              <form class="consultation-form" id="consultationForm" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="fc5e4f78-3216-4c5c-a551-f2fb6f534836">
-                <input type="hidden" name="subject" value="New Architecture Consultation Request - Medhyx Solutions">
-                <input type="hidden" name="from_name" value="Medhyx Solutions Lead System">
-                <input type="checkbox" name="botcheck" class="hidden" style="display:none">
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="clientName">Full Name *</label>
-                    <input type="text" id="clientName" name="name" placeholder="e.g. Alex Morgan" maxlength="100" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="clientEmail">Work Email *</label>
-                    <input type="email" id="clientEmail" name="email" placeholder="alex@company.com" maxlength="100" required>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="companyName">Organization / Company</label>
-                  <input type="text" id="companyName" name="company" placeholder="e.g. Acme Health" maxlength="120">
-                </div>
-
-                <div class="form-group">
-                  <label>Primary Focus Area *</label>
-                  <div class="chip-group" id="focusAreaGroup">
-                    <button type="button" class="chip-btn active" data-value="Lakehouse Engineering">Lakehouse &amp; Engineering</button>
-                    <button type="button" class="chip-btn" data-value="Cloud Migration">Cloud Migration</button>
-                    <button type="button" class="chip-btn" data-value="Real-Time Streaming">Real-Time Streaming</button>
-                    <button type="button" class="chip-btn" data-value="AI & LLMOps">AI &amp; LLMOps</button>
-                    <button type="button" class="chip-btn" data-value="FinOps Optimization">FinOps / Cost Audit</button>
-                  </div>
-                  <input type="hidden" name="focusArea" id="focusAreaInput" value="Lakehouse Engineering">
-                </div>
-
-                <div class="form-group">
-                  <label for="projectScope">Project Overview / Current Challenges</label>
-                  <textarea id="projectScope" name="message" rows="3" maxlength="3000" placeholder="Briefly describe your data volume, current cloud stack, and key objectives..."></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitFormBtn">
-                  <span>Submit Consultation Request</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
-
-                <div class="form-status" id="formStatus" style="display: none;"></div>
-              </form>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+              <a href="contact.html" class="btn btn-primary btn-lg" style="padding: 14px 28px;">
+                <span>Schedule Architecture Discovery</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="case-studies.html" class="btn btn-secondary btn-lg" style="padding: 14px 28px; background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2); color: #ffffff;">
+                <span>Explore Client Case Studies &rarr;</span>
+              </a>
             </div>
           </div>
         </div>
@@ -1571,7 +858,7 @@
     <div class="container footer-container">
       <div class="footer-top">
         <div class="footer-brand-col">
-          <a href="#home" class="footer-brand">
+          <a href="index.html" class="footer-brand">
             <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" class="footer-logo">
           </a>
           <p class="footer-tagline">
@@ -1588,29 +875,29 @@
         </div>
 
         <div class="footer-links-grid">
-          <div class="footer-col">
+                    <div class="footer-col">
             <h5>Solutions</h5>
-            <a href="#solutions">Lakehouse Engineering</a>
-            <a href="#solutions">Cloud Migration</a>
-            <a href="#solutions">Event Streaming</a>
-            <a href="#solutions">Governance &amp; Purview</a>
-            <a href="#solutions">Applied AI &amp; LLMs</a>
+            <a href="solutions.html#tab-lakehouse">Lakehouse Engineering</a>
+            <a href="solutions.html#tab-migration">Cloud Migration</a>
+            <a href="solutions.html#tab-streaming">Event Streaming</a>
+            <a href="solutions.html#tab-governance">Governance &amp; Purview</a>
+            <a href="solutions.html#tab-ai">Applied AI &amp; LLMs</a>
           </div>
 
           <div class="footer-col">
             <h5>Architecture</h5>
-            <a href="#pipeline">4-Stage Pipeline</a>
-            <a href="#technologies">Technology Radar</a>
-            <a href="#pipeline">Medallion Patterns</a>
-            <a href="#why-us">FinOps Guardrails</a>
+            <a href="architecture.html">4-Stage Pipeline</a>
+            <a href="technologies.html">Technology Radar</a>
+            <a href="architecture.html#medallion">Medallion Patterns</a>
+            <a href="technologies.html#roi-calculator">FinOps ROI Calculator</a>
           </div>
 
           <div class="footer-col">
             <h5>Company</h5>
-            <a href="#why-us">Why Medhyx</a>
+            <a href="index.html#why-us">Why Medhyx</a>
             <a href="careers.html">Careers &amp; Openings</a>
-            <a href="#impact">Case Studies</a>
-            <a href="#contact">Contact</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="contact.html">Contact Us</a>
             <a href="https://www.linkedin.com/company/medhyx-solutions/" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a>
           </div>
         </div>
