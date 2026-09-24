@@ -89,6 +89,7 @@ a {
 
 button {
   font-family: inherit;
+  color: inherit;
   cursor: pointer;
   border: none;
   background: none;
@@ -2547,13 +2548,15 @@ button {
   gap: 10px;
 }
 
-.matcher-btn {
+.matcher-btn,
+.match-btn,
+.matcher-btn-group button {
   text-align: left;
-  padding: 12px 16px;
+  padding: 12px 18px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0 !important;
   font-size: 13.5px;
   font-weight: 600;
   cursor: pointer;
@@ -2563,16 +2566,21 @@ button {
   justify-content: space-between;
 }
 
-.matcher-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: white;
-  border-color: rgba(255, 255, 255, 0.2);
+.matcher-btn:hover,
+.match-btn:hover,
+.matcher-btn-group button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+  border-color: rgba(56, 189, 248, 0.4);
 }
 
-.matcher-btn.active {
-  background: rgba(14, 165, 233, 0.15);
-  border-color: var(--blue-400);
-  color: #38bdf8;
+.matcher-btn.active,
+.match-btn.active,
+.matcher-btn-group button.active {
+  background: rgba(14, 165, 233, 0.18) !important;
+  border-color: var(--blue-400) !important;
+  color: #38bdf8 !important;
+  box-shadow: 0 0 16px rgba(14, 165, 233, 0.2);
 }
 
 .matcher-result-box {

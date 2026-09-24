@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    // Clean URL: automatically strip .html from the address bar if present
+    if (window.location.pathname.endsWith('.html')) {
+      var cleanPath = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+      window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+    }
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404: Page Not Found | Medhyx Solutions</title>
@@ -11,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2.3">
+  <link rel="stylesheet" href="css/style.css?v=2.4">
   <style>
     .error-page-container {
       min-height: 80vh;
@@ -75,18 +83,18 @@
   <div class="top-banner">
     <div class="top-banner-inner">
       <span>Medhyx Solutions — Enterprise Data Engineering &amp; Cloud Lakehouse Consultancy</span>
-      <a href="contact.html" class="banner-link">Contact Us &rarr;</a>
+      <a href="contact" class="banner-link">Contact Us &rarr;</a>
     </div>
   </div>
 
   <!-- Header -->
   <header class="nav" id="navbar">
     <div class="nav-inner">
-      <a class="brand" href="index.html" aria-label="Medhyx Solutions Home">
+      <a class="brand" href="/" aria-label="Medhyx Solutions Home">
         <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" class="brand-logo">
       </a>
       <div class="nav-actions">
-        <a class="btn btn-nav" href="index.html">Back to Home</a>
+        <a class="btn btn-nav" href="/">Back to Home</a>
       </div>
     </div>
   </header>
@@ -99,20 +107,20 @@
         The cloud resource or URL you requested cannot be located. It may have moved, or the link address might be incorrect.
       </p>
 
-      <a href="index.html" class="btn btn-primary btn-lg">Return to Homepage &rarr;</a>
+      <a href="/" class="btn btn-primary btn-lg">Return to Homepage &rarr;</a>
 
       <div class="quick-links">
-        <a href="solutions.html" class="quick-link">Enterprise Solutions</a>
+        <a href="solutions" class="quick-link">Enterprise Solutions</a>
         <span>&bull;</span>
-        <a href="architecture.html" class="quick-link">Architecture Blueprint</a>
+        <a href="architecture" class="quick-link">Architecture Blueprint</a>
         <span>&bull;</span>
-        <a href="technologies.html" class="quick-link">Tech Stack</a>
+        <a href="technologies" class="quick-link">Tech Stack</a>
         <span>&bull;</span>
-        <a href="case-studies.html" class="quick-link">Case Studies</a>
+        <a href="case-studies" class="quick-link">Case Studies</a>
         <span>&bull;</span>
-        <a href="careers.html" class="quick-link">Careers &amp; Open Roles</a>
+        <a href="careers" class="quick-link">Careers &amp; Open Roles</a>
         <span>&bull;</span>
-        <a href="contact.html" class="quick-link">Contact Our Team</a>
+        <a href="contact" class="quick-link">Contact Our Team</a>
       </div>
     </div>
   </main>

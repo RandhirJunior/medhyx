@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    // Clean URL: automatically strip .html from the address bar if present
+    if (window.location.pathname.endsWith('.html')) {
+      var cleanPath = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+      window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+    }
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enterprise Technology Stack &amp; FinOps Estimator | Medhyx Solutions</title>
   <meta name="description" content="Explore our enterprise data engineering technology stack: Microsoft Azure, Databricks, Apache Spark, Delta Lake, Snowflake, Microsoft Fabric, and cloud FinOps optimization.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://medhyx.com/technologies.html">
+  <link rel="canonical" href="https://medhyx.com/technologies">
   <meta name="theme-color" content="#0284c7">
   <link rel="manifest" href="site.webmanifest">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2.3">
+  <link rel="stylesheet" href="css/style.css?v=2.4">
 </head>
 <body>
 
@@ -28,28 +36,28 @@
     <div class="top-banner-inner">
       <span class="badge-pulse"><span class="pulse-dot"></span> Ecosystem Standards</span>
       <span>Certified Cloud &amp; Lakehouse Practitioners across Azure, Databricks &amp; Microsoft Fabric.</span>
-      <a href="contact.html" class="banner-link">Book FinOps Review &rarr;</a>
+      <a href="contact" class="banner-link">Book FinOps Review &rarr;</a>
     </div>
   </div>
 
   <!-- Main Navigation Header -->
   <header class="nav" id="navbar">
     <div class="nav-inner">
-      <a class="brand" href="index.html" aria-label="Medhyx Solutions Home">
+      <a class="brand" href="/" aria-label="Medhyx Solutions Home">
         <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" class="brand-logo">
       </a>
 
       <nav class="desktop-nav" aria-label="Primary Navigation">
-        <a href="index.html" class="nav-item">Home</a>
-        <a href="solutions.html" class="nav-item">Solutions</a>
-        <a href="architecture.html" class="nav-item">Architecture</a>
-        <a href="technologies.html" class="nav-item active">Tech Stack</a>
-        <a href="case-studies.html" class="nav-item">Case Studies</a>
-        <a href="careers.html" class="nav-item">Careers</a>
+        <a href="/" class="nav-item">Home</a>
+        <a href="solutions" class="nav-item">Solutions</a>
+        <a href="architecture" class="nav-item">Architecture</a>
+        <a href="technologies" class="nav-item active">Tech Stack</a>
+        <a href="case-studies" class="nav-item">Case Studies</a>
+        <a href="careers" class="nav-item">Careers</a>
       </nav>
 
       <div class="nav-actions">
-        <a class="btn btn-secondary btn-nav-cta" href="contact.html">Contact Us</a>
+        <a class="btn btn-secondary btn-nav-cta" href="contact">Contact Us</a>
         <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -66,15 +74,15 @@
       <button class="close-drawer" id="closeDrawerBtn" aria-label="Close Menu">&times;</button>
     </div>
     <div class="drawer-body">
-      <a href="index.html" class="drawer-link">Home</a>
-      <a href="solutions.html" class="drawer-link">Solutions</a>
-      <a href="architecture.html" class="drawer-link">Architecture</a>
-      <a href="technologies.html" class="drawer-link active" style="color: var(--blue-600); font-weight: 700;">Technology Stack</a>
-      <a href="case-studies.html" class="drawer-link">Case Studies</a>
-      <a href="careers.html" class="drawer-link">Careers &amp; Openings</a>
-      <a href="contact.html" class="drawer-link">Contact</a>
+      <a href="/" class="drawer-link">Home</a>
+      <a href="solutions" class="drawer-link">Solutions</a>
+      <a href="architecture" class="drawer-link">Architecture</a>
+      <a href="technologies" class="drawer-link active" style="color: var(--blue-600); font-weight: 700;">Technology Stack</a>
+      <a href="case-studies" class="drawer-link">Case Studies</a>
+      <a href="careers" class="drawer-link">Careers &amp; Openings</a>
+      <a href="contact" class="drawer-link">Contact</a>
       <div class="drawer-action">
-        <a class="btn btn-primary btn-block" href="contact.html">Book FinOps Review</a>
+        <a class="btn btn-primary btn-block" href="contact">Book FinOps Review</a>
       </div>
     </div>
   </div>
@@ -319,7 +327,7 @@
                   <p class="arch-box-desc" id="archDesc">Delta Lake Medallion with Databricks Serverless autoscaling, Photon runtime optimization, and automated spot-cluster fallback.</p>
                 </div>
 
-                <a href="contact.html" class="btn btn-primary btn-block" id="claimAuditBtn">
+                <a href="contact" class="btn btn-primary btn-block" id="claimAuditBtn">
                   <span>Claim Your Custom FinOps Audit &rarr;</span>
                 </a>
               </div>
@@ -336,7 +344,7 @@
     <div class="container footer-container">
       <div class="footer-top">
         <div class="footer-brand-col">
-          <a href="index.html" class="footer-brand">
+          <a href="/" class="footer-brand">
             <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" class="footer-logo">
           </a>
           <p class="footer-tagline">
@@ -355,27 +363,27 @@
         <div class="footer-links-grid">
           <div class="footer-col">
             <h5>Solutions</h5>
-            <a href="solutions.html#tab-lakehouse">Lakehouse Engineering</a>
-            <a href="solutions.html#tab-migration">Cloud Migration</a>
-            <a href="solutions.html#tab-streaming">Event Streaming</a>
-            <a href="solutions.html#tab-governance">Governance &amp; Purview</a>
-            <a href="solutions.html#tab-ai">Applied AI &amp; LLMs</a>
+            <a href="solutions#tab-lakehouse">Lakehouse Engineering</a>
+            <a href="solutions#tab-migration">Cloud Migration</a>
+            <a href="solutions#tab-streaming">Event Streaming</a>
+            <a href="solutions#tab-governance">Governance &amp; Purview</a>
+            <a href="solutions#tab-ai">Applied AI &amp; LLMs</a>
           </div>
 
           <div class="footer-col">
             <h5>Architecture</h5>
-            <a href="architecture.html">4-Stage Pipeline</a>
-            <a href="technologies.html">Technology Radar</a>
-            <a href="architecture.html#medallion">Medallion Patterns</a>
-            <a href="technologies.html#roi-calculator">FinOps ROI Calculator</a>
+            <a href="architecture">4-Stage Pipeline</a>
+            <a href="technologies">Technology Radar</a>
+            <a href="architecture#medallion">Medallion Patterns</a>
+            <a href="technologies#roi-calculator">FinOps ROI Calculator</a>
           </div>
 
           <div class="footer-col">
             <h5>Company</h5>
-            <a href="index.html#why-us">Why Medhyx</a>
-            <a href="careers.html">Careers &amp; Openings</a>
-            <a href="case-studies.html">Case Studies</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="/#why-us">Why Medhyx</a>
+            <a href="careers">Careers &amp; Openings</a>
+            <a href="case-studies">Case Studies</a>
+            <a href="contact">Contact Us</a>
             <a href="https://www.linkedin.com/company/medhyx-solutions/" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a>
           </div>
         </div>

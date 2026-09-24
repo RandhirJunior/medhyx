@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    // Clean URL: automatically strip .html from the address bar if present
+    if (window.location.pathname.endsWith('.html')) {
+      var cleanPath = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+      window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+    }
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Careers at Medhyx Solutions — Open positions for Senior Azure Data Engineers, Databricks Architects, and Cloud Data Migration Specialists.">
@@ -9,7 +17,7 @@
   <meta http-equiv="Expires" content="0">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Careers &amp; Engineering Opportunities | Medhyx Solutions</title>
-  <link rel="canonical" href="https://medhyx.com/careers.html">
+  <link rel="canonical" href="https://medhyx.com/careers">
   
   <!-- Open Graph / LinkedIn / Facebook -->
   <meta property="og:type" content="website">
@@ -52,7 +60,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2.3">
+  <link rel="stylesheet" href="css/style.css?v=2.4">
 </head>
 <body>
 
@@ -74,17 +82,17 @@
   <!-- Main Navigation -->
   <header class="nav" id="navbar">
     <div class="nav-inner">
-      <a class="brand" href="index.html" aria-label="Medhyx Solutions Home">
+      <a class="brand" href="/" aria-label="Medhyx Solutions Home">
         <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" class="brand-logo">
       </a>
 
       <nav class="desktop-nav" aria-label="Primary Navigation">
-        <a href="index.html" class="nav-item">Home</a>
-        <a href="solutions.html" class="nav-item">Solutions</a>
-        <a href="architecture.html" class="nav-item">Architecture</a>
-        <a href="technologies.html" class="nav-item">Tech Stack</a>
-        <a href="case-studies.html" class="nav-item">Case Studies</a>
-        <a href="careers.html" class="nav-item active">Careers</a>
+        <a href="/" class="nav-item">Home</a>
+        <a href="solutions" class="nav-item">Solutions</a>
+        <a href="architecture" class="nav-item">Architecture</a>
+        <a href="technologies" class="nav-item">Tech Stack</a>
+        <a href="case-studies" class="nav-item">Case Studies</a>
+        <a href="careers" class="nav-item active">Careers</a>
       </nav>
 
       <div class="nav-actions">
@@ -92,7 +100,7 @@
           <span class="dot-green"></span>
           <span>We're Hiring</span>
         </div>
-        <a class="btn btn-nav" href="contact.html">Contact Us</a>
+        <a class="btn btn-nav" href="contact">Contact Us</a>
         <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Open Mobile Menu" aria-expanded="false">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -109,13 +117,13 @@
       <button class="close-drawer" id="closeDrawerBtn" aria-label="Close Menu">&times;</button>
     </div>
     <div class="drawer-body">
-      <a href="index.html" class="drawer-link">Home</a>
-      <a href="solutions.html" class="drawer-link">Solutions</a>
-      <a href="architecture.html" class="drawer-link">Architecture</a>
-      <a href="technologies.html" class="drawer-link">Technology Stack</a>
-      <a href="case-studies.html" class="drawer-link">Case Studies</a>
-      <a href="careers.html" class="drawer-link active" style="color: var(--blue-600); font-weight: 700;">Careers &amp; Openings</a>
-      <a href="contact.html" class="drawer-link">Contact Us</a>
+      <a href="/" class="drawer-link">Home</a>
+      <a href="solutions" class="drawer-link">Solutions</a>
+      <a href="architecture" class="drawer-link">Architecture</a>
+      <a href="technologies" class="drawer-link">Technology Stack</a>
+      <a href="case-studies" class="drawer-link">Case Studies</a>
+      <a href="careers" class="drawer-link active" style="color: var(--blue-600); font-weight: 700;">Careers &amp; Openings</a>
+      <a href="contact" class="drawer-link">Contact Us</a>
       <div class="drawer-action">
         <a class="btn btn-primary btn-block" href="#openings">Explore Open Roles</a>
       </div>
@@ -386,7 +394,7 @@
     <div class="container footer-container">
       <div class="footer-top">
         <div class="footer-brand-col">
-          <a href="index.html" class="footer-brand">
+          <a href="/" class="footer-brand">
             <img src="images/medhyx-logo.png" alt="Medhyx Solutions Logo" class="footer-logo">
           </a>
           <p class="footer-tagline">
@@ -405,27 +413,27 @@
         <div class="footer-links-grid">
           <div class="footer-col">
             <h5>Solutions</h5>
-            <a href="solutions.html">Lakehouse Engineering</a>
-            <a href="solutions.html">Cloud Migration</a>
-            <a href="solutions.html">Event Streaming</a>
-            <a href="solutions.html">Governance &amp; Purview</a>
-            <a href="solutions.html">Applied AI &amp; LLMs</a>
+            <a href="solutions">Lakehouse Engineering</a>
+            <a href="solutions">Cloud Migration</a>
+            <a href="solutions">Event Streaming</a>
+            <a href="solutions">Governance &amp; Purview</a>
+            <a href="solutions">Applied AI &amp; LLMs</a>
           </div>
 
           <div class="footer-col">
             <h5>Architecture</h5>
-            <a href="architecture.html">4-Phase Framework</a>
-            <a href="technologies.html">Technology Radar</a>
-            <a href="architecture.html">Medallion Patterns</a>
-            <a href="technologies.html">FinOps Estimator</a>
+            <a href="architecture">4-Phase Framework</a>
+            <a href="technologies">Technology Radar</a>
+            <a href="architecture">Medallion Patterns</a>
+            <a href="technologies">FinOps Estimator</a>
           </div>
 
           <div class="footer-col">
             <h5>Company</h5>
-            <a href="index.html#why-us">Why Medhyx</a>
-            <a href="careers.html">Careers &amp; Openings</a>
-            <a href="case-studies.html">Case Studies</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="/#why-us">Why Medhyx</a>
+            <a href="careers">Careers &amp; Openings</a>
+            <a href="case-studies">Case Studies</a>
+            <a href="contact">Contact Us</a>
             <a href="https://www.linkedin.com/company/medhyx-solutions/" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a>
           </div>
         </div>
