@@ -7,5 +7,5 @@ Expires: 2027-12-31T23:59:59.000Z
 Preferred-Languages: en
 Canonical: https://medhyx.com/.well-known/security.txt
 Policy: https://medhyx.com/#security
-Hiring: https://medhyx.com/careers.html
+Hiring: https://medhyx.com/careers
 
