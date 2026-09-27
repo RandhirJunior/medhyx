@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  const WORKER_URL = 'https://medhyx-ai.randhirgupta.workers.dev';
+  const WORKER_URL = 'https://medhyx-ai.randhir1265.workers.dev';
   const STORAGE_KEY = 'mx-chat-history-v1';
   const MAX_STORED_MESSAGES = 16;
 
@@ -632,6 +632,7 @@
             continue;
           }
           if (data.error) errorText = data.error;
+          if (data.reset) fullText = '';
           if (data.text) {
             fullText += data.text;
             if (!aiDiv) {
