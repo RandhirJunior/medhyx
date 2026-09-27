@@ -8,9 +8,6 @@
     "deploy": "npm run build && wrangler deploy",
     "test": "npm run build && node --test test/*.test.js"
   },
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.128.0"
-  },
   "devDependencies": {
     "wrangler": "^4.142.0"
   }
