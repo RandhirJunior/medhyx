@@ -1,0 +1,17 @@
+{
+  "name": "medhyx-ai",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-knowledge.mjs",
+    "dev": "npm run build && wrangler dev --var ALLOW_LOCALHOST:true",
+    "deploy": "npm run build && wrangler deploy",
+    "test": "npm run build && node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.142.0"
+  }
+}

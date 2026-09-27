@@ -1,23 +1,19 @@
 /**
- * Medhyx AI Architecture Assistant — Chat Widget
- * Self-contained floating chat widget for medhyx.com
- * 
- * CONFIGURATION: Update WORKER_URL below after deploying the Cloudflare Worker
+ * Medhyx AI Assistant — floating chat widget for medhyx.com.
+ * Talks to the Cloudflare Worker in /chatbot, which answers with Claude.
  */
 (function () {
   'use strict';
 
-  // ═══════════════════════════════════════════════════════════
-  // CONFIGURATION — Update this after deploying your worker
-  // ═══════════════════════════════════════════════════════════
   const WORKER_URL = 'https://medhyx-ai.randhirgupta.workers.dev';
-  // ═══════════════════════════════════════════════════════════
+  const STORAGE_KEY = 'mx-chat-history-v1';
+  const MAX_STORED_MESSAGES = 16;
 
   const QUICK_PROMPTS = [
     'What services does Medhyx offer?',
-    'How does your Delta Lake migration work?',
-    'What FinOps savings can we expect?',
-    'Tell me about your AI & LLMOps capabilities',
+    'How do engagements and pricing work?',
+    'Which clients and industries have you worked with?',
+    'Are you hiring? What roles are open?',
   ];
 
   // Inject styles
@@ -320,6 +316,28 @@
     }
     .mx-chat-footer a { color: #64748b; }
 
+    .mx-chat-reset {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      color: #94a3b8;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+    .mx-chat-reset:hover { color: #38bdf8; border-color: rgba(56, 189, 248, 0.4); }
+    .mx-chat-reset svg { width: 16px; height: 16px; }
+    .mx-msg-error {
+      border-color: rgba(248, 113, 113, 0.35);
+      color: #fecaca;
+    }
+    .mx-msg-ai h4 { margin: 8px 0 4px; font-size: 13.5px; color: #f8fafc; }
+
     /* Mobile */
     @media (max-width: 480px) {
       .mx-chat-window {
@@ -340,15 +358,16 @@
   document.head.appendChild(style);
 
   // Build DOM
-  const triggerHTML = `
-    <button class="mx-chat-trigger" id="mxChatTrigger" aria-label="Open AI Chat Assistant" title="Ask Medhyx AI">
+  const GREETING = "Hi! I'm the **Medhyx AI Assistant**. Ask me anything about Medhyx: our data engineering and AI services, architecture approach, case studies, engagement models, or open roles.";
+
+  const wrapper = document.createElement('div');
+  wrapper.id = 'mxChatWidget';
+  wrapper.innerHTML = `
+    <button class="mx-chat-trigger" id="mxChatTrigger" type="button" aria-label="Open Medhyx AI Assistant" aria-controls="mxChatWindow" aria-expanded="false" title="Ask Medhyx AI">
       <svg class="mx-icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
       <svg class="mx-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
-  `;
-
-  const windowHTML = `
-    <div class="mx-chat-window" id="mxChatWindow">
+    <div class="mx-chat-window" id="mxChatWindow" role="dialog" aria-label="Medhyx AI Assistant" aria-hidden="true">
       <div class="mx-chat-header">
         <div class="mx-chat-avatar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -357,169 +376,239 @@
           <div class="mx-chat-header-title">Medhyx AI Assistant</div>
           <div class="mx-chat-header-status"><span class="mx-status-dot"></span> Online</div>
         </div>
+        <button class="mx-chat-reset" id="mxChatReset" type="button" aria-label="Start a new conversation" title="New conversation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+        </button>
       </div>
-      <div class="mx-chat-messages" id="mxChatMessages">
-        <div class="mx-msg mx-msg-ai">
-          <p>Hi! I'm the <strong>Medhyx Architecture Assistant</strong>. I can help you with questions about our enterprise data engineering services, cloud lakehouse architecture, migration strategies, and AI/LLMOps capabilities.</p>
-          <p>What would you like to know?</p>
-        </div>
-      </div>
+      <div class="mx-chat-messages" id="mxChatMessages" aria-live="polite"></div>
       <div class="mx-quick-prompts" id="mxQuickPrompts">
         <div class="mx-quick-label">Quick Questions</div>
-        ${QUICK_PROMPTS.map(p => `<button class="mx-quick-btn" type="button">${p}</button>`).join('')}
       </div>
       <div class="mx-chat-input-area">
-        <input type="text" class="mx-chat-input" id="mxChatInput" placeholder="Ask about our architecture services..." autocomplete="off" maxlength="500">
+        <input type="text" class="mx-chat-input" id="mxChatInput" placeholder="Ask anything about Medhyx..." aria-label="Your question" autocomplete="off" maxlength="1000">
         <button class="mx-chat-send" id="mxChatSend" type="button" aria-label="Send message">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
         </button>
       </div>
-      <div class="mx-chat-footer">Powered by <a href="/">Medhyx Solutions</a> &bull; Gemini AI</div>
+      <div class="mx-chat-footer">AI answers can be imperfect &bull; Powered by Claude</div>
     </div>
   `;
-
-  // Inject into page
-  const wrapper = document.createElement('div');
-  wrapper.id = 'mxChatWidget';
-  wrapper.innerHTML = triggerHTML + windowHTML;
   document.body.appendChild(wrapper);
 
-  // State
-  const conversationHistory = [];
-  let isStreaming = false;
-
-  // Elements
   const trigger = document.getElementById('mxChatTrigger');
   const chatWindow = document.getElementById('mxChatWindow');
   const messages = document.getElementById('mxChatMessages');
   const input = document.getElementById('mxChatInput');
   const sendBtn = document.getElementById('mxChatSend');
+  const resetBtn = document.getElementById('mxChatReset');
   const quickPrompts = document.getElementById('mxQuickPrompts');
 
-  // Toggle chat
-  trigger.addEventListener('click', () => {
-    const isOpen = chatWindow.classList.toggle('open');
-    trigger.classList.toggle('open', isOpen);
-    if (isOpen) {
-      setTimeout(() => input.focus(), 300);
+  QUICK_PROMPTS.forEach(prompt => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'mx-quick-btn';
+    btn.textContent = prompt;
+    btn.addEventListener('click', () => sendMessage(prompt));
+    quickPrompts.appendChild(btn);
+  });
+
+  let history = loadHistory();
+  let isStreaming = false;
+
+  function loadHistory() {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]');
+      return Array.isArray(saved) ? saved.filter(m => m && typeof m.content === 'string' && (m.role === 'user' || m.role === 'assistant')) : [];
+    } catch {
+      return [];
     }
-  });
-
-  // Quick prompts
-  quickPrompts.querySelectorAll('.mx-quick-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      sendMessage(btn.textContent.trim());
-    });
-  });
-
-  // Send on Enter
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && !e.shiftKey && !isStreaming) {
-      e.preventDefault();
-      const text = input.value.trim();
-      if (text) sendMessage(text);
-    }
-  });
-
-  // Send button
-  sendBtn.addEventListener('click', () => {
-    if (isStreaming) return;
-    const text = input.value.trim();
-    if (text) sendMessage(text);
-  });
-
-  // Simple markdown to HTML
-  function mdToHtml(text) {
-    let html = text
-      // Code blocks
-      .replace(/```(\w*)\n([\s\S]*?)```/g, '<pre><code>$2</code></pre>')
-      // Inline code
-      .replace(/`([^`]+)`/g, '<code>$1</code>')
-      // Bold
-      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-      // Italic
-      .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-      // Links
-      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-      // Unordered lists
-      .replace(/^[-*] (.+)$/gm, '<li>$1</li>')
-      // Ordered lists
-      .replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
-      // Wrap consecutive <li> in <ul>
-      .replace(/((?:<li>.*<\/li>\n?)+)/g, '<ul>$1</ul>')
-      // Paragraphs
-      .replace(/\n\n/g, '</p><p>')
-      // Line breaks
-      .replace(/\n/g, '<br>');
-
-    if (!html.startsWith('<')) html = '<p>' + html + '</p>';
-    return html;
   }
 
-  // Add message to UI
-  function addMessage(role, content) {
-    const div = document.createElement('div');
-    div.className = `mx-msg mx-msg-${role === 'user' ? 'user' : 'ai'}`;
-    if (role === 'user') {
-      div.textContent = content;
-    } else {
-      div.innerHTML = mdToHtml(content);
+  function saveHistory() {
+    history = history.slice(-MAX_STORED_MESSAGES);
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(history));
+    } catch {
+      // Storage unavailable (private mode); the chat still works for this page.
     }
+  }
+
+  function renderConversation() {
+    messages.innerHTML = '';
+    addMessage('assistant', GREETING);
+    history.forEach(m => addMessage(m.role, m.content));
+    quickPrompts.style.display = history.length ? 'none' : '';
+  }
+
+  function setOpen(open) {
+    chatWindow.classList.toggle('open', open);
+    trigger.classList.toggle('open', open);
+    trigger.setAttribute('aria-expanded', String(open));
+    trigger.setAttribute('aria-label', open ? 'Close Medhyx AI Assistant' : 'Open Medhyx AI Assistant');
+    chatWindow.setAttribute('aria-hidden', String(!open));
+    if (open) {
+      messages.scrollTop = messages.scrollHeight;
+      setTimeout(() => input.focus(), 300);
+    }
+  }
+
+  trigger.addEventListener('click', () => setOpen(!chatWindow.classList.contains('open')));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && chatWindow.classList.contains('open')) {
+      setOpen(false);
+      trigger.focus();
+    }
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage(input.value);
+    }
+  });
+
+  sendBtn.addEventListener('click', () => sendMessage(input.value));
+
+  resetBtn.addEventListener('click', () => {
+    if (isStreaming) return;
+    history = [];
+    saveHistory();
+    renderConversation();
+    input.focus();
+  });
+
+  // Minimal Markdown renderer. Everything is HTML-escaped first, so model output can never inject markup.
+  function escapeHtml(str) {
+    return str.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  function linkHtml(href, label) {
+    const external = !href.startsWith('/') && !href.startsWith('https://medhyx.com');
+    return `<a href="${href}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${label}</a>`;
+  }
+
+  function renderInline(escaped) {
+    return escaped
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[^*\w])\*([^*\s][^*]*?)\*(?!\w)/g, '$1<em>$2</em>')
+      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (match, label, url) =>
+        /^(https?:\/\/|mailto:|\/)/i.test(url) ? linkHtml(url, label) : label)
+      .replace(/(^|[\s(])(https?:\/\/[^\s<()]*[^\s<().,;:!?'])/g, (match, lead, url) => lead + linkHtml(url, url))
+      .replace(/(^|[\s(])([\w.+-]+@[\w-]+\.[\w.]+[\w])/g, '$1<a href="mailto:$2">$2</a>');
+  }
+
+  function mdToHtml(markdown) {
+    const out = [];
+    let paragraph = [];
+    let list = null;
+    let code = null;
+
+    const flushParagraph = () => {
+      if (paragraph.length) out.push(`<p>${paragraph.map(renderInline).join('<br>')}</p>`);
+      paragraph = [];
+    };
+    const flushList = () => {
+      if (list) out.push(`<${list.tag}>${list.items.map(i => `<li>${renderInline(i)}</li>`).join('')}</${list.tag}>`);
+      list = null;
+    };
+    const flushCode = () => {
+      out.push(`<pre><code>${escapeHtml(code.join('\n'))}</code></pre>`);
+      code = null;
+    };
+
+    for (const rawLine of markdown.replace(/\r/g, '').split('\n')) {
+      if (code) {
+        if (rawLine.trim().startsWith('```')) flushCode();
+        else code.push(rawLine);
+        continue;
+      }
+      const line = escapeHtml(rawLine.trim());
+      if (line.startsWith('```')) {
+        flushParagraph();
+        flushList();
+        code = [];
+        continue;
+      }
+      if (!line) {
+        flushParagraph();
+        flushList();
+        continue;
+      }
+      const heading = line.match(/^#{1,6}\s+(.*)$/);
+      const bullet = line.match(/^[-*•]\s+(.*)$/);
+      const numbered = line.match(/^\d+[.)]\s+(.*)$/);
+      if (heading) {
+        flushParagraph();
+        flushList();
+        out.push(`<h4>${renderInline(heading[1])}</h4>`);
+      } else if (bullet || numbered) {
+        flushParagraph();
+        const tag = bullet ? 'ul' : 'ol';
+        if (list && list.tag !== tag) flushList();
+        if (!list) list = { tag, items: [] };
+        list.items.push((bullet || numbered)[1]);
+      } else {
+        flushList();
+        paragraph.push(line);
+      }
+    }
+    if (code) flushCode();
+    flushParagraph();
+    flushList();
+    return out.join('');
+  }
+
+  function addMessage(role, content, { error = false } = {}) {
+    const div = document.createElement('div');
+    div.className = `mx-msg ${role === 'user' ? 'mx-msg-user' : 'mx-msg-ai'}${error ? ' mx-msg-error' : ''}`;
+    if (role === 'user') div.textContent = content;
+    else div.innerHTML = mdToHtml(content);
     messages.appendChild(div);
     messages.scrollTop = messages.scrollHeight;
     return div;
   }
 
-  // Show typing indicator
   function showTyping() {
     const div = document.createElement('div');
     div.className = 'mx-typing';
-    div.id = 'mxTyping';
+    div.setAttribute('aria-label', 'Assistant is typing');
     div.innerHTML = '<span class="mx-typing-dot"></span><span class="mx-typing-dot"></span><span class="mx-typing-dot"></span>';
     messages.appendChild(div);
     messages.scrollTop = messages.scrollHeight;
+    return div;
   }
 
-  function removeTyping() {
-    const el = document.getElementById('mxTyping');
-    if (el) el.remove();
-  }
+  const FALLBACK_ERROR = "Sorry, I'm having trouble connecting right now. Please try again in a moment, or email us at hello@medhyx.com.";
 
-  // Send message
-  async function sendMessage(text) {
-    if (isStreaming || !text.trim()) return;
+  async function sendMessage(rawText) {
+    const text = rawText.trim();
+    if (isStreaming || !text) return;
     isStreaming = true;
     sendBtn.disabled = true;
     input.value = '';
+    quickPrompts.style.display = 'none';
 
-    // Hide quick prompts after first message
-    if (quickPrompts) quickPrompts.style.display = 'none';
-
-    // Add user message
     addMessage('user', text);
-    conversationHistory.push({ role: 'user', content: text });
+    history.push({ role: 'user', content: text });
+    const typing = showTyping();
 
-    showTyping();
+    let aiDiv = null;
+    let fullText = '';
+    let errorText = null;
 
     try {
       const response = await fetch(WORKER_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages: conversationHistory,
-          stream: true,
-        }),
+        body: JSON.stringify({ messages: history }),
       });
 
       if (!response.ok) {
-        throw new Error(`Server error: ${response.status}`);
+        const data = await response.json().catch(() => ({}));
+        throw new Error(response.status === 429 && data.error ? data.error : FALLBACK_ERROR);
       }
-
-      removeTyping();
-
-      // Create AI message element for streaming
-      const aiDiv = addMessage('assistant', '');
-      let fullText = '';
 
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
@@ -528,45 +617,50 @@
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-
         buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split('\n');
-        buffer = lines.pop() || '';
+        const events = buffer.split('\n\n');
+        buffer = events.pop() || '';
 
-        for (const line of lines) {
-          if (!line.startsWith('data: ')) continue;
-          const jsonStr = line.slice(6).trim();
-          if (!jsonStr || jsonStr === '[DONE]') continue;
-
+        for (const event of events) {
+          if (!event.startsWith('data: ')) continue;
+          const payload = event.slice(6).trim();
+          if (payload === '[DONE]') continue;
+          let data;
           try {
-            const data = JSON.parse(jsonStr);
-            const chunk = data.candidates?.[0]?.content?.parts?.[0]?.text;
-            if (chunk) {
-              fullText += chunk;
-              aiDiv.innerHTML = mdToHtml(fullText);
-              messages.scrollTop = messages.scrollHeight;
-            }
+            data = JSON.parse(payload);
           } catch {
-            // Skip malformed JSON chunks
+            continue;
+          }
+          if (data.error) errorText = data.error;
+          if (data.text) {
+            fullText += data.text;
+            if (!aiDiv) {
+              typing.remove();
+              aiDiv = addMessage('assistant', '');
+            }
+            aiDiv.innerHTML = mdToHtml(fullText);
+            messages.scrollTop = messages.scrollHeight;
           }
         }
       }
-
-      if (!fullText.trim()) {
-        fullText = "I apologize, but I wasn't able to generate a response. Please try asking your question again.";
-        aiDiv.innerHTML = mdToHtml(fullText);
-      }
-
-      conversationHistory.push({ role: 'assistant', content: fullText });
-
+      if (!fullText.trim() && !errorText) errorText = FALLBACK_ERROR;
     } catch (err) {
-      removeTyping();
-      addMessage('assistant', "I'm sorry, I'm having trouble connecting right now. Please try again in a moment, or reach out to us directly at [hello@medhyx.com](mailto:hello@medhyx.com).");
-      console.error('Medhyx AI Chat Error:', err);
+      errorText = err.message && err.message !== 'Failed to fetch' ? err.message : FALLBACK_ERROR;
+      console.error('Medhyx AI chat error:', err);
     } finally {
+      typing.remove();
+      if (fullText.trim()) {
+        history.push({ role: 'assistant', content: fullText });
+      } else {
+        history.pop();
+      }
+      if (errorText) addMessage('assistant', errorText, { error: true });
+      saveHistory();
       isStreaming = false;
       sendBtn.disabled = false;
       input.focus();
     }
   }
+
+  renderConversation();
 })();
