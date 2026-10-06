@@ -39,6 +39,16 @@
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       animation: mx-pulse-ring 2.5s ease-in-out infinite;
     }
+    .mx-chat-trigger::before {
+      content: ''; position: absolute; inset: -6px; border-radius: 50%; pointer-events: none;
+      background: conic-gradient(from 0deg, transparent 0 62%, #6fd0f7 82%, #9b7bff 92%, transparent 100%);
+      -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+      mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+      animation: mx-orbit 3.2s linear infinite;
+    }
+    .mx-chat-trigger.open::before { display: none; }
+    @keyframes mx-orbit { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .mx-chat-trigger, .mx-chat-trigger::before { animation: none !important; } }
     .mx-chat-trigger:hover {
       transform: scale(1.1);
       box-shadow: 0 12px 32px rgba(15, 28, 51, 0.35);

@@ -467,6 +467,51 @@ gold_revenue.write.format("delta").mode("overwrite") \\
     revealTargets.forEach(el => revealIO.observe(el));
   }
 
+  if (!reduceMotion) {
+    // Cursor spotlight on dark surfaces
+    $$('.dark, .hero, .page-hero, .cta-band').forEach(el => {
+      el.addEventListener('pointermove', e => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', `${e.clientX - r.left}px`);
+        el.style.setProperty('--my', `${e.clientY - r.top}px`);
+      });
+      el.addEventListener('pointerleave', () => { el.style.removeProperty('--mx'); el.style.removeProperty('--my'); });
+    });
+
+    // 3D tilt on cards (mouse only)
+    if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      $$('.p-card, .tech-item, .case').forEach(card => {
+        card.classList.add('tilt');
+        const max = card.classList.contains('case') ? 3 : 7;
+        card.addEventListener('pointermove', e => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transform = `perspective(900px) rotateX(${(-py * max).toFixed(2)}deg) rotateY(${(px * max).toFixed(2)}deg) translateY(-4px)`;
+        });
+        card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // "Decoding" effect on section labels as they appear
+    if (hasIO) {
+      const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&*+<>/';
+      const decodeIO = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        decodeIO.unobserve(entry.target);
+        const el = entry.target, final = el.textContent;
+        el.setAttribute('aria-label', final);
+        const start = performance.now(), dur = 700;
+        const step = now => {
+          const p = Math.min(1, (now - start) / dur), reveal = Math.floor(p * final.length);
+          el.textContent = final.split('').map((ch, i) => (i < reveal || ch === ' ' ? ch : GLYPHS[(Math.random() * GLYPHS.length) | 0])).join('');
+          if (p < 1) requestAnimationFrame(step); else el.textContent = final;
+        };
+        requestAnimationFrame(step);
+      }), { threshold: 0.6 });
+      $$('.eyebrow').forEach(el => { if (el.children.length === 0) decodeIO.observe(el); });
+    }
+  }
+
   // Legal modal
   const LEGAL = {
     privacy: {
