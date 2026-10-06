@@ -39,14 +39,14 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
-  <meta name="theme-color" content="#0f1c33">
+  <meta name="theme-color" content="#05070f">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/images/favicon.png">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css?v=4">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css?v=7">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -54,7 +54,7 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label="Medhyx Solutions home">
-        <img src="/images/medhyx-logo.png" alt="Medhyx Solutions" width="291" height="126">
+        <img src="/images/medhyx-logo-light.png" alt="Medhyx Solutions" width="291" height="126">
       </a>
       <nav class="main-nav" aria-label="Main">
         <a href="/solutions">Services</a>
@@ -82,34 +82,29 @@
 
   <main id="main">
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow">Data engineering &amp; AI consultancy</span>
-          <h1>Cloud data platforms, <em>engineered</em> for the enterprise.</h1>
-          <p class="lead">Medhyx designs, migrates and optimizes data pipelines, lakehouses and AI platforms on Azure, Databricks and Microsoft Fabric. Built by senior engineers, owned entirely by you.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="/contact">
-              Book a discovery call
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-            <a class="text-link" href="/case-studies">See our client work</a>
-          </div>
-          <ul class="hero-notes">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>99.99% pipeline SLA</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No vendor lock-in</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>FinOps cost guardrails</li>
-          </ul>
+      <div class="wrap">
+        <span class="pill" aria-label="Data engineering and AI consultancy">Building&nbsp;<span class="typer" aria-hidden="true" data-typer='["RAG &amp; AI agents", "real-time lakehouses", "zero-downtime migrations", "LLMOps platforms"]'>RAG &amp; AI agents</span></span>
+        <h1><span class="line">Cloud data platforms,</span><span class="line soft">engineered for the enterprise.</span></h1>
+        <p class="lead">Medhyx designs, migrates and optimizes data pipelines, lakehouses and AI platforms on Azure, Databricks and Microsoft Fabric. Built by senior engineers, owned entirely by you.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/contact">Book a discovery call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="btn btn-glass" href="/case-studies">See our client work</a>
         </div>
-
-        <aside class="process-card" aria-label="How we build a data platform">
-          <div class="process-card-title">How we build</div>
-          <ol class="process-steps">
-            <li><span class="step-num">1</span><div><div class="step-title">Ingest</div><div class="step-sub">SQL Server, Oracle, APIs and Kafka streams</div></div></li>
-            <li><span class="step-num">2</span><div><div class="step-title">Engineer</div><div class="step-sub">PySpark and Delta Lake on Databricks</div></div></li>
-            <li><span class="step-num">3</span><div><div class="step-title">Govern</div><div class="step-sub">Fabric OneLake, Unity Catalog and Purview</div></div></li>
-            <li><span class="step-num">4</span><div><div class="step-title">Serve</div><div class="step-sub">Power BI, analytics and AI applications</div></div></li>
-          </ol>
-        </aside>
+        <ul class="hero-notes">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>99.99% pipeline SLA</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No vendor lock-in</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>FinOps cost guardrails</li>
+        </ul>
+        <div class="hero-visual">
+          <span class="ai-chip c1" aria-hidden="true"><i></i>Vector search</span>
+          <span class="ai-chip c2" aria-hidden="true"><i></i>LLM gateway</span>
+          <span class="ai-chip c3" aria-hidden="true"><i></i>Real-time CDC</span>
+          <span class="ai-chip c4" aria-hidden="true"><i></i>Delta Lake</span>
+          <div class="hero-frame">
+            <img src="/images/cloud-lakehouse-mesh.webp" width="1376" height="768" alt="Illustration of a multi-layered cloud lakehouse with streaming pipelines and dashboards" decoding="async" fetchpriority="high">
+            <span class="scan" aria-hidden="true"></span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -135,7 +130,43 @@
       </div>
     </section>
 
-    <section class="section-tight">
+    <section class="section section-day" id="services">
+      <div class="wrap">
+        <div class="intro-grid">
+          <div>
+            <span class="eyebrow">What we do</span>
+            <h2>Data architecture and applied AI, <em>done properly</em>.</h2>
+            <a class="btn btn-primary" href="/solutions">All five practice areas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+          <p>We partner with enterprise data leaders to build resilient lakehouses, migrate off legacy platforms and put AI into production. Every engagement is built as code, secured by design and measured against production SLAs, so you get dependable platforms and clear ownership from day one.</p>
+        </div>
+        <div class="practice-cards">
+          <a class="p-card light" href="/solutions#tab-lakehouse">
+            <span class="kicker">01 &middot; Foundation</span>
+            <h3>Cloud lakehouse engineering</h3>
+            <p>Production Delta Lake, PySpark cluster optimization, multi-cloud lakehouse meshes and fast analytical serving layers, engineered for petabyte scale.</p>
+            <span class="tags">Azure Databricks &middot; Fabric OneLake &middot; Delta Lake</span>
+            <span class="card-link">Lakehouse engineering</span>
+          </a>
+          <a class="p-card" href="/solutions#tab-migration">
+            <span class="kicker">02 &middot; Modernization</span>
+            <h3>Enterprise cloud migration</h3>
+            <p>Zero-downtime migration from Teradata, Oracle and SQL Server to modern cloud platforms, with dual-run validation and cost controls.</p>
+            <span class="tags">Zero data loss &middot; 40%+ cost reduction</span>
+            <span class="card-link">Migration framework</span>
+          </a>
+          <a class="p-card" href="/solutions#tab-ai">
+            <span class="kicker">03 &middot; Intelligence</span>
+            <h3>Applied AI &amp; LLMOps</h3>
+            <p>Retrieval-augmented generation, vector databases, model governance and LLM evaluation, with your data kept inside your environment.</p>
+            <span class="tags">Azure OpenAI &middot; LangChain &middot; MLflow</span>
+            <span class="card-link">AI &amp; LLMOps</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark stats-band" aria-label="Results">
       <div class="wrap">
         <div class="stats">
           <div class="stat"><div class="stat-value">500M+</div><div class="stat-label">Daily events streamed</div><div class="stat-sub">Across real-time enterprise pipelines</div></div>
@@ -146,52 +177,7 @@
       </div>
     </section>
 
-    <section class="section" id="services">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">What we do</span>
-          <h2>Data architecture and applied AI, done properly.</h2>
-          <p>We partner with enterprise data leaders to build resilient lakehouses, migrate off legacy platforms and put AI into production.</p>
-        </div>
-        <ol class="numbered-list">
-          <li class="numbered-item">
-            <span class="num">01</span>
-            <div><span class="kicker">Foundation</span><h3>Cloud lakehouse engineering</h3></div>
-            <div>
-              <p>Production Delta Lake, PySpark cluster optimization, multi-cloud lakehouse meshes and fast analytical serving layers, engineered for petabyte scale.</p>
-              <p class="tags">Azure Databricks &middot; Fabric OneLake &middot; Delta Lake</p>
-              <a class="text-link" href="/solutions#tab-lakehouse">Lakehouse engineering</a>
-            </div>
-          </li>
-          <li class="numbered-item">
-            <span class="num">02</span>
-            <div><span class="kicker">Modernization</span><h3>Enterprise cloud migration</h3></div>
-            <div>
-              <p>Zero-downtime migration from on-premises warehouses such as Teradata, Oracle and SQL Server to modern cloud platforms, with dual-run validation and cost controls.</p>
-              <p class="tags">Zero data loss &middot; 40%+ cost reduction &middot; Terraform IaC</p>
-              <a class="text-link" href="/solutions#tab-migration">Migration framework</a>
-            </div>
-          </li>
-          <li class="numbered-item">
-            <span class="num">03</span>
-            <div><span class="kicker">Intelligence</span><h3>Applied AI &amp; LLMOps</h3></div>
-            <div>
-              <p>Retrieval-augmented generation (RAG), vector databases, model governance and continuous LLM evaluation, with your data kept inside your environment.</p>
-              <p class="tags">Azure OpenAI &middot; LangChain &middot; MLflow</p>
-              <a class="text-link" href="/solutions#tab-ai">AI &amp; LLMOps</a>
-            </div>
-          </li>
-        </ol>
-        <div class="section-foot">
-          <a class="btn btn-outline" href="/solutions">
-            All five practice areas
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-sand" id="why-us">
+    <section class="section" id="why-us">
       <div class="wrap split">
         <div>
           <span class="eyebrow">Why Medhyx</span>
@@ -244,9 +230,14 @@
       </div>
     </section>
 
-    <section class="section" aria-label="Client testimonials">
+    <section class="dark section quote-section" aria-label="Client testimonials">
       <div class="wrap">
-        <div class="quote-block" data-quotes>
+        <div>
+          <span class="eyebrow">Client voices</span>
+          <h2>Trusted by <span class="soft">data leaders</span> at global enterprises.</h2>
+          <p class="lead">What engineering and analytics leaders say about working with our senior pods.</p>
+        </div>
+        <div class="quote-block glass" data-quotes>
           <div class="quote-mark" aria-hidden="true">&ldquo;</div>
           <div class="quote-slides">
             <figure class="quote-slide active">
@@ -267,11 +258,27 @@
             <div class="quote-dots"></div>
             <button type="button" data-next aria-label="Next testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
           </div>
-        </div>
+</div>
       </div>
     </section>
 
-    <section class="section section-sand" id="faq">
+    <section class="dark section" aria-label="Technology expertise" style="padding-top: 24px;">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="eyebrow">Technology</span>
+          <h2>Expertise across the <span class="soft">modern data stack</span>.</h2>
+          <p>Certified practitioners on the platforms enterprises run on.</p>
+        </div>
+        <div class="honeycomb" role="list" aria-label="Technologies">
+          <div class="hex-row"><div class="hex"><img src="/images/tech/azure.svg" alt="" loading="lazy"><span>Azure</span></div><div class="hex"><img src="/images/tech/databricks.svg" alt="" loading="lazy"><span>Databricks</span></div><div class="hex"><img src="/images/tech/fabric.svg" alt="" loading="lazy"><span>Fabric</span></div><div class="hex"><img src="/images/tech/spark.svg" alt="" loading="lazy"><span>Spark</span></div><div class="hex"><img src="/images/tech/snowflake.svg" alt="" loading="lazy"><span>Snowflake</span></div></div>
+          <div class="hex-row"><div class="hex"><img src="/images/tech/deltalake.svg" alt="" loading="lazy"><span>Delta Lake</span></div><div class="hex"><img src="/images/tech/kafka.svg" alt="" loading="lazy"><span>Kafka</span></div><div class="hex"><img src="/images/tech/powerbi.svg" alt="" loading="lazy"><span>Power BI</span></div><div class="hex"><img src="/images/tech/purview.svg" alt="" loading="lazy"><span>Purview</span></div></div>
+          <div class="hex-row"><div class="hex"><img src="/images/tech/dbt.svg" alt="" loading="lazy"><span>dbt</span></div><div class="hex"><img src="/images/tech/terraform.svg" alt="" loading="lazy"><span>Terraform</span></div><div class="hex"><img src="/images/tech/openai.svg" alt="" loading="lazy"><span>Azure OpenAI</span></div></div>
+        </div>
+        <div style="text-align:center;"><a class="btn btn-glass" href="/technologies">Explore our technology stack <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </div>
+    </section>
+
+    <section class="section section-day" id="faq">
       <div class="wrap">
         <div class="section-head center">
           <span class="eyebrow">FAQ</span>
@@ -304,13 +311,11 @@
 
     <section class="cta-band">
       <div class="wrap">
-        <div>
-          <h2>Ready to talk about your <em>data platform</em>?</h2>
-          <p>Book a 30-minute discovery call with a principal engineer to discuss your migration roadmap, lakehouse architecture or AI readiness. No sales pressure.</p>
-        </div>
+        <h2>Ready to talk about your <em>data platform</em>?</h2>
+        <p>Book a 30-minute discovery call with a principal engineer to discuss your migration roadmap, lakehouse architecture or AI readiness. No sales pressure.</p>
         <div class="cta-actions">
-          <a class="btn btn-light" href="/contact">Book a discovery call</a>
-          <a class="btn btn-ghost-light" href="mailto:hello@medhyx.com">hello@medhyx.com</a>
+          <a class="btn btn-primary" href="/contact">Book a discovery call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="btn btn-glass" href="mailto:hello@medhyx.com">hello@medhyx.com</a>
         </div>
       </div>
     </section>
@@ -364,7 +369,7 @@
     </div>
   </footer>
 
-  <script src="/js/site.js?v=2" defer></script>
+  <script src="/js/site.js?v=4" defer></script>
   <script src="/js/chat-widget.js?v=2" defer></script>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9b05a19250cb4e6696a8aef411cbe3dc"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

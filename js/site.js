@@ -308,6 +308,165 @@ gold_revenue.write.format("delta").mode("overwrite") \\
     });
   });
 
+  // ---------- AI motion layer ----------
+  const reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const hasIO = 'IntersectionObserver' in window;
+
+  // Neural-network canvas: drifting nodes, links, travelling data pulses, cursor attraction.
+  function neuralNetwork(host, { density = 1, pulses = 6, interactive = false } = {}) {
+    const canvas = document.createElement('canvas');
+    canvas.className = 'neural-bg';
+    canvas.setAttribute('aria-hidden', 'true');
+    const ctx = canvas.getContext && canvas.getContext('2d');
+    if (!ctx) return;
+    host.prepend(canvas);
+    const LINK = 150;
+    const mouse = { x: -9999, y: -9999 };
+    let w = 0, h = 0, nodes = [], packets = [], running = false, inView = !hasIO;
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = host.clientWidth; h = host.clientHeight;
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+      canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const count = Math.round(Math.min(150, Math.max(34, (w * h) / 9500)) * density);
+      nodes = Array.from({ length: count }, () => ({
+        x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.6 + 0.7,
+      }));
+      packets = [];
+    }
+
+    function draw(step) {
+      ctx.clearRect(0, 0, w, h);
+      if (step) {
+        for (const n of nodes) {
+          n.x += n.vx; n.y += n.vy;
+          if (n.x < 0 || n.x > w) n.vx *= -1;
+          if (n.y < 0 || n.y > h) n.vy *= -1;
+        }
+      }
+      ctx.lineWidth = 1;
+      for (let i = 0; i < nodes.length; i++) {
+        const a = nodes[i];
+        for (let j = i + 1; j < nodes.length; j++) {
+          const b = nodes[j];
+          const dx = a.x - b.x, dy = a.y - b.y, d2 = dx * dx + dy * dy;
+          if (d2 < LINK * LINK) {
+            ctx.strokeStyle = `rgba(120, 175, 255, ${(1 - Math.sqrt(d2) / LINK) * 0.42})`;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
+        }
+        if (interactive) {
+          const mx = a.x - mouse.x, my = a.y - mouse.y, m2 = mx * mx + my * my;
+          if (m2 < 170 * 170) {
+            ctx.strokeStyle = `rgba(26, 163, 220, ${(1 - Math.sqrt(m2) / 170) * 0.7})`;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+          }
+        }
+      }
+      for (const n of nodes) {
+        ctx.fillStyle = 'rgba(180, 218, 255, 0.95)';
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fill();
+      }
+      if (!step) return;
+      if (packets.length < pulses && Math.random() < 0.09) {
+        const a = nodes[(Math.random() * nodes.length) | 0];
+        const near = nodes.filter(b => b !== a && (a.x - b.x) ** 2 + (a.y - b.y) ** 2 < LINK * LINK);
+        if (near.length) packets.push({ a, b: near[(Math.random() * near.length) | 0], t: 0 });
+      }
+      packets = packets.filter(p => p.t <= 1);
+      for (const p of packets) {
+        p.t += 0.018;
+        const x = p.a.x + (p.b.x - p.a.x) * p.t, y = p.a.y + (p.b.y - p.a.y) * p.t;
+        const g = ctx.createRadialGradient(x, y, 0, x, y, 9);
+        g.addColorStop(0, 'rgba(130, 225, 255, 0.95)');
+        g.addColorStop(1, 'rgba(130, 225, 255, 0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 9, 0, Math.PI * 2); ctx.fill();
+      }
+    }
+
+    function loop() {
+      if (!running) return;
+      draw(true);
+      requestAnimationFrame(loop);
+    }
+    function update() {
+      const should = inView && !document.hidden && !reduceMotion;
+      if (should && !running) { running = true; requestAnimationFrame(loop); }
+      if (!should) running = false;
+    }
+
+    resize();
+    draw(false);
+    if (reduceMotion) return;
+    let resizeTimer;
+    window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { resize(); draw(false); }, 200); });
+    document.addEventListener('visibilitychange', update);
+    if (hasIO) new IntersectionObserver(([e]) => { inView = e.isIntersecting; update(); }).observe(host);
+    if (interactive) {
+      host.addEventListener('pointermove', e => { const r = host.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
+      host.addEventListener('pointerleave', () => { mouse.x = mouse.y = -9999; });
+    }
+    update();
+  }
+  $$('.hero').forEach(el => neuralNetwork(el, { density: 1, pulses: 8, interactive: true }));
+  $$('.page-hero, .cta-band').forEach(el => neuralNetwork(el, { density: 0.6, pulses: 4 }));
+
+  // Typing badge
+  $$('[data-typer]').forEach(el => {
+    const words = JSON.parse(el.dataset.typer);
+    if (reduceMotion || words.length < 2) return;
+    let wi = 0, ci = words[0].length, deleting = true;
+    const tick = () => {
+      const word = words[wi];
+      ci += deleting ? -1 : 1;
+      el.textContent = word.slice(0, ci);
+      let delay = deleting ? 32 : 65;
+      if (!deleting && ci === word.length) { deleting = true; delay = 1800; }
+      else if (deleting && ci === 0) { deleting = false; wi = (wi + 1) % words.length; delay = 350; }
+      setTimeout(tick, delay);
+    };
+    setTimeout(tick, 2200);
+  });
+
+  // Honeycomb wave order
+  $$('.hex').forEach((hex, i) => hex.style.setProperty('--i', i));
+
+  if (!reduceMotion && hasIO) {
+    // Count-up stats
+    const counters = $$('.stat-value');
+    const countIO = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      countIO.unobserve(entry.target);
+      const el = entry.target, final = el.textContent.trim();
+      const m = final.match(/^([\d.]+)(.*)$/);
+      if (!m) return;
+      const target = parseFloat(m[1]), decimals = (m[1].split('.')[1] || '').length, start = performance.now();
+      const step = now => {
+        const p = Math.min(1, (now - start) / 1600), eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = p < 1 ? (target * eased).toFixed(decimals) + m[2] : final;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }), { threshold: 0.4 });
+    counters.forEach(c => countIO.observe(c));
+
+    // Scroll reveal
+    const revealTargets = $$('.section-head, .intro-grid, .p-card, .principle, .panel, .hex-row, .faq-item, .phase, .tech-item, .case, .job, .feature-list li, .aside-box, .tool, .calc, .form-card, .contact-list li, .call-card, .perks li, .figure-card, .quote-block, .certs, .layer-detail, .stat');
+    revealTargets.forEach(el => {
+      const siblings = [...el.parentElement.children];
+      el.style.setProperty('--d', `${(siblings.indexOf(el) % 6) * 90}ms`);
+      el.classList.add('reveal');
+    });
+    const revealIO = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('in'); revealIO.unobserve(entry.target); }
+    }), { rootMargin: '0px 0px -6% 0px' });
+    revealTargets.forEach(el => revealIO.observe(el));
+  }
+
   // Legal modal
   const LEGAL = {
     privacy: {
