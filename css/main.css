@@ -644,3 +644,96 @@ h1 em, h2 em { font-style: italic; color: var(--accent); }
 }
 .range-value { white-space: nowrap; }
 @media (max-width: 1080px) { .contact-grid > .form-card { order: -1; } }
+
+/* ======================================================================
+   Colour pass — palette taken from the Medhyx logo (cyan → blue, coral)
+   ====================================================================== */
+:root {
+  --brand-cyan: #0b8fc4;
+  --brand-blue: #2b5fd9;
+  --brand-coral: #d9533c;
+  --brand-grad: linear-gradient(120deg, #0b8fc4 0%, #2b5fd9 100%);
+  --accent: #2b5fd9;
+  --accent-dark: #1f4bb5;
+  --sand: #f4f8fc;
+  --sand-2: #e9f0f8;
+  --line: #e2e8f0;
+  --line-strong: #cfd8e3;
+  --tint-cyan: #e3f4fb;
+  --tint-blue: #e8eefc;
+  --tint-coral: #fdece8;
+}
+
+h1 em, h2 em {
+  background: var(--brand-grad); -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: var(--brand-blue);
+  padding-right: .06em;
+}
+.eyebrow { color: var(--brand-blue); }
+
+.btn-primary { background: var(--brand-grad); color: #fff; box-shadow: 0 6px 18px rgba(43, 95, 217, .22); }
+.btn-primary:hover { background: linear-gradient(120deg, #0a7fae 0%, #1f4bb5 100%); color: #fff; }
+.text-link:hover { color: var(--brand-blue); border-color: var(--brand-blue); }
+
+/* Hero glow */
+.hero, .page-hero { position: relative; overflow: hidden; isolation: isolate; }
+.hero::before, .page-hero::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(520px 340px at 88% 18%, rgba(11, 143, 196, .16), transparent 70%),
+    radial-gradient(460px 300px at 70% 95%, rgba(217, 83, 60, .10), transparent 70%),
+    radial-gradient(600px 380px at 5% 0%, rgba(43, 95, 217, .08), transparent 70%);
+}
+.hero-notes svg { color: var(--brand-cyan); }
+
+.process-card { background: #fff; box-shadow: var(--shadow); border-color: var(--line); }
+.step-num { background: var(--brand-grad); color: #fff; border: 0; font-weight: 600; }
+.process-steps li::before { background: linear-gradient(var(--brand-cyan), var(--brand-blue)); opacity: .35; }
+
+/* Numbers and labels */
+.stat-value, .mini-stats b, .case-metrics b, .big-number {
+  background: var(--brand-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.calc-output .big-number { background: linear-gradient(120deg, #7fd3f5, #a9c1ff); -webkit-background-clip: text; background-clip: text; }
+.numbered-item .num, .practice-head .num, .phase .num { color: var(--brand-coral); font-weight: 600; }
+.case .kicker, .tech-item .kind, .aside-list .tag, .model-term, .layer-detail .tag, .job-meta .flag { color: var(--brand-blue); }
+.quote-mark { color: var(--brand-coral); }
+.quote-dots button.active { background: var(--brand-blue); }
+.certs li::before { background: var(--brand-coral); }
+.check-list li::before { border-color: var(--brand-cyan); }
+
+/* Tinted icon circles */
+.principle:nth-child(1) .principle-icon { background: var(--tint-cyan); color: var(--brand-cyan); border-color: transparent; }
+.principle:nth-child(2) .principle-icon { background: var(--tint-blue); color: var(--brand-blue); border-color: transparent; }
+.principle:nth-child(3) .principle-icon { background: var(--tint-coral); color: var(--brand-coral); border-color: transparent; }
+
+/* Interactive states */
+.option-btn.active { background: var(--brand-blue); border-color: var(--brand-blue); }
+.seg-tabs button.active { color: var(--brand-blue); }
+.jump-nav a.active, .jump-nav a:hover { border-bottom-color: var(--brand-blue); }
+.main-nav a.active { border-bottom-color: var(--brand-blue); }
+.calc input[type="range"] { accent-color: var(--brand-blue); }
+.faq-item.open .faq-q { color: var(--brand-blue); }
+.faq-item.open .faq-icon::before, .faq-item.open .faq-icon::after { background: var(--brand-blue); }
+
+/* Cards get a coloured top edge */
+.panel, .tool, .form-card { position: relative; }
+.panel::before, .tool::before, .form-card::before {
+  content: ''; position: absolute; left: -1px; right: -1px; top: -1px; height: 3px;
+  background: linear-gradient(90deg, var(--brand-cyan), var(--brand-blue) 60%, var(--brand-coral)); border-radius: 12px 12px 0 0;
+}
+.tech-item { transition: background-color .2s ease; }
+.tech-item:hover { background: var(--sand); }
+
+/* Dark bands with colour glow */
+.cta-band { position: relative; overflow: hidden; background: #0d1a33; }
+.cta-band::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(520px 320px at 92% 10%, rgba(11, 143, 196, .35), transparent 70%),
+    radial-gradient(420px 280px at 0% 100%, rgba(217, 83, 60, .22), transparent 70%);
+}
+.cta-band .wrap { position: relative; }
+.cta-band h2 em { background: linear-gradient(120deg, #7fd3f5, #a9c1ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.calc-output, .code-block, .figure-card { background: #0d1a33; }
+.site-footer { background: var(--sand); }

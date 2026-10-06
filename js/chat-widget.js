@@ -28,7 +28,7 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: #0f1c33;
+      background: linear-gradient(120deg, #0b8fc4 0%, #2b5fd9 100%);
       border: 2px solid rgba(255, 255, 255, 0.85);
       color: #ffffff;
       cursor: pointer;
@@ -66,8 +66,8 @@
     .mx-chat-trigger .mx-icon-close { display: none; }
 
     @keyframes mx-pulse-ring {
-      0%, 100% { box-shadow: 0 8px 24px rgba(15, 28, 51, 0.28), 0 0 0 0 rgba(14, 107, 168, 0.35); }
-      50% { box-shadow: 0 8px 24px rgba(15, 28, 51, 0.28), 0 0 0 12px rgba(14, 107, 168, 0); }
+      0%, 100% { box-shadow: 0 8px 24px rgba(15, 28, 51, 0.28), 0 0 0 0 rgba(43, 95, 217, 0.35); }
+      50% { box-shadow: 0 8px 24px rgba(15, 28, 51, 0.28), 0 0 0 12px rgba(43, 95, 217, 0); }
     }
 
     /* Chat Window */
@@ -110,7 +110,7 @@
       width: 40px;
       height: 40px;
       border-radius: 12px;
-      background: #0e6ba8;
+      background: linear-gradient(120deg, #0b8fc4 0%, #2b5fd9 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -172,7 +172,7 @@
     }
     .mx-msg-user {
       align-self: flex-end;
-      background: #0e6ba8;
+      background: linear-gradient(120deg, #0b8fc4 0%, #2b5fd9 100%);
       color: #ffffff;
       border-bottom-right-radius: 4px;
     }
@@ -305,7 +305,7 @@
       width: 40px;
       height: 40px;
       border-radius: 12px;
-      background: #0e6ba8;
+      background: linear-gradient(120deg, #0b8fc4 0%, #2b5fd9 100%);
       border: none;
       color: #fff;
       cursor: pointer;
