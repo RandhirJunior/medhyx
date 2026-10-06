@@ -9,11 +9,11 @@
   <g transform="translate(10, 10)">
     <rect x="0" y="2" width="48" height="48" rx="8" fill="url(#rhRedGrad)"/>
     <!-- Angled modern loading dock leveler / chevron -->
-    <path d="M12 36 L24 16 L36 36 Z" fill="#FFFFFF" opacity="0.95"/>
+    <path d="M12 36 L24 16 L36 36 Z" fill="#0f1c33" opacity="0.95"/>
     <path d="M18 36 L24 26 L30 36 Z" fill="#C8102E"/>
   </g>
   <!-- Brand Wordmark -->
-  <text x="72" y="42" font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="1.5" fill="#FFFFFF">
+  <text x="72" y="42" font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="1.5" fill="#0f1c33">
     RITE<tspan fill="#EF2B38">-</tspan>HITE
   </text>
   <!-- Official Tagline -->

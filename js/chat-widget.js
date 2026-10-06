@@ -28,20 +28,20 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
-      border: 2px solid rgba(56, 189, 248, 0.4);
+      background: #0f1c33;
+      border: 2px solid rgba(255, 255, 255, 0.85);
       color: #ffffff;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 32px rgba(2, 132, 199, 0.4), 0 0 20px rgba(14, 165, 233, 0.2);
+      box-shadow: 0 8px 24px rgba(15, 28, 51, 0.28);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       animation: mx-pulse-ring 2.5s ease-in-out infinite;
     }
     .mx-chat-trigger:hover {
       transform: scale(1.1);
-      box-shadow: 0 12px 40px rgba(2, 132, 199, 0.5), 0 0 30px rgba(14, 165, 233, 0.3);
+      box-shadow: 0 12px 32px rgba(15, 28, 51, 0.35);
     }
     .mx-chat-trigger.open {
       animation: none;
@@ -66,8 +66,8 @@
     .mx-chat-trigger .mx-icon-close { display: none; }
 
     @keyframes mx-pulse-ring {
-      0%, 100% { box-shadow: 0 8px 32px rgba(2, 132, 199, 0.4), 0 0 0 0 rgba(14, 165, 233, 0.3); }
-      50% { box-shadow: 0 8px 32px rgba(2, 132, 199, 0.4), 0 0 0 12px rgba(14, 165, 233, 0); }
+      0%, 100% { box-shadow: 0 8px 24px rgba(15, 28, 51, 0.28), 0 0 0 0 rgba(14, 107, 168, 0.35); }
+      50% { box-shadow: 0 8px 24px rgba(15, 28, 51, 0.28), 0 0 0 12px rgba(14, 107, 168, 0); }
     }
 
     /* Chat Window */
@@ -110,7 +110,7 @@
       width: 40px;
       height: 40px;
       border-radius: 12px;
-      background: linear-gradient(135deg, #0284c7, #0ea5e9);
+      background: #0e6ba8;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -172,7 +172,7 @@
     }
     .mx-msg-user {
       align-self: flex-end;
-      background: linear-gradient(135deg, #0284c7, #0369a1);
+      background: #0e6ba8;
       color: #ffffff;
       border-bottom-right-radius: 4px;
     }
@@ -305,7 +305,7 @@
       width: 40px;
       height: 40px;
       border-radius: 12px;
-      background: linear-gradient(135deg, #0284c7, #0ea5e9);
+      background: #0e6ba8;
       border: none;
       color: #fff;
       cursor: pointer;
