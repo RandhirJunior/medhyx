@@ -191,18 +191,20 @@ h1 em, h2 em { font-style: italic; color: var(--accent); }
 /* ---------- Clients ---------- */
 .clients { padding: 56px 0; border-bottom: 1px solid var(--line); }
 .clients-label { text-align: center; font-size: 14px; color: var(--muted); margin-bottom: 28px; }
-.client-logos {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 28px 56px;
-  list-style: none; margin: 0; padding: 0;
+.client-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
-.client-logos img {
-  height: 30px; width: auto; max-width: 150px; object-fit: contain;
-  filter: grayscale(1); opacity: .6; transition: opacity .2s ease, filter .2s ease;
+.client-track {
+  display: flex; align-items: center; gap: 72px; width: max-content;
+  list-style: none; margin: 0; padding: 8px 0;
+  animation: marquee 32s linear infinite;
 }
-.client-logos li:hover img { filter: none; opacity: 1; }
-.client-logos .logo-text {
-  font-family: var(--serif); font-size: 1.15rem; color: var(--muted); white-space: nowrap;
-}
+.client-marquee:hover .client-track { animation-play-state: paused; }
+.client-track li { flex-shrink: 0; }
+.client-track img { height: 34px; width: auto; max-width: 170px; object-fit: contain; }
+@keyframes marquee { to { transform: translateX(calc(-50% - 36px)); } }
 
 /* ---------- Stats ---------- */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -393,10 +395,13 @@ h1 em, h2 em { font-style: italic; color: var(--accent); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .client-marquee { -webkit-mask-image: none; mask-image: none; }
+  .client-track { width: auto; flex-wrap: wrap; justify-content: center; gap: 28px 56px; }
+  .client-track li[aria-hidden="true"] { display: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-.client-logos img.logo-tall { height: 44px; }
+.client-track img.logo-tall { height: 48px; }
 
 /* ======================================================================
    Inner-page components

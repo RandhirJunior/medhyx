@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css?v=2">
+  <link rel="stylesheet" href="/css/main.css?v=3">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -127,14 +127,22 @@
     <section class="clients" aria-label="Clients" style="border-top: 1px solid var(--line);">
       <div class="wrap">
         <p class="clients-label">Trusted by data teams at global enterprises and institutions</p>
-        <ul class="client-logos">
+        <div class="client-marquee">
+          <ul class="client-track">
           <li><img src="/images/clients/booking.svg" alt="Booking.com" loading="lazy"></li>
           <li><img src="/images/clients/pepsico.svg" alt="PepsiCo" loading="lazy"></li>
           <li><img src="/images/clients/schneider.svg" alt="Schneider Electric" loading="lazy"></li>
           <li><img src="/images/clients/isc2.svg" alt="ISC2" loading="lazy"></li>
           <li><img src="/images/clients/rite-hite.svg" alt="Rite-Hite" loading="lazy"></li>
           <li><img src="/images/kcl-logo.svg" alt="King's College London" class="logo-tall" loading="lazy"></li>
-        </ul>
+          <li aria-hidden="true"><img src="/images/clients/booking.svg" alt="" loading="lazy"></li>
+          <li aria-hidden="true"><img src="/images/clients/pepsico.svg" alt="" loading="lazy"></li>
+          <li aria-hidden="true"><img src="/images/clients/schneider.svg" alt="" loading="lazy"></li>
+          <li aria-hidden="true"><img src="/images/clients/isc2.svg" alt="" loading="lazy"></li>
+          <li aria-hidden="true"><img src="/images/clients/rite-hite.svg" alt="" loading="lazy"></li>
+          <li aria-hidden="true"><img src="/images/kcl-logo.svg" alt="" class="logo-tall" loading="lazy"></li>
+          </ul>
+        </div>
       </div>
     </section>
 
