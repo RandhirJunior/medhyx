@@ -413,7 +413,7 @@ gold_revenue.write.format("delta").mode("overwrite") \\
     update();
   }
   $$('.hero').forEach(el => neuralNetwork(el, { density: 1, pulses: 8, interactive: true }));
-  $$('.page-hero, .cta-band').forEach(el => neuralNetwork(el, { density: 0.6, pulses: 4 }));
+  $$('.page-hero').forEach(el => neuralNetwork(el, { density: 0.6, pulses: 4 }));
 
   // Typing badge
   $$('[data-typer]').forEach(el => {
@@ -511,6 +511,168 @@ gold_revenue.write.format("delta").mode("overwrite") \\
       $$('.eyebrow').forEach(el => { if (el.children.length === 0) decodeIO.observe(el); });
     }
   }
+
+  // ---------- Sci-fi cinematic layer ----------
+
+  // Boot sequence: first page of a session only (class set by an inline script in <head>)
+  const root = document.documentElement;
+  if (root.classList.contains('booting')) {
+    try { sessionStorage.setItem('mx-boot', '1'); } catch (e) { /* storage blocked: boot shows each page */ }
+    const boot = document.createElement('div');
+    boot.className = 'boot';
+    boot.setAttribute('aria-hidden', 'true');
+    boot.innerHTML = '<div class="boot-scan"></div><div class="boot-inner"><img class="boot-logo" src="/images/medhyx-logo-light.png" alt=""><div class="boot-lines"></div><div class="boot-bar"><span></span></div><div class="boot-skip">Click to skip</div></div>';
+    document.body.appendChild(boot);
+    const lines = ['initializing medhyx data platform', 'connecting lakehouse layers', 'calibrating ai core', 'systems ready'];
+    const box = $('.boot-lines', boot);
+    let li = 0, finished = false;
+    const typeLine = () => {
+      if (finished || li >= lines.length) return;
+      const row = document.createElement('div');
+      row.className = 'boot-line';
+      box.appendChild(row);
+      const text = '> ' + lines[li];
+      let ci = 0;
+      const t = setInterval(() => {
+        row.textContent = text.slice(0, ++ci);
+        if (ci >= text.length) { clearInterval(t); row.classList.add('done'); li++; setTimeout(typeLine, 90); }
+      }, 13);
+    };
+    typeLine();
+    const finish = () => {
+      if (finished) return;
+      finished = true;
+      boot.classList.add('out');
+      root.classList.remove('booting');
+      setTimeout(() => boot.remove(), 900);
+    };
+    boot.addEventListener('click', finish);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') finish(); });
+    setTimeout(finish, 2300);
+  }
+
+  // Tron floor + HUD frame in the home hero
+  $$('.hero').forEach(hero => {
+    const floor = document.createElement('div');
+    floor.className = 'hero-floor';
+    floor.setAttribute('aria-hidden', 'true');
+    hero.prepend(floor);
+    const visual = $('.hero-visual', hero);
+    if (visual) {
+      visual.insertAdjacentHTML('afterbegin',
+        '<span class="hud-corner tl" aria-hidden="true"></span><span class="hud-corner tr" aria-hidden="true"></span>' +
+        '<span class="hud-corner bl" aria-hidden="true"></span><span class="hud-corner br" aria-hidden="true"></span>' +
+        '<span class="hud-label left" aria-hidden="true"><i></i>Live architecture</span>' +
+        '<span class="hud-label right" aria-hidden="true">Lakehouse · AI · BI</span>');
+    }
+  });
+
+  // Periodic hologram glitch on the hero headline
+  if (!reduceMotion) {
+    const glitchTarget = $('.hero h1 .line');
+    if (glitchTarget) {
+      setInterval(() => {
+        if (document.hidden || root.classList.contains('booting')) return;
+        glitchTarget.classList.add('glitching');
+        setTimeout(() => glitchTarget.classList.remove('glitching'), 520);
+      }, 6500);
+    }
+  }
+
+  // Holographic globe with data arcs from New Delhi
+  function holoGlobe(host) {
+    const canvas = document.createElement('canvas');
+    canvas.className = 'globe-canvas';
+    canvas.setAttribute('aria-hidden', 'true');
+    const ctx = canvas.getContext && canvas.getContext('2d');
+    if (!ctx) return;
+    host.prepend(canvas);
+    const toVec = (lat, lon) => {
+      const phi = (lat * Math.PI) / 180, lam = (lon * Math.PI) / 180;
+      return [Math.cos(phi) * Math.sin(lam), Math.sin(phi), Math.cos(phi) * Math.cos(lam)];
+    };
+    const N = 900, dots = [];
+    for (let i = 0; i < N; i++) {
+      const y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(1 - y * y), th = Math.PI * (3 - Math.sqrt(5)) * i;
+      dots.push([Math.cos(th) * r, y, Math.sin(th) * r]);
+    }
+    const hub = toVec(28.6, 77.2);
+    const cities = [[40.7, -74.0], [51.5, -0.1], [50.1, 8.7], [25.2, 55.3], [1.35, 103.8], [-33.9, 151.2]].map(([a, b]) => toVec(a, b));
+    const arcs = cities.map((c, i) => ({ to: c, offset: i / cities.length }));
+    let size = 0, rot = 0, running = false, inView = !hasIO;
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      size = window.innerWidth > 1080 ? Math.min(680, host.clientHeight * 1.25) : Math.min(560, host.clientWidth * 0.95);
+      canvas.width = Math.round(size * dpr); canvas.height = Math.round(size * dpr);
+      canvas.style.width = size + 'px'; canvas.style.height = size + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    const tilt = 0.32;
+    function project(v) {
+      const cr = Math.cos(rot), sr = Math.sin(rot);
+      let x = v[0] * cr + v[2] * sr, z = -v[0] * sr + v[2] * cr, y = v[1];
+      const ct = Math.cos(tilt), st = Math.sin(tilt);
+      const y2 = y * ct - z * st, z2 = y * st + z * ct;
+      const R = size * 0.42;
+      return [size / 2 + x * R, size / 2 - y2 * R, z2];
+    }
+    function slerp(a, b, t) {
+      const dot = Math.max(-1, Math.min(1, a[0] * b[0] + a[1] * b[1] + a[2] * b[2])), om = Math.acos(dot), so = Math.sin(om) || 1;
+      const k1 = Math.sin((1 - t) * om) / so, k2 = Math.sin(t * om) / so, lift = 1 + Math.sin(Math.PI * t) * 0.18;
+      return [(a[0] * k1 + b[0] * k2) * lift, (a[1] * k1 + b[1] * k2) * lift, (a[2] * k1 + b[2] * k2) * lift];
+    }
+    function draw(time) {
+      ctx.clearRect(0, 0, size, size);
+      const g = ctx.createRadialGradient(size / 2, size / 2, size * 0.2, size / 2, size / 2, size * 0.5);
+      g.addColorStop(0, 'rgba(43, 95, 217, 0.10)'); g.addColorStop(1, 'rgba(43, 95, 217, 0)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, size, size);
+      for (const d of dots) {
+        const [x, y, z] = project(d);
+        ctx.fillStyle = z > 0 ? `rgba(143, 200, 255, ${0.35 + z * 0.55})` : 'rgba(143, 200, 255, 0.08)';
+        ctx.fillRect(x, y, z > 0 ? 1.6 : 1.1, z > 0 ? 1.6 : 1.1);
+      }
+      const t0 = (time / 2600) % 1;
+      for (const arc of arcs) {
+        ctx.beginPath();
+        let started = false;
+        for (let i = 0; i <= 40; i++) {
+          const [x, y, z] = project(slerp(hub, arc.to, i / 40));
+          if (z < -0.05) { started = false; continue; }
+          if (!started) { ctx.moveTo(x, y); started = true; } else ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = 'rgba(111, 208, 247, 0.45)'; ctx.lineWidth = 1.2; ctx.stroke();
+        const tt = (t0 + arc.offset) % 1, [px, py, pz] = project(slerp(hub, arc.to, tt));
+        if (pz > -0.05) {
+          const pg = ctx.createRadialGradient(px, py, 0, px, py, 7);
+          pg.addColorStop(0, 'rgba(160, 235, 255, 1)'); pg.addColorStop(1, 'rgba(160, 235, 255, 0)');
+          ctx.fillStyle = pg; ctx.beginPath(); ctx.arc(px, py, 7, 0, Math.PI * 2); ctx.fill();
+        }
+        const [cx, cy, cz] = project(arc.to);
+        if (cz > 0) { ctx.fillStyle = 'rgba(155, 123, 255, 0.95)'; ctx.beginPath(); ctx.arc(cx, cy, 2.6, 0, Math.PI * 2); ctx.fill(); }
+      }
+      const [hx, hy, hz] = project(hub);
+      if (hz > 0) {
+        const pulse = 4 + Math.sin(time / 300) * 2;
+        ctx.strokeStyle = 'rgba(224, 97, 75, 0.9)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(hx, hy, pulse + 3, 0, Math.PI * 2); ctx.stroke();
+        ctx.fillStyle = '#ff8a6b'; ctx.beginPath(); ctx.arc(hx, hy, 3.2, 0, Math.PI * 2); ctx.fill();
+      }
+    }
+    function loop(time) { if (!running) return; rot += 0.0025; draw(time); requestAnimationFrame(loop); }
+    function update() {
+      const should = inView && !document.hidden && !reduceMotion;
+      if (should && !running) { running = true; requestAnimationFrame(loop); }
+      if (!should) running = false;
+    }
+    rot = -1.35; // start with India facing the viewer
+    resize(); draw(0);
+    if (reduceMotion) return;
+    window.addEventListener('resize', () => { resize(); draw(0); });
+    document.addEventListener('visibilitychange', update);
+    if (hasIO) new IntersectionObserver(([e]) => { inView = e.isIntersecting; update(); }).observe(host);
+    update();
+  }
+  $$('.cta-band').forEach(holoGlobe);
 
   // Legal modal
   const LEGAL = {
