@@ -355,20 +355,20 @@ gold_revenue.write.format("delta").mode("overwrite") \\
           const b = nodes[j];
           const dx = a.x - b.x, dy = a.y - b.y, d2 = dx * dx + dy * dy;
           if (d2 < LINK * LINK) {
-            ctx.strokeStyle = `rgba(120, 175, 255, ${(1 - Math.sqrt(d2) / LINK) * 0.42})`;
+            ctx.strokeStyle = `rgba(167, 139, 250, ${(1 - Math.sqrt(d2) / LINK) * 0.42})`;
             ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
           }
         }
         if (interactive) {
           const mx = a.x - mouse.x, my = a.y - mouse.y, m2 = mx * mx + my * my;
           if (m2 < 170 * 170) {
-            ctx.strokeStyle = `rgba(26, 163, 220, ${(1 - Math.sqrt(m2) / 170) * 0.7})`;
+            ctx.strokeStyle = `rgba(34, 211, 238, ${(1 - Math.sqrt(m2) / 170) * 0.7})`;
             ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
           }
         }
       }
       for (const n of nodes) {
-        ctx.fillStyle = 'rgba(180, 218, 255, 0.95)';
+        ctx.fillStyle = 'rgba(221, 214, 254, 0.95)';
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fill();
       }
       if (!step) return;
@@ -382,8 +382,8 @@ gold_revenue.write.format("delta").mode("overwrite") \\
         p.t += 0.018;
         const x = p.a.x + (p.b.x - p.a.x) * p.t, y = p.a.y + (p.b.y - p.a.y) * p.t;
         const g = ctx.createRadialGradient(x, y, 0, x, y, 9);
-        g.addColorStop(0, 'rgba(130, 225, 255, 0.95)');
-        g.addColorStop(1, 'rgba(130, 225, 255, 0)');
+        g.addColorStop(0, 'rgba(103, 232, 249, 0.95)');
+        g.addColorStop(1, 'rgba(103, 232, 249, 0)');
         ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 9, 0, Math.PI * 2); ctx.fill();
       }
     }
@@ -625,11 +625,11 @@ gold_revenue.write.format("delta").mode("overwrite") \\
     function draw(time) {
       ctx.clearRect(0, 0, size, size);
       const g = ctx.createRadialGradient(size / 2, size / 2, size * 0.2, size / 2, size / 2, size * 0.5);
-      g.addColorStop(0, 'rgba(43, 95, 217, 0.10)'); g.addColorStop(1, 'rgba(43, 95, 217, 0)');
+      g.addColorStop(0, 'rgba(99, 102, 241, 0.10)'); g.addColorStop(1, 'rgba(99, 102, 241, 0)');
       ctx.fillStyle = g; ctx.fillRect(0, 0, size, size);
       for (const d of dots) {
         const [x, y, z] = project(d);
-        ctx.fillStyle = z > 0 ? `rgba(143, 200, 255, ${0.35 + z * 0.55})` : 'rgba(143, 200, 255, 0.08)';
+        ctx.fillStyle = z > 0 ? `rgba(196, 181, 253, ${0.35 + z * 0.55})` : 'rgba(196, 181, 253, 0.08)';
         ctx.fillRect(x, y, z > 0 ? 1.6 : 1.1, z > 0 ? 1.6 : 1.1);
       }
       const t0 = (time / 2600) % 1;
@@ -641,21 +641,21 @@ gold_revenue.write.format("delta").mode("overwrite") \\
           if (z < -0.05) { started = false; continue; }
           if (!started) { ctx.moveTo(x, y); started = true; } else ctx.lineTo(x, y);
         }
-        ctx.strokeStyle = 'rgba(111, 208, 247, 0.45)'; ctx.lineWidth = 1.2; ctx.stroke();
+        ctx.strokeStyle = 'rgba(103, 232, 249, 0.45)'; ctx.lineWidth = 1.2; ctx.stroke();
         const tt = (t0 + arc.offset) % 1, [px, py, pz] = project(slerp(hub, arc.to, tt));
         if (pz > -0.05) {
           const pg = ctx.createRadialGradient(px, py, 0, px, py, 7);
-          pg.addColorStop(0, 'rgba(160, 235, 255, 1)'); pg.addColorStop(1, 'rgba(160, 235, 255, 0)');
+          pg.addColorStop(0, 'rgba(165, 243, 252, 1)'); pg.addColorStop(1, 'rgba(165, 243, 252, 0)');
           ctx.fillStyle = pg; ctx.beginPath(); ctx.arc(px, py, 7, 0, Math.PI * 2); ctx.fill();
         }
         const [cx, cy, cz] = project(arc.to);
-        if (cz > 0) { ctx.fillStyle = 'rgba(155, 123, 255, 0.95)'; ctx.beginPath(); ctx.arc(cx, cy, 2.6, 0, Math.PI * 2); ctx.fill(); }
+        if (cz > 0) { ctx.fillStyle = 'rgba(192, 132, 252, 0.95)'; ctx.beginPath(); ctx.arc(cx, cy, 2.6, 0, Math.PI * 2); ctx.fill(); }
       }
       const [hx, hy, hz] = project(hub);
       if (hz > 0) {
         const pulse = 4 + Math.sin(time / 300) * 2;
-        ctx.strokeStyle = 'rgba(224, 97, 75, 0.9)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(hx, hy, pulse + 3, 0, Math.PI * 2); ctx.stroke();
-        ctx.fillStyle = '#ff8a6b'; ctx.beginPath(); ctx.arc(hx, hy, 3.2, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = 'rgba(251, 113, 133, 0.9)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(hx, hy, pulse + 3, 0, Math.PI * 2); ctx.stroke();
+        ctx.fillStyle = '#fda4af'; ctx.beginPath(); ctx.arc(hx, hy, 3.2, 0, Math.PI * 2); ctx.fill();
       }
     }
     function loop(time) { if (!running) return; rot += 0.0025; draw(time); requestAnimationFrame(loop); }
